@@ -1,11 +1,14 @@
-import Image from 'next/image'
+'use client'
 
-export default function Home() {
-  return (
-    <main >
-      <div >
-        PH
-      </div>
-    </main>
-  )
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
+
+const HomePage = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/home')
+  }, [])
 }
+
+export default HomePage
