@@ -1,0 +1,70 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--FF1);
+  letter-spacing: 0.01em;
+  color: var(--clr-500);
+  padding: 0.25rem;
+}
+#h1 {
+  font-size: var(--fs-primary-heading);
+}
+#h1TinyScreen {
+  font-weight: 650;
+  font-size: var(--fs-primary-heading);
+  display: none;
+}
+
+@media (max-width: 15.3125em) {
+  #h1 {
+    display: none;
+  }
+
+  #h1TinyScreen {
+    display: block;
+  }
+}
+
+h2{
+  font-size: var(--fs-900);
+}
+
+@media (min-width: 24em) {
+  h2{
+    margin-left: 5rem
+  }
+}
+
+h3{
+  font-size: var(--fs-800);
+}
+
+h4{
+  font-size: var(--fs-650);
+}
+h5{
+  font-size: var(--fs-600);
+  font-weight:700;
+  margin: 1rem;
+}
+
+/* h6 will be for errors */
+h6{
+  color:red;
+}
+
+/* links */
+a:any-link {
+  text-decoration: none;
+  color: var(--clr-800);
+  font-weight: 400;
+  letter-spacing: 0.02rem;
+}
+
+a:hover, a:focus-visible {
+  color: var(--clr-blue);
+  transform: translate(0, -0.15rem);
+  font-weight: 900;
+}
+
+a:active {
+  color: var(--clr-500);
+}

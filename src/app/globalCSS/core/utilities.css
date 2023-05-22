@@ -1,0 +1,85 @@
+/* Utility classes */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.visually-unhidden {
+  position:static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+  clip: auto;
+  white-space: normal;
+  border: none;
+}
+
+.error {
+  color: red;
+  font-family: var(--FF2);
+}
+
+.required::after{
+  content: " *";
+  color: red;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.shrink-text {
+  font-size: var(--fs-300) !important;
+}
+
+.opacity-zero {
+  opacity: 0;
+}
+
+.table-head-shader {
+  background-color: var(--clr-white) !important;
+}
+
+.background-img1 {
+  background-image: url("/otherPictures/backgroundImg1.jpg") !important;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, .8) !important;
+  position: fixed !important;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  transform: translate(-50%, 0%);
+  width: var(--maxWidthBody);
+  z-index: 10;
+}
+
+.modal{
+  width: calc(var(--maxWidthBody) * 6/10);
+  max-width: 90%;
+  width: 62.5;
+  position: fixed;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  background-color: var(--clr-white);
+  box-shadow: 0 0 1.1rem 0 rgba(0, 0, 0, .75);
+  text-align: center;
+
+  /* border: 3px solid blue; */
+}
