@@ -11,3 +11,22 @@
 
   min-height: 100px;
 }
+
+.social-media-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-media-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-media-icon {
+  width: 3rem;
+  height: auto;
+  border: none;
+}

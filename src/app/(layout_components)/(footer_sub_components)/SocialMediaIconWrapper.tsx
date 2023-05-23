@@ -1,7 +1,7 @@
 const SocialMediaIconWrapper = ({iconSrc, href, site}: SocialMediaDatapoint) => {
 
   return (
-    <div className='smIcon-wrapper'>
+    <div className='social-media-icon-wrapper'>
       <a href={href} target='_blank'>
         {iconSrc}
       </a>
