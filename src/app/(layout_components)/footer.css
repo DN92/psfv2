@@ -8,8 +8,55 @@
   color: var(--clr-800);
   display: flex;
   flex-direction: column;
-
   min-height: 100px;
+  padding: 1rem 0 1rem 0;
+}
+
+.footer-section1 {
+  display: flex;
+  justify-content: space-around;
+  flex: 1 1 auto;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  /* background-color: green; */
+}
+
+.footer-left-top {
+  display: flex;
+  flex: 1 1 0;
+  gap: 2rem;
+  justify-content: space-around;
+  padding: 1rem 0 1rem 0;
+}
+
+.footer-right {
+  /* display: flex;
+  flex-direction: column;
+  background-color: blue; */
+}
+
+.kingpin-card {
+  height: 5rem;
+}
+
+.kingpin-icon {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.tica-card {
+  aspect-ratio: 43/20;
+  height: 5.5rem;
+}
+
+.tica-icon {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .social-media-navbar {
@@ -26,7 +73,25 @@
 }
 
 .social-media-icon {
-  width: 3rem;
+  width: 4rem;
   height: auto;
   border: none;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer-nav > a {
+  flex-grow: 1;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  color: var(--clr-white);
+  text-decoration: underline;
 }
