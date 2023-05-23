@@ -18,13 +18,11 @@
 .header-right {
   display: flex;
   flex-direction: column;
-  /* background-color: purple; */
   justify-content: space-around;
   width: 80%;
 }
 
 .application-title-wrapper {
-  /* background-color: red; */
   margin: 0 0 0 10%;
 }
 
