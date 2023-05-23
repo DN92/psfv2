@@ -1,15 +1,12 @@
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--FF1);
   letter-spacing: 0.01em;
   color: var(--clr-500);
   padding: 0.25rem;
 }
 #h1 {
-  font-size: var(--fs-primary-heading);
 }
 #h1TinyScreen {
   font-weight: 650;
-  font-size: var(--fs-primary-heading);
   display: none;
 }
 
@@ -62,7 +59,6 @@ a:any-link {
 a:hover, a:focus-visible {
   color: var(--clr-blue);
   transform: translate(0, -0.15rem);
-  font-weight: 900;
 }
 
 a:active {

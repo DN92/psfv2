@@ -1,13 +1,21 @@
 import Link from 'next/link'
 
-const Footernavigation = () => {
+const FooterNavigation = () => {
   return (
-    <nav className="footer-nav">
-      <Link href='/waitingListForm' >Apply</Link>
-      <Link href='/availableKittens'>Kittens</Link>
-      <Link href='/contact'>Contact</Link>
-    </nav>
+    <div className='footer-nav-wrapper'>
+      <nav className="footer-nav footer-nav-left">
+        <Link href='/home'>Home</Link>
+        <Link href='/availableKittens'>Kittens</Link>
+        <Link href='/contact'>Contact</Link>
+      </nav>
+      <nav className="footer-nav footer-nav-right">
+        <Link href='/waitingListForm' >Apply</Link>
+        <Link href='/login'>Reviews</Link>
+        <Link href='/reviews'>Login</Link>
+      </nav>
+
+    </div>
   )
 }
 
-export default Footernavigation
+export default FooterNavigation

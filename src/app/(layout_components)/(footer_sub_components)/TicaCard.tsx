@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ticaIcon from "../../(layout_assets)/ticaReg.jpg"
+import ticaIcon from "../../(layout_assets)/ticaLogo.webp"
 
 const TicaCard = () => {
 

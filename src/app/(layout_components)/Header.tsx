@@ -4,12 +4,14 @@ import FaviconCard from "./(header_sub_components)/FaviconCard"
 
 const Header = () => {
   return (
-    <div className="header">
-      <FaviconCard />
-      <div className="header-right">
-        <ApplicationTittleH1 />
-        <Header_Navigation />
-        <div></div>
+    <div className="header-wrapper">
+      <div className="header">
+        <FaviconCard />
+        <div className="header-right">
+          <ApplicationTittleH1 />
+          <Header_Navigation />
+          <div></div>
+        </div>
       </div>
     </div>
   )

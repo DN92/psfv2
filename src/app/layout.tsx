@@ -1,10 +1,15 @@
 import './globalCSS/main_layout_components/main.css'
-import { Inter } from 'next/font/google'
+import { Cinzel} from 'next/font/google'
 
 import Header from './(layout_components)/Header'
 import Footer from './(layout_components)/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const cinzel = Cinzel({ 
+  subsets: ['latin'], 
+  display: 'swap', 
+  style: [ 'normal',],
+  weight: ['400', '500', '700']
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -18,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cinzel.className}>
         <div id='App' className='App'>
           <Header />
           <div >

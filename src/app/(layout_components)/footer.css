@@ -9,19 +9,19 @@
   display: flex;
   flex-direction: column;
   min-height: 100px;
-  padding: 1rem 0 1rem 0;
+  padding: 1rem 0 0rem 0;
 }
 
 .footer-section1 {
   display: flex;
   justify-content: space-around;
   flex: 1 1 auto;
+  padding: 0 0 1rem 0;
 }
 
 .footer-left {
   display: flex;
   flex-direction: column;
-  /* background-color: green; */
 }
 
 .footer-left-top {
@@ -29,13 +29,12 @@
   flex: 1 1 0;
   gap: 2rem;
   justify-content: space-around;
-  padding: 1rem 0 1rem 0;
+  padding: 1rem 0 2rem 0;
+
 }
 
 .footer-right {
-  /* display: flex;
-  flex-direction: column;
-  background-color: blue; */
+ 
 }
 
 .kingpin-card {
@@ -49,7 +48,6 @@
 }
 
 .tica-card {
-  aspect-ratio: 43/20;
   height: 5.5rem;
 }
 
@@ -78,20 +76,38 @@
   border: none;
 }
 
+.footer-nav-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5rem;
+}
+
 .footer-nav {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
 }
 
 .footer-nav > a {
   flex-grow: 1;
+  width: 100%;
   height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
-  color: var(--clr-white);
+  color: black;
+}
+
+.footer-nav > a:hover,
+.footer-nav > a:focus-visible {
   text-decoration: underline;
+}
+
+.footer-section2 {
+  padding: 1.75rem 0 1.75rem 0;
+  background-color: black;
+  color: white;
 }
