@@ -1,0 +1,30 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  height: var(--headerSize);
+  /* width: var(--app-width); */
+  width: 100%;
+  /* background-color: teal; */
+  background-color: var(--clr-350);
+}
+
+.header > * {
+  padding: 1rem 0 0rem 0;
+}
+
+.application-title-wrapper {
+  text-align: center;
+}
+
+.header-navigation {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  width: 100%;
+}
+
+.header-hav-link {
+  flex: 1 1 0;
+}
+

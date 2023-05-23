@@ -1,6 +1,6 @@
 @import "../core/index.css";
 
-@import "./header.css";
+@import "../../(layout_components)/header.css";
 @import "./footer.css";
 
 :root {

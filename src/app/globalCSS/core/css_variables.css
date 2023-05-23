@@ -51,12 +51,7 @@
 
   --app-width: 92%;
   --app-margins: auto 4vw auto 3.5vw;
-
-  /* Other */
-
-  
-  
-  --headerSize: 107px;
+  --headerSize: 140px;
 }
 
 @media (min-width: 50em) {
