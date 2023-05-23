@@ -1,0 +1,13 @@
+.footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: var(--clr-350);
+  text-align: center;
+  font-size: var(-fs-300);
+  color: var(--clr-800);
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100px;
+}

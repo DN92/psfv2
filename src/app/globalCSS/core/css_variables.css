@@ -47,9 +47,15 @@
   --fs-nav: var(--fs-500) ;
   --fs-button: var(--fs-400) */
 
+  /* COMPONENT CONFIGURATION VARIABLES */
+
+  --app-width: 92%;
+  --app-margins: auto 4vw auto 3.5vw;
+
   /* Other */
 
-  --maxWidthBody: 57.15em;
+  
+  
   --headerSize: 107px;
 }
 

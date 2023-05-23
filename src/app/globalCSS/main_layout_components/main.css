@@ -1,7 +1,10 @@
 @import "../core/index.css";
 
+@import "./header.css";
+@import "./footer.css";
+
 :root {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   scroll-behavior: smooth;
   background-color: black;
   background: linear-gradient(var(--clr-100), #FFF);
@@ -11,10 +14,11 @@
 }
 
 #App {
-  width: 92%;
-  height: 100vh;
-  margin: auto;
+  width: var(--app-width);
+  min-height: 200vh;
+  margin: auto 4vw auto 3.5vw;
   background-color: blue;
+  position: relative;
 }
 
 /* @media (prefers-color-scheme: dark) {

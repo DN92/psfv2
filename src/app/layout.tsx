@@ -20,7 +20,12 @@ export default function RootLayout({
           <header className='header'>
 
           </header>
+          <div >
           {/* {children} */}
+          </div>
+          <footer className="footer">
+            
+          </footer>
         </div>
       </body>
     </html>
