@@ -1,24 +1,27 @@
 @import "../core/index.css";
 
+@import "./scrollbar.css";
 @import "../../(layout_components)/header.css";
 @import "../../(layout_components)/footer.css";
 
 :root {
-  /* overflow-y: scroll; */
+  overflow-x:hidden;
   scroll-behavior: smooth;
   background-color: black;
   background: linear-gradient(var(--clr-100), #FFF);
   width: 100%;
   min-height: 100vh;
-
 }
 
 #App {
   width: var(--app-width);
   min-height: 200vh;
-  margin: auto 4vw auto 3.5vw;
-  /* background-color: pink; */
+  margin: auto;
   position: relative;
+  border-left: 3px solid pink;
+  border-right: 3px solid pink;
+  background-color: white;
+  box-shadow: 0 0 15px var(--clr-300);
 }
 
 /* @media (prefers-color-scheme: dark) {

@@ -44,7 +44,7 @@
 
   /* COMPONENT CONFIGURATION VARIABLES */
 
-  --app-width: 92%;
+  --app-width: 94%;
   --app-margins: auto 4vw auto 3.5vw;
   --headerSize: 140px;
 }
@@ -63,7 +63,7 @@
     --fs-900: 3rem;
 
     -fs-primary-heading: var(--fs-900);
-    --headerSize: 178px;
+    --headerSize: 187px;
     /* -fs-secondary-heading: var(--fs-800);
     -fs-body: var(--fs-500) ;
     -fs-nav: var(--fs-400) ;

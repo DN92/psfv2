@@ -104,6 +104,7 @@
 .footer-nav > a:hover,
 .footer-nav > a:focus-visible {
   text-decoration: underline;
+  text-decoration-skip-ink: none;
 }
 
 .footer-section2 {
