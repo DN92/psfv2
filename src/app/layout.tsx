@@ -27,7 +27,7 @@ export default function RootLayout({
         <div id='App' className='App'>
           <Header />
           <div >
-          {/* {children} */}
+            {children}
           </div>
           <Footer />
         </div>

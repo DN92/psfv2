@@ -7,8 +7,12 @@ const HomePage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // router.push('/home')
+    router.push('/home')
   }, [])
+
+  return (
+    <p>You sholdn't be able to see this</p>
+  )
 }
 
 export default HomePage

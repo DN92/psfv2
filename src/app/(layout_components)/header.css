@@ -5,8 +5,7 @@
   height: var(--headerSize);
   width: 100%;
   background-color: var(--clr-350);
-  padding: 1rem 0 0rem 0;
-
+  padding: 1rem 0 0rem 0; 
 }
 
 .header {
@@ -53,7 +52,7 @@
 
 .header-navigation {
   position: absolute;
-  bottom: 0;
+  bottom: 1px;
   right: -1px;
   background-color: var(--clr-700);
   display: flex;

@@ -1,0 +1,17 @@
+.review_wrapper {
+  flex-basis: 28%;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: stretch;
+  justify-content: space-between;
+  padding: 1rem 0 2rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.individual_review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
