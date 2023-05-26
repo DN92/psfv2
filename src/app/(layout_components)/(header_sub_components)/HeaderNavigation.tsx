@@ -5,8 +5,8 @@ const HeaderNavigation: React.FC = () => {
 
   return (
     <div className="header-navigation">
-      {headerLinks.map((link) => (
-        <Link className="header-nav-link" href={link.href}>{link.name}</Link>
+      {headerLinks.map((link: NavLink) => (
+        <Link key={link.href} className="header-nav-link" href={link.href}>{link.name}</Link>
       ))}
     </div>
   );

@@ -1,9 +1,4 @@
-type Nav_Link = {
-  name: string,
-  href: string,
-}
-
-const headerLinks: Array<Nav_Link> = [
+const headerLinks: Array<NavLink> = [
   {
     name: 'HOME',
     href: '/home',
@@ -28,6 +23,6 @@ const headerLinks: Array<Nav_Link> = [
     name: 'LOGIN',
     href: '/login',
   },
-]
+];
 
-export default headerLinks
+export default headerLinks;

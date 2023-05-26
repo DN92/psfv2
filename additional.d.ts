@@ -6,4 +6,9 @@ declare global {
     href: string,
     iconSrc: Image,
   };
+
+  type NavLink = {
+    name: string,
+    href: string,
+  };
 }

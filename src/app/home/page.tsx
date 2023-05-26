@@ -1,9 +1,9 @@
 export default function Home() {
   return (
-    <main >
-      <div >
+    <main>
+      <div>
         PH
       </div>
     </main>
-  )
+  );
 }
