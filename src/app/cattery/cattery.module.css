@@ -1,3 +1,54 @@
+.cattery_navigation_wrapper {
+  /* border: 9px solid pink; */
+  width: 90%;
+  margin: auto;
+}
+
 .cattery_menu_singleton_wrapper {
-  border: 3px solid aqua;
+  border: 3px solid black;
+  min-height: 8rem;
+  position: relative;
+  margin: 0 0 .5rem 0;
+}
+
+.cattery_menu_link {
+  font-size: 6rem;
+  margin: 0 0 0 0rem;
+  color: black;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-45%);
+  width: 40%;
+  height: 100%;
+  padding: 0 0 0 1rem;
+  text-shadow: 3px 3px 3px var(--clr-900);
+  color: black !important;
+}
+
+.cattery_menu_link:hover,
+.cattery_menu_link:focus-visible {
+  transform: translateY(-45%) translate(0, -0.25rem);
+}
+
+.cattery_menu_right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 60%;
+  background-size: contain;
+  background-repeat: space no-repeat;
+}
+
+.background_image_kitten_animated_1 {
+  background-image: url('/images/css_images/kitten-animated-1.jpeg');
+}
+
+.background_image_dam_animated_1 {
+  background-image: url('/images/css_images/dam-animated-1.jpeg');
+}
+
+.background_image_sire_animated_1 {
+  background-image: url('/images/css_images/sire-animated-1.jpeg');
 }

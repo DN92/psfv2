@@ -1,8 +1,18 @@
+import CatteryMenuSelectionSingle from './CatteryMenuSelectionSingle';
+import catteryMenuOptions from './catteryMenuData';
+
 const CatteryNavigation: React.FC = () => {
   return (
-    <div>
-      ph
-    </div>
+    <>
+      {catteryMenuOptions.map((option: CatteryMenuSelection) => (
+        <CatteryMenuSelectionSingle
+          key={`${option.href}-${option.name}`}
+          href={option.href}
+          name={option.name}
+          cssClasses={option.cssClasses}
+        />
+      ))}
+    </>
   );
 };
 
