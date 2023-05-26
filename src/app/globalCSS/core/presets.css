@@ -3,8 +3,10 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--clr-500);
   padding: 0.25rem;
 }
-#h1 {
-}
+
+/* #h1 {
+} */
+
 #h1TinyScreen {
   font-weight: 650;
   display: none;
