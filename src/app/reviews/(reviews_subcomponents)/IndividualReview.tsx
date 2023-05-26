@@ -1,19 +1,17 @@
-import Image from 'next/image'
-import styles from './individualReview.module.css'
+import Image from 'next/image';
+import styles from '../reviews.module.css';
 
 type ComponentProps = {
   review: string,
-}
+};
 
-const IndividualReview = ({review}: ComponentProps) => {
+const IndividualReview: React.FC<ComponentProps> = ({ review }: ComponentProps) => {
 
   return (
-    <div className="review_wrapper">
-      <div className={styles.individual_review}>
-        {/* <Image src={review} alt='customer review'></Image> */}
-      </div>
+    <div className={styles.review__singleton_wrapper}>
+      <Image fill src={review} alt="customer review" className={styles.review_singleton} />
     </div>
-  )
-}
+  );
+};
 
-export default IndividualReview
+export default IndividualReview;

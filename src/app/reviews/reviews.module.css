@@ -1,4 +1,38 @@
+.reviews_layout_wrapper {
+
+}
+
 .reviews_wrapper {
-  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+
+.reviews_column {
+  /* border: 6px solid red; */
+  flex-basis: 31%
+}
+
+.review__singleton_wrapper {
+  border: 3px solid blue;
+  position: relative;
+  height: 400px;
+  padding: 3rem;
+  margin: 2rem 0 0 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.review_singleton {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 800px) {
+  .reviews_wrapper {
+    flex-direction: row;
+  }
   
 }
