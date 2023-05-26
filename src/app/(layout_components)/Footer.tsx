@@ -1,21 +1,21 @@
-import SocialMediaNavBar from './(footer_sub_components)/SocailMediaNavBar'
-import KingpinCard from './(footer_sub_components)/KingpinCard'
-import TicaCard from './(footer_sub_components)/TicaCard'
-import FooterNavigation from './(footer_sub_components)/FooterNavigation'
+import SocialMediaNavBar from './(footer_sub_components)/SocailMediaNavBar';
+import KingpinCard from './(footer_sub_components)/KingpinCard';
+import TicaCard from './(footer_sub_components)/TicaCard';
+import FooterNavigation from './(footer_sub_components)/FooterNavigation';
 
-const Footer = () => {
+const Footer: React.FC = () => {
 
   return (
-    <div className='footer'>
+    <div className="footer">
       <section className="footer-section1">
-        <div className='footer-left'>
-          <div className='footer-left-top'>
+        <div className="footer-left">
+          <div className="footer-left-top">
             <TicaCard />
             <KingpinCard />
-          </div >
+          </div>
           <SocialMediaNavBar />
         </div>
-        <div className='footer-right'>
+        <div className="footer-right">
           <FooterNavigation />
         </div>
       </section>
@@ -24,11 +24,11 @@ const Footer = () => {
           &copy;2022 by Planet Scottish Fold
         </span>
       </section>
-      
-        
+
+
     </div>
 
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

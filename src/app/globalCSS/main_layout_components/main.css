@@ -18,14 +18,14 @@
   /* height: 200vh; */
   margin: auto;
   position: relative;
-  border-left: 3px solid pink;
-  border-right: 3px solid pink;
+  border-left: 9px solid pink;
+  border-right: 9px solid pink;
   background-color: white;
   box-shadow: 0 0 15px var(--clr-300);
 }
 
 .pages-container {
-  padding: 2rem 0 25rem 0;
+  padding: 2rem 0 28rem 0;
 }
 
 /* 
