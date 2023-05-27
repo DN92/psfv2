@@ -4,10 +4,9 @@ import styles from './kittens.module.css';
 
 interface ComponentProps {
   kittens: Array<KittenSchema>
-  wrapperClasses?: Array<string>,
 }
 
-const Kittens: React.FC<ComponentProps> = ({ kittens = kittensFromData, wrapperClasses = [] }: ComponentProps) => {
+const Kittens: React.FC<ComponentProps> = ({ kittens = kittensFromData }: ComponentProps) => {
 
   const availableKittens: Array<KittenSchema> = kittens.filter((kitten: KittenSchema) => (
     kitten.status === 'Available' || 'Reserved'
@@ -32,7 +31,11 @@ const Kittens: React.FC<ComponentProps> = ({ kittens = kittensFromData, wrapperC
       <h2 className={styles.h2}>Sold Kittens</h2>
       <section className={styles.kitten_section}>
         {soldKittens.map((kitten: KittenSchema) => (
-          <KittenSingleton key={kitten.id} kitten={kitten} wrapperClasses={['background500']} />
+          <KittenSingleton
+            key={kitten.id}
+            kitten={kitten}
+            wrapperClasses={['background500']}
+          />
         ))}
       </section>
     </div>

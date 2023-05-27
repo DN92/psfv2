@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '../catAdults.module.css';
+import styles from './catAdults.module.css';
 
 interface ComponentProps {
   adultCat: AdultCatSchema,
@@ -25,11 +25,11 @@ const CatAdultSingleton: React.FC<ComponentProps> = ({ adultCat, wrapperClasses 
   } = adultCat;
 
   return (
-    <div className={`${classesToAddToWrapper} ${styles.adult_cat_singleton_wrapper}`}>
-      <div className={styles.adult_cat_singletone_image_card}>
+    <div className={`${styles.adult_cat_singleton_wrapper} ${classesToAddToWrapper} `}>
+      <div className={styles.adult_cat_singleton_image_card}>
         <Image
           fill
-          src="/images/css_images/dam-animated-1.jpeg"
+          src={`/images/css_images/${model}-animated-1.jpeg`}
           alt="dam main pic"
         />
       </div>
