@@ -2,14 +2,14 @@
   text-shadow: 1px 1px 1px var(--clr-500);
 }
 
-.kitten_section {
+.adult_cat_section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 100%;
 }
 
-.kitten_singleton_wrapper {
+.adult_cat_singleton_wrapper {
   margin: 1rem 0 1rem 0;
   flex-basis: 28%;
   border: solid black 1px;
@@ -23,12 +23,12 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.kitten_singleton_wrapper:hover {
+.adult_cat_singleton_wrapper:hover {
   background-color: var(--clr-300);
   transform: translateY(-1rem);
 }
 
-.kitten_singleton_image_card {
+.adult_cat_singleton_image_card {
   position: relative;
   width: 217px;
   height: 217px;
