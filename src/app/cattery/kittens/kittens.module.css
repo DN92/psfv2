@@ -12,7 +12,7 @@
 .kitten_singleton_wrapper {
   margin: 1rem 0 1rem 0;
   flex-basis: 28%;
-  border: solid black 1px;
+  border: 1px solid black;
   border-radius: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -21,6 +21,20 @@
   justify-content: space-between;
   padding: 0.5rem 0 ;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 375px;
+  text-align: center;
+}
+
+.kitten_singleton_text {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem 0 .5rem 0;
+}
+
+.kitten_singleton_text > p {
+  flex: 1 0 auto;
 }
 
 .kitten_singleton_wrapper:hover {

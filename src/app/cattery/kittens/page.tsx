@@ -9,7 +9,7 @@ interface ComponentProps {
 const Kittens: React.FC<ComponentProps> = ({ kittens = kittensFromData }: ComponentProps) => {
 
   const availableKittens: Array<KittenSchema> = kittens.filter((kitten: KittenSchema) => (
-    kitten.status === 'Available' || 'Reserved'
+    kitten.status === 'Available' || kitten.status === 'Reserved'
   ));
 
   const soldKittens: Array<KittenSchema> = kittens.filter((kitten: KittenSchema) => (

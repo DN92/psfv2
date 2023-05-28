@@ -35,8 +35,8 @@ const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = []
         />
         {kitten.status === 'Reserved' && model === 'kitten' && <ReservedSpan />}
       </div>
-      <div>
-        {kitten.status === ('Available' || 'Reserved') ? (
+      <div className={styles.kitten_singleton_text}>
+        {(kitten.status === 'Available' || kitten.status === 'Reserved') ? (
           <>
             <p>{`Hi, I am ${name}`}</p>
             <p>{`I am a ${breed} ${gender}`}</p>
@@ -46,8 +46,9 @@ const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = []
           </>
         ) : (
           <>
-            <p>{name}</p>
-            <p>{kitten.status}</p>
+            <p>{`Hi, I am ${name}`}</p>
+            <p>I was recently sold to</p>
+            <p>a lucky family for</p>
             <p>{`$${kitten.price}`}</p>
           </>
         )}
