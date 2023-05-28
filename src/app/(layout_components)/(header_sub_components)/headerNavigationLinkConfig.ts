@@ -13,7 +13,7 @@ const headerLinks: Array<NavLink> = [
   },
   {
     name: 'CONTACT US',
-    href: '/contactUs',
+    href: '/contact',
   },
   {
     name: 'REVIEWS',

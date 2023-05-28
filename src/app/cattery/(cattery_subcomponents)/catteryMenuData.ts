@@ -8,14 +8,14 @@ const catteryMenuOptions: Array<CatteryMenuSelection> = [
   },
   {
     name: 'dams',
-    href: '/cattery/dams',
+    href: '/cattery/adults/dams',
     cssClasses: [
       'background_image_dam_animated_1',
     ],
   },
   {
     name: 'sires',
-    href: '/cattery/sires',
+    href: '/cattery/adults/sires',
     cssClasses: [
       'background_image_sire_animated_1',
     ],

@@ -36,7 +36,7 @@ module.exports = {
   ],
 
   rules: {
-    '@typescript-eslint/explicit-function-return-type': 1,
+    '@typescript-eslint/explicit-function-return-type': 2,
     '@typescript-eslint/no-inferrable-types': 0,
     '@typescript-eslint/no-unused-vars': 1,
     '@typescript-eslint/no-useless-constructor': 'warn',
@@ -64,6 +64,7 @@ module.exports = {
     ],
     'import/no-unresolved': 1,
     indent: ['error', 2, { SwitchCase: 1 }],
+    'jsx-a11y/label-has-associated-control': 0,
     'linebreak-style': ['error', 'unix'],
     'lines-between-class-members': 0,
     'max-len': 0,
