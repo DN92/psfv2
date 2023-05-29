@@ -1,0 +1,7 @@
+.iframeWrapper {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 0 0;
+}
