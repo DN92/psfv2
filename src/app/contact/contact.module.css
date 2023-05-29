@@ -1,6 +1,8 @@
 .contact_wrapper {
   display: flex;
   padding: 1rem 0 1rem 0;
+  width: 80%;
+  margin: auto;
 }
 
 .contact_wrapper > * {
@@ -14,12 +16,13 @@
   align-items: flex-end;
   gap: 1rem;
   padding: 1rem;
+  margin: 0 3rem 0 0;
 }
 
 .contact_left_text_container {
-  width: 74%;
-  margin: auto;
+  justify-self: flex-end;
   line-height: 1.5;
+  text-align: right;
 }
 
 .contact_left_image_card {
@@ -79,6 +82,13 @@
   padding: 10px 20px; 
   border: none; 
   border-radius: 4px; 
-  transition: transform 0.2s; 
+  transition: transform 0.1s; 
+}
 
+.form_button:hover {
+  transform: scale(1.05);
+}
+
+.form_button:active {
+  transform: scale(0.95);
 }

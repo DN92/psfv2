@@ -82,3 +82,10 @@
   transform: none;
   font-weight:normal;
 }
+
+.header-nav-link:active {
+  transform: scale(0.94);
+  background-color: var(--clr-500);
+  color: var(--clr-100);
+  font-weight: 700;
+}
