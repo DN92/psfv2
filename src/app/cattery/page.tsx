@@ -1,4 +1,4 @@
-import CatteryNavigation from './(cattery_subcomponents)/CatteryNavigation';
+import CatteryNavigation from './_cattery_subcomponents/CatteryNavigation';
 import styles from './cattery.module.css';
 
 const Cattery: React.FC = () => {

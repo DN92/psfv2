@@ -2,8 +2,8 @@ import './globalCSS/main_layout_components/main.css';
 import { Cinzel } from 'next/font/google';
 import { NextFont } from 'next/dist/compiled/@next/font';
 
-import Header from './(layout_components)/Header';
-import Footer from './(layout_components)/Footer';
+import Header from './_layout_components/Header';
+import Footer from './_layout_components/Footer';
 
 interface RootLayoutProps {
   children: React.ReactNode;

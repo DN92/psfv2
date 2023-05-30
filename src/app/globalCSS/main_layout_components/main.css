@@ -1,8 +1,8 @@
 @import "../core/index.css";
 
 @import "./scrollbar.css";
-@import "../../(layout_components)/header.css";
-@import "../../(layout_components)/footer.css";
+@import "../../_layout_components/header.css";
+@import "../../_layout_components/footer.css";
 
 :root {
   overflow-x:hidden;

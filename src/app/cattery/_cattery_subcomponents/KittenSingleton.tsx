@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from '../kittens/kittens.module.css';
 import ReservedSpan from './ReservedSpan';
 
@@ -18,6 +19,7 @@ const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = []
     gender,
     breed,
     ears,
+    price,
     furColor,
     eyeColor,
     status,
@@ -26,7 +28,10 @@ const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = []
   } = kitten;
 
   return (
-    <div className={`${styles.kitten_singleton_wrapper} ${classesToAddToWrapper}`}>
+    <Link
+      className={`${styles.kitten_singleton_wrapper} ${classesToAddToWrapper}`}
+      href={`/cattery/kittens/detailed?kitten=${kitten.id}`}
+    >
       <div className={`${styles.kitten_singleton_image_card}`}>
         <Image
           fill
@@ -43,6 +48,7 @@ const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = []
             <p>My color is </p>
             <p>{furColor}</p>
             <p>{`and I have ${eyeColor} eyes`}</p>
+            <p>{`$${kitten.price}`}</p>
           </>
         ) : (
           <>
@@ -54,7 +60,7 @@ const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = []
         )}
       </div>
 
-    </div>
+    </Link>
   );
 };
 

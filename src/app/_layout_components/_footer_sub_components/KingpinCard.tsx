@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { ReactElement } from 'react';
-import KingpinIcon from '../../(layout_assets)/catKingPinAffPic.webp';
+import KingpinIcon from '../../_layout_assets/catKingPinAffPic.webp';
 
 const KingpinCard: React.FC = (): ReactElement => {
 

@@ -1,5 +1,5 @@
-import { sires } from '../../(cattery_subcomponents)/catTestData';
-import CatAdultSingleton from '../(adults_subcomponents)/CatAdultSingleton';
+import { sires } from '../../_cattery_subcomponents/catTestData';
+import CatAdultSingleton from '../_adults_subcomponents/CatAdultSingleton';
 import styles from '../(adults_subcomponents)/catAdults.module.css';
 
 interface ComponentProps {

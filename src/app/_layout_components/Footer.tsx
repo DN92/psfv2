@@ -1,7 +1,7 @@
-import SocialMediaNavBar from './(footer_sub_components)/SocailMediaNavBar';
-import KingpinCard from './(footer_sub_components)/KingpinCard';
-import TicaCard from './(footer_sub_components)/TicaCard';
-import FooterNavigation from './(footer_sub_components)/FooterNavigation';
+import SocialMediaNavBar from './_footer_sub_components/SocailMediaNavBar';
+import KingpinCard from './_footer_sub_components/KingpinCard';
+import TicaCard from './_footer_sub_components/TicaCard';
+import FooterNavigation from './_footer_sub_components/FooterNavigation';
 
 const Footer: React.FC = () => {
 

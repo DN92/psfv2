@@ -1,5 +1,5 @@
-import { kittens as kittensFromData } from '../(cattery_subcomponents)/catTestData';
-import KittenSingleton from '../(cattery_subcomponents)/KittenSingleton';
+import { kittens as kittensFromData } from '../_cattery_subcomponents/catTestData';
+import KittenSingleton from '../_cattery_subcomponents/KittenSingleton';
 import styles from './kittens.module.css';
 
 interface ComponentProps {

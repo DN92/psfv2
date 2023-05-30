@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import fbPng from '../../(layout_assets)/socialMediaIcons/facebook.png';
-import igPng from '../../(layout_assets)/socialMediaIcons/instagram.png';
-import pintrestPng from '../../(layout_assets)/socialMediaIcons/pintrest.png';
-import tiktokPng from '../../(layout_assets)/socialMediaIcons/tiktok.png';
-import youtubePng from '../../(layout_assets)/socialMediaIcons/youtube.png';
+import fbPng from '../../_layout_assets/socialMediaIcons/facebook.png';
+import igPng from '../../_layout_assets/socialMediaIcons/instagram.png';
+import pintrestPng from '../../_layout_assets/socialMediaIcons/pintrest.png';
+import tiktokPng from '../../_layout_assets/socialMediaIcons/tiktok.png';
+import youtubePng from '../../_layout_assets/socialMediaIcons/youtube.png';
 
 const socialMediaInfo: Array<SocialMediaDatapoint> = [
 

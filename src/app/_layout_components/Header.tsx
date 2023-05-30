@@ -1,6 +1,6 @@
-import ApplicationTittleH1 from './(header_sub_components)/ApplicationTitleH1';
-import HeaderNavigation from './(header_sub_components)/HeaderNavigation';
-import FaviconCard from './(header_sub_components)/FaviconCard';
+import ApplicationTittleH1 from './_header_sub_components/ApplicationTitleH1';
+import HeaderNavigation from './_header_sub_components/HeaderNavigation';
+import FaviconCard from './_header_sub_components/FaviconCard';
 
 const Header: React.FC = () => {
 
