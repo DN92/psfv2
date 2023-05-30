@@ -13,7 +13,7 @@ const Home: React.FC = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           // this iFrame code was copied from youtube itself. Will ignore the TS error for now.
           // its possible that react uses allowFullScreen instead of the html standard. TODO: recheck this later.
-          allowfullscreen
+          allowFullScreen
           autoPlay
         />
       </div>

@@ -38,7 +38,7 @@ const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = []
           src="/images/css_images/kitten-animated-1.jpeg"
           alt="kitten main pic"
         />
-        {kitten.status === 'Reserved' && model === 'kitten' && <ReservedSpan />}
+        {kitten.status === 'Reserved' && <ReservedSpan />}
       </div>
       <div className={styles.kitten_singleton_text}>
         {(kitten.status === 'Available' || kitten.status === 'Reserved') ? (

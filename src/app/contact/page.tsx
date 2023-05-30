@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './contact.module.css';
 import contactPicture from './contactUs.webp';
-import ContactUsForm from './(contact_subcomponents)/ContactUsForm';
+import ContactUsForm from './_contact_subcomponents/ContactUsForm';
 
 const Contact: React.FC = () => {
 

@@ -17,7 +17,7 @@ const catteryMenuOptions: Array<CatteryMenuSelection> = [
     name: 'sires',
     href: '/cattery/adults/sires',
     cssClasses: [
-      'background_image_sire_animated_1',
+      'background_image_stud_animated_1',
     ],
   },
 

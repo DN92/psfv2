@@ -1,20 +1,21 @@
-import { kittens as kittensFromData } from '../_cattery_subcomponents/catTestData';
+import supabase from '@/lib/supabaseConfig/serviceConnection';
 import KittenSingleton from '../_cattery_subcomponents/KittenSingleton';
 import styles from './kittens.module.css';
 
-interface ComponentProps {
-  kittens: Array<KittenSchema>
-}
+const Kittens:() => Promise<JSX.Element> = async () => {
 
-const Kittens: React.FC<ComponentProps> = ({ kittens = kittensFromData }: ComponentProps) => {
+  const { data, error } = await supabase.from('kitten').select();
+  const kittens: Array<KittenSchema> = data as Array<KittenSchema> ?? [];
 
   const availableKittens: Array<KittenSchema> = kittens.filter((kitten: KittenSchema) => (
-    kitten.status === 'Available' || kitten.status === 'Reserved'
+    kitten.status === 'Reserved'
   ));
 
   const soldKittens: Array<KittenSchema> = kittens.filter((kitten: KittenSchema) => (
     kitten.status === 'Sold'
-  ));
+  ))
+    .sort((a: KittenSchema, b: KittenSchema) => (b.price - a.price))
+    .slice(0, 15);
 
   return (
     <div>

@@ -1,7 +1,7 @@
 
 import styles from './reviews.module.css';
-import reviewPaths from './(reviews_subcomponents)/reviewsData';
-import IndividualReview from './(reviews_subcomponents)/IndividualReview';
+import reviewPaths from './_reviews_subcomponents/reviewsData';
+import IndividualReview from './_reviews_subcomponents/IndividualReview';
 
 const firstThird: Array<string> = reviewPaths.slice(0, reviewPaths.length / 3) ?? [];
 const secondThird: Array<string> = reviewPaths.slice(reviewPaths.length / 3, (reviewPaths.length) * (2 / 3)) ?? [];

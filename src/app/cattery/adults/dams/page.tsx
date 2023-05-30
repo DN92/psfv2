@@ -1,21 +1,21 @@
-import { dams } from '../../_cattery_subcomponents/catTestData';
+import supabase from '@/lib/supabaseConfig/serviceConnection';
 import CatAdultSingleton from '../_adults_subcomponents/CatAdultSingleton';
-import styles from '../(adults_subcomponents)/catAdults.module.css';
+import styles from '../_adults_subcomponents/catAdults.module.css';
 
-interface ComponentProps {
-  cats: Array<AdultCatSchema>
-}
+const Dams: () => Promise<JSX.Element> = async () => {
 
-const Dams: React.FC<ComponentProps> = ({ cats = dams }: ComponentProps) => {
+  const { data, error } = await supabase.from('mother').select();
+  const dams: Array<AdultCatSchema> = data as Array<AdultCatSchema>;
 
   return (
     <div>
-      <h2 className={styles.h2}>Our Dams</h2>
+      <h2 className={styles.h2}>Our Sires</h2>
       <section className={styles.adult_cat_section}>
-        {cats.map((cat: AdultCatSchema) => (
+        {dams.map((cat: AdultCatSchema) => (
           <CatAdultSingleton
             key={cat.id}
             adultCat={cat}
+            model="mother"
             wrapperClasses={['background100']}
           />
         ))}

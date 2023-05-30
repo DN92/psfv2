@@ -1,18 +1,19 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './catAdults.module.css';
 
 interface ComponentProps {
   adultCat: AdultCatSchema,
+  model: 'stud' | 'mother'
   wrapperClasses?: Array<string>,
 }
 
-const CatAdultSingleton: React.FC<ComponentProps> = ({ adultCat, wrapperClasses = [] }: ComponentProps) => {
+const CatAdultSingleton: React.FC<ComponentProps> = ({ adultCat, model, wrapperClasses = [] }: ComponentProps) => {
 
   const classesToAddToWrapper: string = wrapperClasses.map((cssClass: string) => (styles[cssClass]) ?? '').join(' ');
 
   const {
     id,
-    model,
     name,
     gender,
     breed,
@@ -25,7 +26,10 @@ const CatAdultSingleton: React.FC<ComponentProps> = ({ adultCat, wrapperClasses 
   } = adultCat;
 
   return (
-    <div className={`${styles.adult_cat_singleton_wrapper} ${classesToAddToWrapper} `}>
+    <Link
+      className={`${styles.adult_cat_singleton_wrapper} ${classesToAddToWrapper} `}
+      href={`/cattery/adults/${(model === 'sire' ? 'sires' : 'dams')}/detailed?${model}=${adultCat.id}`}
+    >
       <div className={styles.adult_cat_singleton_image_card}>
         <Image
           fill
@@ -33,7 +37,7 @@ const CatAdultSingleton: React.FC<ComponentProps> = ({ adultCat, wrapperClasses 
           alt="dam main pic"
         />
       </div>
-      <div>
+      <div className={styles.adult_cat_singleton_text}>
         <p>{`Planet Scottish Fold ${model}`}</p>
         <p>{`Hi, I am${name}`}</p>
         <p>{`I am a ${breed}`}</p>
@@ -42,7 +46,7 @@ const CatAdultSingleton: React.FC<ComponentProps> = ({ adultCat, wrapperClasses 
         <p>{`and I have ${eyeColor} eyes`}</p>
       </div>
 
-    </div>
+    </Link>
   );
 };
 
