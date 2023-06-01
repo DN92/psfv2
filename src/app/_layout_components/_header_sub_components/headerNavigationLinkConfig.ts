@@ -21,7 +21,7 @@ const headerLinks: Array<NavLink> = [
   },
   {
     name: 'LOGIN',
-    href: '/login',
+    href: '/auth',
   },
 ];
 
