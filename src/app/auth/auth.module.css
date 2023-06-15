@@ -1,0 +1,84 @@
+.auth_container,
+.auth_sign_up_wrapper {
+  margin: 3rem auto 3rem auto;
+  padding: 3rem;
+  width: 40%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f6f8fa;
+  border-radius: 1rem;
+  border: 1px solid hsla(210, 18%, 87%, 1);
+}
+
+.auth_container_h2 {
+  font-size: 2rem;
+}
+
+.auth_container_section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 80%;
+  margin: auto;
+}
+
+.auth_section_partition {
+  position: relative;
+  height: 1.5rem;
+  margin: 3rem 0 0rem 0;
+}
+
+.auth_section_partition_span1{
+  position: absolute;
+  left: .25rem;
+}
+
+.auth_section_partition_span2 {
+  position: absolute;
+  right: .25rem;
+}
+
+.auth_input_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  background-color: pink;
+}
+
+.auth_input {
+  width: 100%;
+  height: 1.75rem;
+  font-size: 1.15rem;
+  border-radius: .3rem;
+  border: 1px solid grey;
+  text-indent: .75rem;
+}
+
+.auth_checkbox_wrapper {
+  width: 80%;
+  margin: 2.25rem auto;
+}
+
+.auth_checkbox {
+  height: 1.25rem;
+  aspect-ratio: 1/1;
+}
+
+.auth_sign_in_button_wrapper {
+  width: 40%;
+  margin: auto;
+
+}
+
+.auth_sign_in_button {
+  height: 3.5rem;
+  width: 100%;
+  background-color: var(--clr-400);
+  border-radius: .5rem;
+  font-size: inherit;
+}

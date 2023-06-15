@@ -41,13 +41,6 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 1,
     '@typescript-eslint/no-useless-constructor': 'warn',
     '@typescript-eslint/no-var-requires': 1,
-    '@typescript-eslint/typedef': [
-      'warn',
-      {
-        arrowParameter: true,
-        variableDeclaration: true,
-      },
-    ],
     'arrow-body-style': 0,
     'arrow-parens': 1,
     'consistent-return': 0,

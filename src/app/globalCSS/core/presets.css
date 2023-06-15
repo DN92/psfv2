@@ -26,12 +26,6 @@ h2{
   font-size: var(--fs-900);
 }
 
-@media (min-width: 24em) {
-  h2{
-    margin-left: 5rem
-  }
-}
-
 h3{
   font-size: var(--fs-800);
 }
