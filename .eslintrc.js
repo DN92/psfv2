@@ -38,6 +38,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': 2,
     '@typescript-eslint/no-inferrable-types': 0,
+    '@typescript-eslint/no-shadow': 0,
     '@typescript-eslint/no-unused-vars': 1,
     '@typescript-eslint/no-useless-constructor': 'warn',
     '@typescript-eslint/no-var-requires': 1,
