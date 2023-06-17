@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, ChangeEventHandler } from 'react';
+import { useState } from 'react';
 import { QuestionObject } from '../_data/questions';
 import AnswerField from './AnswerField';
 
@@ -11,23 +11,31 @@ type ComponentProps = {
 
 const AnswerFieldWrapper = ({ question }: ComponentProps): JSX.Element => {
 
-  function answerValueDefaultValue(question: QuestionObject): string | number | null {
+  function answerValueDefaultValue(question: QuestionObject): string | number | null | Array<string> | Array<number> {
     switch (question.answerType) {
       case 'string':
         return '';
       case 'number':
         return 0;
+      case 'stringArray': {
+        const stringArray: Array<string> = [];
+        return stringArray;
+      }
+      case 'numberArray': {
+        const numArray: Array<number> = [];
+        return numArray;
+      }
       default:
         return null;
     }
   }
 
-  const [answerValue, setAnswerValue] = useState<string | number | null>(answerValueDefaultValue(question));
+  const [answerValue, setAnswerValue] = useState(answerValueDefaultValue(question));
 
   return (
     <AnswerField
       question={question}
-      value={answerValue ?? ''}
+      currentState={answerValue}
       setterFunction={setAnswerValue}
     />
   );

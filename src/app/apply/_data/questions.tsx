@@ -1,3 +1,5 @@
+export type AnswerType = 'string' | 'stringArray' | 'number' | 'numberArray' | null;
+
 type Validations = {
   email?: boolean | 'email',
   minLength?: number,
@@ -5,11 +7,15 @@ type Validations = {
   notNull?: boolean | 'notNull'
 };
 
-type Options = {
-  selectValues?: Array<string | boolean>,
-  checkBoxValues?: Array<string>,
-  classNames?: Array<string>,
-};
+type Options = Partial<{
+  selectValues: Array<string | boolean>,
+  checkBoxValues: Array<string>,
+  classNames: Partial<{
+    answerFieldWrapper: Array<string>,
+    answerField: Array<string>,
+    questionField: Array<string>
+  }>
+}>;
 
 type AfterHookValidValues = 'unique' | '';
 
@@ -17,9 +23,8 @@ type BeforeHookValidValues = 'trim' | 'lowercase' | 'titlecase';
 
 export interface QuestionObject {
   question: string,
-  answerType: 'string' | 'stringArray' | 'number',
-  type: 'input' | 'textarea',
-  subType: 'checkbox' | 'select' | 'text' | null,
+  answerType: AnswerType,
+  type: 'text' | 'textarea' | 'radio' | 'checkbox'
   required: boolean,
   options?: Options,
   validation?: Validations,
@@ -54,15 +59,11 @@ const inputList = [
   'Instagram',
 ];
 
-const INPUT = 'input';
-const TEXTAREA = 'textarea';
-
 const mappedQuestions: Array<QuestionObject> = ([
   {
     question: 'Your email',
     answerType: 'string',
-    type: 'input',
-    subType: 'text',
+    type: 'text',
     required: true,
     options: {
 
@@ -81,8 +82,7 @@ const mappedQuestions: Array<QuestionObject> = ([
   {
     question: 'First Name',
     answerType: 'string',
-    type: 'input',
-    subType: 'text',
+    type: 'text',
     required: true,
     options: {
 
@@ -100,8 +100,7 @@ const mappedQuestions: Array<QuestionObject> = ([
   {
     question: 'Last Name',
     answerType: 'string',
-    type: 'input',
-    subType: 'text',
+    type: 'text',
     required: true,
     options: {},
     validation: {
@@ -118,7 +117,6 @@ const mappedQuestions: Array<QuestionObject> = ([
     question: 'Tell us a little about yourself',
     answerType: 'string',
     type: 'textarea',
-    subType: null,
     required: true,
     options: {},
     validation: {
@@ -128,9 +126,8 @@ const mappedQuestions: Array<QuestionObject> = ([
   },
   {
     question: 'Will this be your First Cat?',
-    type: 'input',
-    answerType: 'boolean',
-    subType: 'select',
+    type: 'radio',
+    answerType: 'string',
     required: true,
     options: {
       selectValues: [
@@ -143,9 +140,8 @@ const mappedQuestions: Array<QuestionObject> = ([
   },
   {
     question: 'Fur Color Preferences',
-    type: 'input',
+    type: 'checkbox',
     answerType: 'stringArray',
-    subType: 'checkbox',
     required: true,
     options: {
       checkBoxValues: [
@@ -159,9 +155,8 @@ const mappedQuestions: Array<QuestionObject> = ([
   },
   {
     question: 'Facebook',
-    type: 'input',
+    type: 'text',
     answerType: 'string',
-    subType: 'text',
     required: false,
     options: {},
     validation: {},
