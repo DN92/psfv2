@@ -1,9 +1,8 @@
 'use client';
 
-// debrox
-
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import styles from './auth.module.css';
 
@@ -15,26 +14,18 @@ export default function Login(): JSX.Element {
   const [pw, setPw] = useState('');
   const [rememberUser, setRememberUser] = useState(true);
 
-  const handleSignUp = async (): Promise<void> => {
-    await supabase.auth.signUp({
-      email,
-      password: pw,
-      options: {
-        emailRedirectTo: `${window.location.origin}/auth/callback`,
-      },
-    });
-  };
-
   const handleSignIn = async (): Promise<void> => {
-    await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email: email,
       password: pw,
     });
+    if (data) console.log('A user has signed in:: ', email);
+    if (error) console.log('Error occured during sign in:: ', error);
     router.refresh();
   };
 
   const handleSignOut = async (): Promise<void> => {
-    await supabase.auth.signOut();
+    const { error } = await supabase.auth.signOut();
     router.refresh();
   };
 
@@ -110,7 +101,11 @@ export default function Login(): JSX.Element {
         </div>
       </form>
       <div className={styles.auth_sign_up_wrapper}>
-        <span>Dont have an account? Sign Up</span>
+        <span>
+          Dont have an account?
+          {' '}
+          <Link href="auth/signUp">Sign Up</Link>
+        </span>
       </div>
     </>
   );
