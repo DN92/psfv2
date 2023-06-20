@@ -1,5 +1,4 @@
 import { createServerActionClient } from '@supabase/auth-helpers-nextjs';
-import { useRouter } from 'next/navigation';
 import { cookies } from 'next/headers';
 import styles from '../auth.module.css';
 
@@ -8,16 +7,12 @@ export default async function SignUp(): Promise<JSX.Element> {
   const handleSignUp = async (formData: FormData): Promise<void> => {
     'use server';
 
-    console.log('handleSignUp 1:');
-
     const email = String(formData.get('email'));
     const pw = String(formData.get('password'));
     const confirmPw = String(formData.get('confirmPW'));
 
     const supabase = createServerActionClient({ cookies });
 
-
-    console.log('fry');
     const { data, error } = await supabase.auth.signUp({
       email,
       password: pw,
@@ -27,10 +22,8 @@ export default async function SignUp(): Promise<JSX.Element> {
       },
     });
 
-    if (data) console.log('success', data);
-    if (error) console.log('fail', error);
-
-    console.log('toast');
+    if (data) console.log('A user has signed up :: ', email, ' + ', data);
+    if (error) console.log('Error occured during sign up:: ', error);
   };
 
   return (

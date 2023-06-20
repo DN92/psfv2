@@ -21,6 +21,7 @@
   border-left: 9px solid pink;
   border-right: 9px solid pink;
   background-color: white;
+  /* box-shadow: 0 0 15px black; */
   box-shadow: 0 0 15px var(--clr-300);
 }
 

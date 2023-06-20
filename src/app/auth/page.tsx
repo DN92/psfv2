@@ -1,45 +1,33 @@
-'use client';
-
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
-import { useRouter } from 'next/navigation';
+import { createServerActionClient } from '@supabase/auth-helpers-nextjs';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { cookies } from 'next/headers';
 import styles from './auth.module.css';
 
-export default function Login(): JSX.Element {
-  const router = useRouter();
-  const supabase = createClientComponentClient();
+export default async function Login(): Promise<JSX.Element> {
 
-  const [email, setEmail] = useState('');
-  const [pw, setPw] = useState('');
-  const [rememberUser, setRememberUser] = useState(true);
+  const handleSignIn = async (formData: FormData): Promise<void> => {
+    'use server';
 
-  const handleSignIn = async (): Promise<void> => {
+    const email = String(formData.get('email'));
+    const pw = String(formData.get('pw'));
+    const rememberUser = String(formData.get('rememberUser'));
+
+    const supabase = createServerActionClient({ cookies });
     const { data, error } = await supabase.auth.signInWithPassword({
       email: email,
       password: pw,
     });
-    if (data) console.log('A user has signed in:: ', email);
-    if (error) console.log('Error occured during sign in:: ', error);
-    router.refresh();
+    // const { user, session } = data;
+    const { data: { session } } = await supabase.auth.getSession();
   };
 
   const handleSignOut = async (): Promise<void> => {
-    const { error } = await supabase.auth.signOut();
-    router.refresh();
+    // const { error } = await supabase.auth.signOut();
   };
-
-  const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement>): Promise<void> => {
-    event.preventDefault();
-    await handleSignIn();
-  };
-
-  useEffect(() => { console.log(email); console.log(pw); }, [email, pw]);
-
 
   return (
     <>
-      <form className={styles.auth_container}>
+      <form className={styles.auth_container} action={handleSignIn}>
         <h2 className={styles.auth_container_h2}>Sign in to Planet Scottish Fold</h2>
         <div className={styles.auth_container_section}>
           <div className={styles.auth_section_partition}>
@@ -55,8 +43,7 @@ export default function Login(): JSX.Element {
               id="input_email"
               className={styles.auth_input}
               type="text"
-              value={email}
-              onChange={(event): void => setEmail(event.target.value)}
+              name="email"
             />
           </div>
         </div>
@@ -75,8 +62,7 @@ export default function Login(): JSX.Element {
               id="input_password"
               className={styles.auth_input}
               type="text"
-              value={pw}
-              onChange={(event): void => setPw(event.target.value)}
+              name="pw"
             />
           </div>
         </div>
@@ -85,8 +71,7 @@ export default function Login(): JSX.Element {
             id="input_rememberUser"
             className={styles.auth_checkbox}
             type="checkbox"
-            checked={rememberUser}
-            onChange={(): void => { setRememberUser((prev) => !prev); }}
+            name="rememberUser"
           />
           <label htmlFor="input_rememberUser">Remember Me</label>
         </div>
@@ -94,7 +79,6 @@ export default function Login(): JSX.Element {
           <button
             type="submit"
             className={styles.auth_sign_in_button}
-            onClick={handleSubmit}
           >
             Sign In
           </button>

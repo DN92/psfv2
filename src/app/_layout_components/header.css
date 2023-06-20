@@ -26,6 +26,12 @@
   position: relative;
 }
 
+.header-right-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+}
+
 .header-favicon-card {
   display: inline-block;
   margin: 0 0 1.25rem auto;
