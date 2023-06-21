@@ -1,4 +1,4 @@
-const kittens: Array<KittenSchema> = [
+const kittens: Array<Kitten> = [
   {
     id: 1,
     model: 'kitten',

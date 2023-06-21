@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import type { Database as DB } from '@/lib/database.types';
 
 declare global {
 
@@ -24,6 +25,9 @@ declare global {
 // DATABASE SCHEMAS
 
 declare global {
+
+  type Database = DB;
+  type Kitten = Databse['public']['Tables']['kitten']['Row'];
 
   interface CatSchema {
     id: number,
