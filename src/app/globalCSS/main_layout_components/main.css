@@ -1,8 +1,11 @@
 @import "../core/index.css";
-
 @import "./scrollbar.css";
 @import "../../_layout_components/header.css";
 @import "../../_layout_components/footer.css";
+
+/* global css for CSSTransitions package. */
+/* This package requires naming conventions that are incompatiable with css-modules */
+@import "../cssTransitions/index.css";
 
 :root {
   overflow-x:hidden;

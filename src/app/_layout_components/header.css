@@ -28,8 +28,12 @@
 
 .header-right-top {
   display: flex;
-  align-items: baseline;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-right-top > * {
+  margin: 0 1rem;
 }
 
 .header-favicon-card {
@@ -45,7 +49,7 @@
 }
 
 .application-title-wrapper {
-  margin: 0 0 0 5%;
+  
 }
 
 .website-title {
@@ -94,4 +98,39 @@
   background-color: var(--clr-500);
   color: var(--clr-100);
   font-weight: 700;
+}
+
+.header-navlink-with-dropdown {
+  position: relative;
+}
+
+.header-navlink-dropdown {
+  position: absolute;
+  border: 2px solid green;
+  background-color: rgb(27, 137, 137);
+  width: 200px;
+  top: 58px;
+  overflow: hidden;
+  padding: 1rem;
+  z-index: 100;
+  transition: all 3000ms ease;
+}
+
+.header-navlink-dropdown-item {
+  background-color: var(--clr-700);
+  border: 1px solid white;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.header-navlink-dropdown-item > * {
+  flex-grow: 1;
+}
+
+.header-navlink-dropdown-item:active,
+.header-navlink-dropdown-item:focus {
+  background-color: var(--clr-100);
 }

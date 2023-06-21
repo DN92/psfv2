@@ -1,0 +1,73 @@
+.header_icon_nav {
+  
+}
+
+.header_icon_nav_ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header_icon_nav_li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms;
+  z-index: 100;
+}
+
+.header_icon_nav_li:hover,
+.header_icon_nav_li:active {
+  scale: 1.03;
+  filter: brightness(1.07);
+}
+
+.portrait_card {
+  position: relative;
+  width: 6rem;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border: 2px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.dropdown_menu {
+  background-color: rgb(27, 137, 137);
+  position: absolute;
+  top: 98px;
+  width: 300px;
+  transform: translateX(-35%);
+  overflow: hidden;
+  border: 4px solid grey;
+  border-radius: 5%;
+  padding: 1rem;
+  transition: all 200ms ease;
+}
+
+.dropdown_menu * {
+  flex-grow: 1;
+}
+
+.dropdown_icon_left {
+  margin-right: auto;
+}
+
+.dropdown_icon_right {
+  margin-left: auto;
+}
+
+.dropdown_item {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transition: background 200ms;
+  padding: 0.5rem;
+}
+
+.dropdown_item:hover {
+  background-color: aqua;
+}
