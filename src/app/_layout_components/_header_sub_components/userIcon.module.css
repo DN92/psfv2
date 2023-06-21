@@ -37,7 +37,7 @@
 .dropdown_menu {
   background-color: rgb(27, 137, 137);
   position: absolute;
-  top: 98px;
+  top: 73px;
   width: 300px;
   transform: translateX(-35%);
   overflow: hidden;
@@ -45,6 +45,7 @@
   border-radius: 5%;
   padding: 1rem;
   transition: all 200ms ease;
+  z-index: -1;
 }
 
 .dropdown_menu * {

@@ -17,6 +17,7 @@ export default function UserNavItem({ src, alt, children }: ComponentProps): JSX
   return (
     <li
       className={styles.header_icon_nav_li}
+      onMouseLeave={():void => setOpen(false)}
     >
       <button
         className={styles.portrait_card}
