@@ -78,3 +78,7 @@ html:focus-within {
   animation-duration: 0.01ms !important;
   scroll-behavior: auto !important;
 }
+
+a {
+  color: white;
+}

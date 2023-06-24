@@ -4,8 +4,8 @@ import styles from './kittens.module.css';
 
 const Kittens:() => Promise<JSX.Element> = async () => {
 
-  const { data, error } = await supabase.from('kitten').select();
-  const kittens: Array<KittenSchema> = data as Array<KittenSchema> ?? [];
+  const { data, error } = await supabase.from('kitten').select('*');
+  const kittens: Array<Kitten> = data ?? [];
 
   const availableKittens: Array<KittenSchema> = kittens.filter((kitten: KittenSchema) => (
     kitten.status === 'Reserved'

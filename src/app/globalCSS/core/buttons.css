@@ -1,0 +1,20 @@
+.button_style1 {
+  width: 10rem;
+  height: 3rem;
+  font-size: 1.125rem;
+  background-color: var(--clr-500);
+  color: white;
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 4px; 
+  transition: transform 0.1s ease; 
+}
+
+.button_style1:hover,
+.button_style1:focus {
+  transform: scale(1.075);
+}
+
+.button_style1:active {
+  transform: scale(1.025);
+}

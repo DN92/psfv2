@@ -1,15 +1,12 @@
 import { createServerActionClient } from '@supabase/auth-helpers-nextjs';
 import Link from 'next/link';
 import { cookies } from 'next/headers';
-import { getUserAsync } from '@/lib/functions/getUserAsync';
 import styles from './auth.module.css';
 
 // TODO
 // add parameter for sign in / sign up and combine routes
 
 export default async function Login(): Promise<JSX.Element> {
-
-  const user = await getUserAsync();
 
   const handleSignUp = async (formData: FormData): Promise<void> => {
     'use server';
@@ -44,7 +41,7 @@ export default async function Login(): Promise<JSX.Element> {
       email: email,
       password: pw,
     });
-    const { data: { session } } = await supabase.auth.getSession();
+    // const { data: { session } } = await supabase.auth.getSession();
   };
 
   const handleSignOut = async (): Promise<void> => {

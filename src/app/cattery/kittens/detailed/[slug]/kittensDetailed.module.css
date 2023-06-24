@@ -1,0 +1,40 @@
+.page_wrapper {
+  margin: auto;
+  display: flex;
+  width: 80%;
+  min-height: 60vh;
+  gap: 10rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.page_left,
+.page_right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.page_left {
+  justify-content: flex-end;
+}
+
+.page_right {
+  justify-content: flex-start;
+}
+
+.card {
+  min-width: 400px;
+  min-height: 400px;
+  background-color: pink;
+  position: relative;
+  padding: 2rem;
+  margin: auto;
+}
+
+.navigation_button_wrapper {
+  margin: 1rem 0;
+}

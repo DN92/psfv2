@@ -12,6 +12,10 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
+a, p, span, textarea {
+  line-height: 1.5;
+}
+
 @media (max-width: 15.3125em) {
   #h1 {
     display: none;
@@ -47,16 +51,13 @@ h6{
 /* links */
 a:any-link {
   text-decoration: none;
-  color: var(--clr-800);
-  font-weight: 400;
   letter-spacing: 0.02rem;
 }
 
 a:hover, a:focus-visible {
-  color: var(--clr-blue);
-  transform: translate(0, -0.15rem);
+  /* color: var(--clr-blue); */
 }
 
 a:active {
-  color: var(--clr-500);
+  /* color: var(--clr-500); */
 }

@@ -132,9 +132,9 @@ export interface Database {
         }
         Relationships: []
       }
-      kitten: {
+      Kitten: {
         Row: {
-          breed: string | null
+          breed: string
           createdAt: string | null
           description: string | null
           dob: string | null

@@ -17,17 +17,13 @@ declare global {
   type SocialMediaDatapoint = {
     site: string,
     href: string,
-    iconSrc: Image,
+    iconSrc: typeof Image,
   };
 
-}
-
-// DATABASE SCHEMAS
-
-declare global {
+  // DATABASE SCHEMAS
 
   type Database = DB;
-  type Kitten = Databse['public']['Tables']['kitten']['Row'];
+  type Kitten = DB['public']['Tables']['Kitten']['Row'];
 
   interface CatSchema {
     id: number,

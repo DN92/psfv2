@@ -30,7 +30,7 @@ const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = []
   return (
     <Link
       className={`${styles.kitten_singleton_wrapper} ${classesToAddToWrapper}`}
-      href={`/cattery/kittens/detailed?kitten=${kitten.id}`}
+      href={`/cattery/kittens/detailed/${kitten.id}`}
     >
       <div className={`${styles.kitten_singleton_image_card}`}>
         <Image
