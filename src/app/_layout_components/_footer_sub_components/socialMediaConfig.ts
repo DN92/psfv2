@@ -10,27 +10,27 @@ const socialMediaInfo: Array<SocialMediaDatapoint> = [
   {
     site: 'instagram',
     href: 'https://www.instagram.com/floofylicious_cattery/',
-    iconSrc: <Image className="social-media-icon" src={igPng} alt="ig Png" />,
+    iconSrc: igPng,
   },
   {
     site: 'facebook',
     href: 'https://www.facebook.com/planetscottishfold?mibextid=LQQJ4d',
-    iconSrc: <Image className="social-media-icon" src={fbPng} alt="fb Png" />,
+    iconSrc: fbPng,
   },
   {
     site: 'tiktok',
     href: 'https://www.tiktok.com/@planetscottishfold',
-    iconSrc: <Image className="social-media-icon" src={tiktokPng} alt="tiktok Png" />,
+    iconSrc: tiktokPng,
   },
   {
     site: 'pintrest',
     href: 'https://www.pinterest.com/planetscottishfold/',
-    iconSrc: <Image className="social-media-icon" src={pintrestPng} alt="pintrest Png" />,
+    iconSrc: pintrestPng,
   },
   {
     site: 'youtube',
     href: 'https://www.youtube.com/channel/UC3O7RNKGYtocqgB8d-QTZkg',
-    iconSrc: <Image className="social-media-icon" src={youtubePng} alt="youtube Png" />,
+    iconSrc: youtubePng,
   },
 ];
 

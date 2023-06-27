@@ -56,6 +56,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'import/prefer-default-export': 0,
     'import/no-unresolved': 1,
     indent: ['error', 2, { SwitchCase: 1 }],
     'jsx-a11y/label-has-associated-control': 0,

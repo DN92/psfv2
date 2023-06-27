@@ -132,9 +132,9 @@ export interface Database {
         }
         Relationships: []
       }
-      Kitten: {
+      kitten: {
         Row: {
-          breed: string
+          breed: string | null
           createdAt: string | null
           description: string | null
           dob: string | null
@@ -152,8 +152,11 @@ export interface Database {
           name: string | null
           price: number | null
           regNum: string | null
+          slug: string | null
           status: string | null
+          type: string
           updatedAt: string | null
+          uuid_column: string | null
         }
         Insert: {
           breed?: string | null
@@ -174,8 +177,11 @@ export interface Database {
           name?: string | null
           price?: number | null
           regNum?: string | null
+          slug?: string | null
           status?: string | null
+          type?: string
           updatedAt?: string | null
+          uuid_column?: string | null
         }
         Update: {
           breed?: string | null
@@ -196,8 +202,11 @@ export interface Database {
           name?: string | null
           price?: number | null
           regNum?: string | null
+          slug?: string | null
           status?: string | null
+          type?: string
           updatedAt?: string | null
+          uuid_column?: string | null
         }
         Relationships: []
       }
@@ -217,6 +226,7 @@ export interface Database {
           name: string | null
           regNum: string | null
           status: string | null
+          type: string
           updatedAt: string | null
         }
         Insert: {
@@ -234,6 +244,7 @@ export interface Database {
           name?: string | null
           regNum?: string | null
           status?: string | null
+          type?: string
           updatedAt?: string | null
         }
         Update: {
@@ -251,6 +262,7 @@ export interface Database {
           name?: string | null
           regNum?: string | null
           status?: string | null
+          type?: string
           updatedAt?: string | null
         }
         Relationships: []
@@ -271,6 +283,7 @@ export interface Database {
           name: string | null
           regNum: string | null
           status: string | null
+          type: string
           updatedAt: string | null
         }
         Insert: {
@@ -288,6 +301,7 @@ export interface Database {
           name?: string | null
           regNum?: string | null
           status?: string | null
+          type?: string
           updatedAt?: string | null
         }
         Update: {
@@ -305,6 +319,7 @@ export interface Database {
           name?: string | null
           regNum?: string | null
           status?: string | null
+          type?: string
           updatedAt?: string | null
         }
         Relationships: []

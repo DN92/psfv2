@@ -1,12 +1,15 @@
-const SocialMediaIconWrapper: React.FC = ({ iconSrc, href, site }: SocialMediaDatapoint) => {
+import Image from 'next/image';
+
+export default function SocialMediaWrapper({ iconSrc, href }: SocialMediaDatapoint): JSX.Element {
 
   return (
-    <div className="social-media-icon-wrapper">
-      <a href={href} target="_blank">
-        {iconSrc}
-      </a>
-    </div>
+    <a className="social-media-icon-wrapper" href={href} target="_blank">
+      <Image
+        className="social-media-icon"
+        src={iconSrc}
+        alt="smIcon"
+      />
+    </a>
   );
-};
+}
 
-export default SocialMediaIconWrapper;

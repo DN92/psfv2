@@ -68,11 +68,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .social-media-icon {
   width: 4rem;
-  height: auto;
+  height: 4rem;
   border: none;
 }
 

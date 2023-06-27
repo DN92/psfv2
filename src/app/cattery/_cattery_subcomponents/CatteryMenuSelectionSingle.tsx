@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '../cattery.module.css';
+import styles from '../Cattery.module.css';
 
 interface ComponentProps {
   href: string,

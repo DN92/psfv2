@@ -63,7 +63,7 @@ export default function CatsAndKittensNavigationDropDown():JSX.Element {
         <DropDownMenuOption
           className="header-navlink-dropdown-item"
           type="link"
-          href="/cattery/adults/dams"
+          href="/cattery/dams"
           iconLeft={<FaCat style={iconScaler} />}
           onClick={closeMenu}
         >
@@ -72,7 +72,7 @@ export default function CatsAndKittensNavigationDropDown():JSX.Element {
         <DropDownMenuOption
           className="header-navlink-dropdown-item"
           type="link"
-          href="/cattery/adults/sires"
+          href="/cattery/sires"
           iconLeft={<FaCat style={iconScaler} />}
           onClick={closeMenu}
         >

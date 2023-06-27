@@ -3,10 +3,10 @@ import Link from 'next/link';
 import styles from '../kittens/kittens.module.css';
 import ReservedSpan from './ReservedSpan';
 
-interface ComponentProps {
-  kitten: KittenSchema,
+type ComponentProps = {
+  kitten: Kitten,
   wrapperClasses?: Array<string>,
-}
+};
 
 const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = [] }: ComponentProps) => {
 
@@ -14,7 +14,6 @@ const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = []
 
   const {
     id,
-    model,
     name,
     gender,
     breed,
@@ -30,7 +29,7 @@ const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = []
   return (
     <Link
       className={`${styles.kitten_singleton_wrapper} ${classesToAddToWrapper}`}
-      href={`/cattery/kittens/detailed/${kitten.id}`}
+      href={`/cattery/kittens/detailed/kitten/${kitten.id}`}
     >
       <div className={`${styles.kitten_singleton_image_card}`}>
         <Image

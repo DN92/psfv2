@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './catAdults.module.css';
+import styles from './CatAdults.module.css';
 
 interface ComponentProps {
-  adultCat: AdultCatSchema,
+  adultCat: Mother | Stud,
   model: 'stud' | 'mother'
   wrapperClasses?: Array<string>,
 }
@@ -15,7 +15,6 @@ const CatAdultSingleton: React.FC<ComponentProps> = ({ adultCat, model, wrapperC
   const {
     id,
     name,
-    gender,
     breed,
     ears,
     furColor,
@@ -28,7 +27,7 @@ const CatAdultSingleton: React.FC<ComponentProps> = ({ adultCat, model, wrapperC
   return (
     <Link
       className={`${styles.adult_cat_singleton_wrapper} ${classesToAddToWrapper} `}
-      href={`/cattery/adults/${(model === 'sire' ? 'sires' : 'dams')}/detailed?${model}=${adultCat.id}`}
+      href={`/cattery/studs/detailed/stud/${adultCat.id}`}
     >
       <div className={styles.adult_cat_singleton_image_card}>
         <Image

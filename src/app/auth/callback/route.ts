@@ -4,7 +4,8 @@ import { NextResponse } from 'next/server';
 
 import type { NextRequest } from 'next/server';
 
-async function GET(request: NextRequest): Promise<NextResponse> {
+export async function GET(request: NextRequest): Promise<NextResponse> {
+
   const requestUrl: URL = new URL(request.url);
   const code: string | null = requestUrl.searchParams.get('code');
 
@@ -16,5 +17,3 @@ async function GET(request: NextRequest): Promise<NextResponse> {
   // URL to redirect to after sign in process completes
   return NextResponse.redirect(requestUrl.origin);
 }
-
-export default GET;

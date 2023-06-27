@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { StaticImageData } from 'next/image';
 import type { Database as DB } from '@/lib/database.types';
 
 declare global {
@@ -17,13 +17,16 @@ declare global {
   type SocialMediaDatapoint = {
     site: string,
     href: string,
-    iconSrc: typeof Image,
+    iconSrc: StaticImageData,
   };
 
   // DATABASE SCHEMAS
 
   type Database = DB;
-  type Kitten = DB['public']['Tables']['Kitten']['Row'];
+  type Kitten = DB['public']['Tables']['kitten']['Row'];
+  type Mother = DB['public']['Tables']['mother']['Row'];
+  type Stud = DB['public']['Tables']['stud']['Row'];
+  type Cat = Kitten | Mother | Stud | null;
 
   interface CatSchema {
     id: number,
