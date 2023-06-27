@@ -1,20 +1,16 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
+import supabase from '@/lib/supabaseConfig';
 import CatAdultSingleton from '../_shared_components/CatAdultSingleton';
 import styles from '../_shared_components/CatAdults.module.css';
 
+export const revalidate = 60 * 60;
+
 export default async function Studs(): Promise<JSX.Element> {
+  const { data: studs, error } = await supabase.from('stud').select('*');
 
-  async function getStuds():Promise<Array<Stud>> {
-    'use server';
-
-    const supabase = createServerComponentClient<Database>({ cookies });
-    const { data, error } = await supabase.from('stud').select('*');
-    if (data) return data;
-    return [];
+  if (!studs) {
+    console.log('error fetching studs:: studs.pagae.tsx');
+    return <div>bad data:: fallback</div>;
   }
-
-  const studs: Array<Stud> = await getStuds();
 
   return (
     <div>

@@ -1,12 +1,11 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
+import supabase from '@/lib/supabaseConfig';
 import Link from 'next/link';
 import styles from './CatDetailed.module.css';
 
 type Params = {
   params: {
-    type: 'kitten' | 'dam' | 'sire',
-    id: string | number
+    type: 'kitten' | 'mother' | 'stud',
+    id: string
   }
 };
 
@@ -14,11 +13,9 @@ type Cat = Kitten | Mother | Stud | null;
 
 export default async function DetailedCat({ params: { type, id } }: Params): Promise<JSX.Element> {
 
-
   async function getCat(): Promise<Cat> {
     'use server';
 
-    const supabase = createServerComponentClient<Database>({ cookies });
     const { data, error } = await supabase
       .from(`${type}`)
       .select('*')

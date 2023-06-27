@@ -4,7 +4,7 @@ export type Json =
   | boolean
   | null
   | { [key: string]: Json }
-  | Json[];
+  | Json[]
 
 export interface Database {
   public: {
@@ -225,6 +225,7 @@ export interface Database {
           mainImageSrcValue: string | null
           name: string | null
           regNum: string | null
+          slug: string | null
           status: string | null
           type: string
           updatedAt: string | null
@@ -243,6 +244,7 @@ export interface Database {
           mainImageSrcValue?: string | null
           name?: string | null
           regNum?: string | null
+          slug?: string | null
           status?: string | null
           type?: string
           updatedAt?: string | null
@@ -261,6 +263,7 @@ export interface Database {
           mainImageSrcValue?: string | null
           name?: string | null
           regNum?: string | null
+          slug?: string | null
           status?: string | null
           type?: string
           updatedAt?: string | null
@@ -282,6 +285,7 @@ export interface Database {
           mainImageSrcValue: string | null
           name: string | null
           regNum: string | null
+          slug: string | null
           status: string | null
           type: string
           updatedAt: string | null
@@ -300,6 +304,7 @@ export interface Database {
           mainImageSrcValue?: string | null
           name?: string | null
           regNum?: string | null
+          slug?: string | null
           status?: string | null
           type?: string
           updatedAt?: string | null
@@ -318,6 +323,7 @@ export interface Database {
           mainImageSrcValue?: string | null
           name?: string | null
           regNum?: string | null
+          slug?: string | null
           status?: string | null
           type?: string
           updatedAt?: string | null

@@ -3,17 +3,12 @@ import styles from './userIcon.module.css';
 import UserNavItem from './UserNavItem';
 import DropDownUserMenu from './DropDownUserMenu';
 
-type UserIconProps = {
-  user: any,
-};
-
-export default function UserIcon({ user }: UserIconProps): JSX.Element {
-
+export default async function UserIcon(): Promise<JSX.Element> {
   return (
     <nav className={styles.header_icon_nav}>
       <ul className={styles.header_icon_nav_ul}>
         <UserNavItem src={catImage} alt="userTestImage">
-          <DropDownUserMenu user={user} />
+          <DropDownUserMenu />
         </UserNavItem>
       </ul>
     </nav>

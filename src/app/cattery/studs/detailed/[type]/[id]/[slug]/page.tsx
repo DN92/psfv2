@@ -9,11 +9,11 @@ type ParamsObject = {
 };
 
 export async function generateStaticParams():Promise<Array<ParamsObject>> {
-  const { data, error } = await supabase.from('kitten').select('id, slug');
+  const { data, error } = await supabase.from('stud').select('id, slug');
 
   if (!data) return [];
   return data.map((ele) => ({
-    type: 'kitten',
+    type: 'stud',
     id: String(ele.id),
     slug: ele.slug,
   }));

@@ -1,18 +1,32 @@
 'use client';
 
 import { CSSTransition } from 'react-transition-group';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SiLapce } from 'react-icons/si';
 import { AiOutlineUser } from 'react-icons/ai';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import DropDownItem from './DropDownItem';
 import DropDownMenuOption from './DropDownMenuOption';
 import styles from './userIcon.module.css';
 
-type ComponentProps = {
-  user: any,
-};
 
-export default function DropDownUserMenu({ user }: ComponentProps): JSX.Element {
+export default function DropDownUserMenu(): JSX.Element {
+
+  const [user, setUser] = useState<any>();
+
+  useEffect(() => {
+    async function getUser():Promise<void> {
+      const supabase = createClientComponentClient<Database>();
+      const { data, error } = await supabase.auth.getSession();
+      if (data) {
+        setUser(data.session?.user ?? null);
+      }
+      console.log('data', data?.session?.user ?? null);
+    }
+    getUser();
+  }, []);
+
+  console.log('user', user);
 
   const [activeMenu, setActiveMenu] = useState('primary');
   const [menuHeight, setMenuHeight] = useState<null | number>(null);
@@ -34,7 +48,7 @@ export default function DropDownUserMenu({ user }: ComponentProps): JSX.Element 
         unmountOnExit
         timeout={200}
         classNames="menu-primary"
-        onEnter={calculateHeight}
+        onMouseEnter={calculateHeight}
       >
         <div className="menu">
 
@@ -47,13 +61,13 @@ export default function DropDownUserMenu({ user }: ComponentProps): JSX.Element 
             <p>{emailRoot}</p>
           </DropDownMenuOption>
           <DropDownMenuOption className={styles.dropdown_item}>
-            {user.id}
+            {user?.id}
           </DropDownMenuOption>
           <DropDownMenuOption className={styles.dropdown_item}>
-            {user.session_id}
+            {user?.session_id}
           </DropDownMenuOption>
           <DropDownMenuOption className={styles.dropdown_item}>
-            {user.role}
+            {user?.role}
           </DropDownMenuOption>
         </div>
 
@@ -64,7 +78,7 @@ export default function DropDownUserMenu({ user }: ComponentProps): JSX.Element 
         unmountOnExit
         timeout={200}
         classNames="menu-secondary"
-        onEnter={calculateHeight}
+        onMouseEnter={calculateHeight}
       >
         <div className="menu">
           <DropDownItem setActiveMenu={setActiveMenu} goToMenu="primary">

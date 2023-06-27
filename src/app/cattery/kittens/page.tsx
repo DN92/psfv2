@@ -5,7 +5,6 @@ import styles from './kittens.module.css';
 export const revalidate = 60 * 60;
 
 export default async function Kittens(): Promise<JSX.Element> {
-
   const { data: kittens, error } = await supabase.from('kitten').select('*');
 
   if (!kittens) {

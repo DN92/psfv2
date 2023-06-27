@@ -1,5 +1,4 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
+import supabase from '@/lib/supabaseConfig';
 import CatAdultSingleton from '../_shared_components/CatAdultSingleton';
 import styles from '../_shared_components/CatAdults.module.css';
 
@@ -8,7 +7,6 @@ export default async function Dams(): Promise<JSX.Element> {
   async function getDams():Promise<Array<Stud>> {
     'use server';
 
-    const supabase = createServerComponentClient<Database>({ cookies });
     const { data, error } = await supabase.from('mother').select('*');
     if (data) return data;
     return [];

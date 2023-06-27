@@ -10,12 +10,12 @@ type Params = {
 };
 
 export async function generateStaticParams():Promise<Array<Params>> {
-  const { data, error } = await supabase.from('kitten').select('id, slug');
+  const { data, error } = await supabase.from('stud').select('id, slug');
 
   if (!data) return [];
   return data.map((ele) => ({
     params: {
-      type: 'kitten',
+      type: 'stud',
       id: String(ele.id),
     },
   }));
@@ -23,7 +23,7 @@ export async function generateStaticParams():Promise<Array<Params>> {
 
 export default async function RedirectToUrlWithSlug({ params: { type, id } }: Params):Promise<JSX.Element> {
 
-  const { data, error } = await supabase.from('kitten').select('id, slug').eq('id', id).single();
+  const { data, error } = await supabase.from('stud').select('id, slug').eq('id', id).single();
 
   if (!data) notFound();
 
