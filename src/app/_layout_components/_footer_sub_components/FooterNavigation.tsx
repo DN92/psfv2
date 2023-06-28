@@ -7,15 +7,14 @@ function FooterNavigation(): ReactElement {
     <div className="footer-nav-wrapper">
       <nav className="footer-nav footer-nav-left">
         <Link href="/home">Home</Link>
-        <Link href="/availableKittens">Kittens</Link>
+        <Link href="/cattery/kittens">Kittens</Link>
         <Link href="/contact">Contact</Link>
       </nav>
       <nav className="footer-nav footer-nav-right">
-        <Link href="/waitingListForm">Apply</Link>
-        <Link href="/login">Reviews</Link>
+        <Link href="/apply">Apply</Link>
+        <Link href="/auth">Reviews</Link>
         <Link href="/reviews">Login</Link>
       </nav>
-
     </div>
   );
 }

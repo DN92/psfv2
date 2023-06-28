@@ -2,6 +2,8 @@ import { createServerActionClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import styles from '../auth.module.css';
 
+export const dynamic = 'force-dynamic';
+
 export default async function SignUp(): Promise<JSX.Element> {
 
   const handleSignUp = async (formData: FormData): Promise<void> => {

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import fbPng from '../../_layout_assets/socialMediaIcons/facebook.png';
 import igPng from '../../_layout_assets/socialMediaIcons/instagram.png';
 import pintrestPng from '../../_layout_assets/socialMediaIcons/pintrest.png';
