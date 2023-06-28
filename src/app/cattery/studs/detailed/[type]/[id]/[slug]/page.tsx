@@ -1,4 +1,4 @@
-import DetailedCat from '@/src/app/_cattery/_shared_components/DetailedCat';
+import DetailedCat from '@/src/app/cattery/_shared_components/DetailedCat';
 import supabase from '@/lib/supabaseConfig';
 
 
