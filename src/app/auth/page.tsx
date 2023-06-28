@@ -6,6 +6,8 @@ import styles from './auth.module.css';
 // TODO
 // add parameter for sign in / sign up and combine routes
 
+export const dynamic = 'force-dynamic';
+
 export default async function Login(): Promise<JSX.Element> {
 
   const handleSignUp = async (formData: FormData): Promise<void> => {
