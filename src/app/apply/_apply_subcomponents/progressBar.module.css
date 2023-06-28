@@ -1,0 +1,71 @@
+.progress_bar {
+  height: 40px;
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+
+.progress_step,
+.progress_step_gutter,
+.progress_break {
+  transform: skewX(-30deg);
+  border: 2px solid black;
+}
+
+.progress_step {
+  flex-grow: 1;
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress_step_innertext {
+  transform: skewX(30deg);
+  font-size: 1.25rem;
+
+}
+
+.progress_break {
+  flex-grow: .1;
+  background-color: gray;
+
+}
+
+.progress_step_gutter {
+  flex-grow: .15;
+  padding:1rem;
+}
+
+.progress_step_gutter_start {
+  background-color: red;
+  border-top-left-radius: 40%;
+  border-bottom-left-radius: 60%;
+}
+
+.progress_step_gutter_end {
+  background-color: green;
+  border-top-right-radius: 60%;
+  border-bottom-right-radius: 40%;
+}
+
+.progress_step_last_child {
+
+}
+
+.progress_step_selected {
+  background-color: aqua;
+  animation: brightnessAnimation 1s infinite;
+}
+
+@keyframes brightnessAnimation {
+  0% {
+    filter: brightness(.5);
+  }
+  50% {
+    filter: brightness(1.5);
+  }
+  100% {
+    filter: brightness(.5)
+  }
+}

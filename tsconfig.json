@@ -43,6 +43,7 @@
   ],
   "exclude": [
     "node_modules",
+    "_generated_application_questions"
     // "__tests__"
   ],
 }
