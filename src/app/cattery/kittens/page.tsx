@@ -8,7 +8,7 @@ export default async function Kittens(): Promise<JSX.Element> {
   const { data: kittens, error } = await supabase.from('kitten').select('*');
 
   if (!kittens) {
-    console.log('error fetching kittens:: kitten.pagae.tsx');
+    console.log('error fetching kittens:: kitten.pagae.tsx:: ', error);
     return <div>bad data:: fallback</div>;
   }
 

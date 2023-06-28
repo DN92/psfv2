@@ -3,7 +3,7 @@
 import { useState, ChangeEvent, FormEvent, FormEventHandler, ChangeEventHandler } from 'react';
 import styles from '../contact.module.css';
 
-const ContactUsForm: React.FC = () => {
+export default function ContactUsForm(): JSX.Element {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -93,6 +93,4 @@ const ContactUsForm: React.FC = () => {
       </form>
     </div>
   );
-};
-
-export default ContactUsForm;
+}

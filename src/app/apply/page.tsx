@@ -3,7 +3,6 @@ import QuestionSlide from './_components/QuestionSlide';
 
 export default function Apply(): JSX.Element {
 
-
   return (
     <>
       {/* {testQuestions.map((question, idx) => {

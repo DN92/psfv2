@@ -8,7 +8,7 @@ interface ComponentProps {
   wrapperClasses?: Array<string>,
 }
 
-const CatAdultSingleton: React.FC<ComponentProps> = ({ adultCat, model, wrapperClasses = [] }: ComponentProps) => {
+export default function CatAdultSingleton({ adultCat, model, wrapperClasses = [] }: ComponentProps): JSX.Element {
 
   const classesToAddToWrapper: string = wrapperClasses.map((cssClass: string) => (styles[cssClass]) ?? '').join(' ');
 
@@ -27,7 +27,7 @@ const CatAdultSingleton: React.FC<ComponentProps> = ({ adultCat, model, wrapperC
   return (
     <Link
       className={`${styles.adult_cat_singleton_wrapper} ${classesToAddToWrapper} `}
-      href={`/cattery/studs/detailed/stud/${adultCat.id}`}
+      href={`/cattery/${model === 'stud' ? 'studs' : 'dams'}/detailed/${model}/${adultCat.id}`}
     >
       <div className={styles.adult_cat_singleton_image_card}>
         <Image
@@ -47,6 +47,4 @@ const CatAdultSingleton: React.FC<ComponentProps> = ({ adultCat, model, wrapperC
 
     </Link>
   );
-};
-
-export default CatAdultSingleton;
+}

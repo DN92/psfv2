@@ -4,7 +4,7 @@ export type Json =
   | boolean
   | null
   | { [key: string]: Json }
-  | Json[]
+  | Json[];
 
 export interface Database {
   public: {

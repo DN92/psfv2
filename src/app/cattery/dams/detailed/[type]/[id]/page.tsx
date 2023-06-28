@@ -28,7 +28,7 @@ export default async function RedirectToUrlWithSlug({ params: { type, id } }: Pa
   if (!data) notFound();
 
   if (id && data.slug) {
-    redirect(`/cattery/kittens/detailed/${type}/${id}/${data.slug}`);
+    redirect(`/cattery/dams/detailed/${type}/${id}/${data.slug}`);
   }
   return (
     <h3>REdirecting</h3>

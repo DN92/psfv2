@@ -36,6 +36,7 @@ module.exports = {
   ],
 
   rules: {
+    '@typescript-eslint/ban-ts-comment': 0,
     '@typescript-eslint/explicit-function-return-type': 2,
     '@typescript-eslint/no-inferrable-types': 0,
     '@typescript-eslint/no-shadow': 0,

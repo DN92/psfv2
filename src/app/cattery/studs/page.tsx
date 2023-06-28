@@ -8,7 +8,7 @@ export default async function Studs(): Promise<JSX.Element> {
   const { data: studs, error } = await supabase.from('stud').select('*');
 
   if (!studs) {
-    console.log('error fetching studs:: studs.pagae.tsx');
+    console.log('error fetching studs:: studs.pagae.tsx:: ', error);
     return <div>bad data:: fallback</div>;
   }
 

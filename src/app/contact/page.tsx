@@ -3,7 +3,7 @@ import styles from './contact.module.css';
 import contactPicture from './contactUs.webp';
 import ContactUsForm from './_contact_subcomponents/ContactUsForm';
 
-const Contact: React.FC = () => {
+export default function Contact(): JSX.Element {
 
   return (
     <>
@@ -23,6 +23,5 @@ const Contact: React.FC = () => {
       </div>
     </>
   );
-};
+}
 
-export default Contact;

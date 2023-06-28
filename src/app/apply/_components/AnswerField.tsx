@@ -12,11 +12,11 @@ type ComponentProps = {
   setterFunction:Dispatch<SetStateAction<string | number | string[] | number[] | null>>
 };
 
-const AnswerField = ({
+export default function AnswerField({
   question,
   currentState,
   setterFunction,
-}: ComponentProps): JSX.Element => {
+}: ComponentProps): JSX.Element {
 
   const classNamesForAnswerFieldFromProps = question.options?.classNames?.answerField?.join(' ') ?? '';
 
@@ -27,11 +27,11 @@ const AnswerField = ({
   function multipleOptionChangeHandler(e:ChangeEvent<HTMLInputElement>, choice: string): void {
 
     if (!Array.isArray(currentState)) return;
-    const isSelected = currentState.includes(choice);
-    if (isSelected) {
-      setterFunction((prev) => [...prev].filter((element) => element !== choice));
+    // @ts-ignore
+    if (currentState.includes(choice)) {
+      setterFunction((prev) => [...prev as Array<string>].filter((element) => element !== choice));
     } else {
-      setterFunction((prev) => ([...prev, choice]));
+      setterFunction((prev) => ([...prev as Array<string>, choice]));
     }
   }
 
@@ -96,8 +96,9 @@ const AnswerField = ({
                 className={styles.checkbox_input}
                 type="checkbox"
                 name="choice"
-                value={idx}
+                value={choice}
                 checked={
+                  // @ts-ignore
                   Array.isArray(currentState) && currentState.includes(choice)
                 }
                 onChange={(e):void => multipleOptionChangeHandler(e, choice)}
@@ -116,6 +117,4 @@ const AnswerField = ({
         return <div>something went wrong</div>;
     }
   })();
-};
-
-export default AnswerField;
+}

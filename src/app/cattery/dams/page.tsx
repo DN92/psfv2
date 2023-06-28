@@ -2,17 +2,16 @@ import supabase from '@/lib/supabaseConfig';
 import CatAdultSingleton from '../_shared_components/CatAdultSingleton';
 import styles from '../_shared_components/CatAdults.module.css';
 
+export const revalidate = 60 * 60;
+
 export default async function Dams(): Promise<JSX.Element> {
 
-  async function getDams():Promise<Array<Stud>> {
-    'use server';
+  const { data: dams, error } = await supabase.from('mother').select('*');
 
-    const { data, error } = await supabase.from('mother').select('*');
-    if (data) return data;
-    return [];
+  if (!dams) {
+    console.log('error fetching kittens:: kitten.pagae.tsx:: ', error);
+    return <div>bad data:: fallback</div>;
   }
-
-  const dams: Array<Mother> = await getDams();
 
   return (
     <div>

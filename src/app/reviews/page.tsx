@@ -7,7 +7,7 @@ const firstThird: Array<string> = reviewPaths.slice(0, reviewPaths.length / 3) ?
 const secondThird: Array<string> = reviewPaths.slice(reviewPaths.length / 3, (reviewPaths.length) * (2 / 3)) ?? [];
 const thirdThird: Array<string> = reviewPaths.slice((reviewPaths.length) * (2 / 3)) ?? [];
 
-const Reviews: React.FC = () => {
+export default function Reviews(): JSX.Element {
 
   return (
     <div className={styles.reviews_wrapper}>
@@ -28,6 +28,4 @@ const Reviews: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default Reviews;
+}

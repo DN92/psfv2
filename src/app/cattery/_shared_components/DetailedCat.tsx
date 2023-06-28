@@ -9,73 +9,55 @@ type Params = {
   }
 };
 
-type Cat = Kitten | Mother | Stud | null;
+export default async function Detailedkitten({ params: { type, id } }: Params): Promise<JSX.Element> {
 
-export default async function DetailedCat({ params: { type, id } }: Params): Promise<JSX.Element> {
+  const { data: cat, error } = await supabase
+    .from(`${type}`)
+    .select('*')
+    .eq('id', id)
+    .single();
 
-  async function getCat(): Promise<Cat> {
-    'use server';
-
-    const { data, error } = await supabase
-      .from(`${type}`)
-      .select('*')
-      .eq('id', id);
-    if (Array.isArray(data) && data.length) {
-      return data[0] as Cat;
-    }
-    return null;
+  if (!cat) {
+    return (
+      <div>fetch fail</div>
+    );
   }
 
-  const cat = await getCat();
+  const kitten: Kitten | null = cat.type === 'kitten' ? cat as Kitten : null;
+  const adultCat: Mother | Stud | null = (cat.type === 'mother' || cat.type === 'stud') ? cat : null;
 
-  function getTypedCat(cat: Cat): Cat {
-    if (!cat) return null;
-    switch (cat.type) {
-      case 'kitten': return cat as Kitten;
-      case 'mother': return cat as Mother;
-      case 'stud': return cat as Stud;
-      default: return null;
-    }
+  let descriptionSection: JSX.Element;
+
+  if (kitten) {
+    descriptionSection = (
+      <section className={styles.animal_description}>
+        des
+        <h3>{kitten.name}</h3>
+        <p>{`Date of Birth ${kitten.dob}`}</p>
+        <p>{`A ${kitten.furColor} ${kitten.gender}`}</p>
+        <p>{`with ${kitten.eyeColor} eyes`}</p>
+        <p>{`STATUS: ${kitten.status}`}</p>
+        <p>{`$${kitten.price}`}</p>
+        <h4>Parents</h4>
+        <p>{`Dam: ${kitten.mother}`}</p>
+        <p>{`Sire: ${kitten.father}`}</p>
+        <p />
+      </section>
+    );
+  }
+  if (adultCat) {
+    descriptionSection = (
+      <section>
+        <h3>{adultCat.name}</h3>
+        {adultCat.dob && <p>{`Date of Birth ${adultCat.dob}`}</p>}
+        <p>{`A ${adultCat.furColor}`}</p>
+        <p>{`${adultCat.ears} Ears`}</p>
+        <p>{`${adultCat.furColor} Fur`}</p>
+        <p>{`Description: ${adultCat.description}`}</p>
+      </section>
+    );
   }
 
-  const typedCat = getTypedCat(cat);
-
-  const descriptionSection = (():JSX.Element => {
-    if (!typedCat) return <div>error fallback</div>;
-    switch (typedCat.type) {
-      case 'kitten': {
-        return (
-          <section className={styles.animal_description}>
-            des
-            <h3>{typedCat.name}</h3>
-            <p>{`Date of Birth ${typedCat.dob}`}</p>
-            <p>{`A ${typedCat.furColor} ${typedCat.gender}`}</p>
-            <p>{`with ${typedCat.eyeColor} eyes`}</p>
-            <p>{`STATUS: ${typedCat.status}`}</p>
-            <p>{`$${typedCat.price}`}</p>
-            <h4>Parents</h4>
-            <p>{`Dam: ${typedCat.mother}`}</p>
-            <p>{`Sire: ${typedCat.father}`}</p>
-            <p />
-          </section>
-        );
-      }
-      case 'mother':
-      case 'stud': {
-        return (
-          <section>
-            <h3>{typedCat.name}</h3>
-            {typedCat.dob && <p>{`Date of Birth ${typedCat.dob}`}</p>}
-            <p>{`A ${typedCat.furColor}`}</p>
-            <p>{`${typedCat.ears} Ears`}</p>
-            <p>{`${typedCat.furColor} Fur`}</p>
-            <p>{`Description: ${typedCat.description}`}</p>
-          </section>
-        );
-      }
-      default: return <div>error fallback</div>;
-    }
-  })();
 
   return (
     <div className={styles.page_wrapper}>
@@ -84,7 +66,7 @@ export default async function DetailedCat({ params: { type, id } }: Params): Pro
           card
           {/* <Image src={kitten.mainImageSrcValue} alt="kitty picture" /> */}
         </div>
-        { typedCat?.type === 'kitten' && (
+        { kitten?.type === 'kitten' && (
           <div className={styles.carousel}>
             carousel
           </div>
@@ -94,7 +76,7 @@ export default async function DetailedCat({ params: { type, id } }: Params): Pro
         {descriptionSection}
         <nav>
           <ul className={styles.page_navigation}>
-            <li className={styles.navigation_button_wrapper}><button type="button" className="button_style1"><Link href="/cattery/kittens">BACK</Link></button></li>
+            <li className={styles.navigation_button_wrapper}><button type="button" className="button_style1"><Link href="/kittentery/kittens">BACK</Link></button></li>
             <li className={styles.navigation_button_wrapper}><button type="button" className="button_style1"><Link href="/apply">APPLY</Link></button></li>
             <li className={styles.navigation_button_wrapper}><button type="button" className="button_style1"><Link href="/contact">CONTACT US</Link></button></li>
           </ul>

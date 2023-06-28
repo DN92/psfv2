@@ -8,7 +8,7 @@ type Validations = {
 };
 
 type Options = Partial<{
-  selectValues: Array<string | boolean>,
+  selectValues: Array<string>,
   checkBoxValues: Array<string>,
   classNames: Partial<{
     answerFieldWrapper: Array<string>,

@@ -72,7 +72,7 @@ export default function CatsAndKittensNavigationDropDown():JSX.Element {
         <DropDownMenuOption
           className="header-navlink-dropdown-item"
           type="link"
-          href="/cattery/sires"
+          href="/cattery/studs"
           iconLeft={<FaCat style={iconScaler} />}
           onClick={closeMenu}
         >
