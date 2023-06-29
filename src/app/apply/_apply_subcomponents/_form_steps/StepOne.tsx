@@ -1,7 +1,7 @@
 'use client';
 
 import useLocalStorage from '@/lib/hooks/useLocalStorage';
-import QuestionWrapper from './QuestionWrapper';
+import QuestionWrapper from '../QuestionWrapper';
 
 export default function StepOne():JSX.Element {
 
@@ -13,8 +13,8 @@ export default function StepOne():JSX.Element {
 
   return (
     <QuestionWrapper>
-      <h3>Personnal Information</h3>
-      <form onSubmit={(e):void => handleSubmit(e)}>
+      <h3>Contact Information</h3>
+      <form>
         <div>
           <label htmlFor="fullName">Full Name:</label>
           <input
@@ -60,7 +60,6 @@ export default function StepOne():JSX.Element {
             onChange={(e):void => setAge(e.target.value)}
           />
         </div>
-        {/* <button type="submit">Submit</button> */}
       </form>
     </QuestionWrapper>
   );

@@ -2,7 +2,12 @@
 
 import { useState } from 'react';
 import ProgressBar from './_apply_subcomponents/progressBar';
-import StepOne from './_apply_subcomponents/StepOne';
+import StepZero from './_apply_subcomponents/_form_steps/StepZero';
+import StepOne from './_apply_subcomponents/_form_steps/StepOne';
+import StepTwo from './_apply_subcomponents/_form_steps/StepTwo';
+import StepThree from './_apply_subcomponents/_form_steps/StepThree';
+import StepFour from './_apply_subcomponents/_form_steps/StepFour';
+import StepFive from './_apply_subcomponents/_form_steps/StepFive';
 
 export default function Apply():JSX.Element {
 
@@ -18,7 +23,6 @@ export default function Apply():JSX.Element {
 
   return (
     <div>
-      ph appy
       <ProgressBar
         currentStep={currentStep}
         updateStepState={updateStepState}
@@ -26,7 +30,13 @@ export default function Apply():JSX.Element {
         slots={10}
       />
       <div className="QUESTIONS_WRAPPER">
+
+        {currentStep === 0 && <StepZero />}
         {currentStep === 1 && <StepOne />}
+        {currentStep === 2 && <StepTwo />}
+        {currentStep === 3 && <StepThree />}
+        {currentStep === 4 && <StepFour />}
+        {currentStep === 5 && <StepFive />}
       </div>
       <div className="BUTTONS-WRAPPER">
         <button type="button">reset form</button>
