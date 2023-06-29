@@ -8,6 +8,9 @@ import StepTwo from './_apply_subcomponents/_form_steps/StepTwo';
 import StepThree from './_apply_subcomponents/_form_steps/StepThree';
 import StepFour from './_apply_subcomponents/_form_steps/StepFour';
 import StepFive from './_apply_subcomponents/_form_steps/StepFive';
+import StepSix from './_apply_subcomponents/_form_steps/StepSix';
+import StepAllergies from './_apply_subcomponents/_form_steps/StepAllergies';
+import StepSocialMedeia from './_apply_subcomponents/_form_steps/StepSocialMedia';
 
 export default function Apply():JSX.Element {
 
@@ -20,6 +23,17 @@ export default function Apply():JSX.Element {
     setCurrentStep(nextState);
   }
 
+  const allSteps = [
+    <StepZero key="landing" />,
+    <StepOne key="one" />,
+    <StepTwo key="two" />,
+    <StepThree key="three" />,
+    <StepFour key="four" />,
+    <StepFive key="five" />,
+    <StepSix key="six" />,
+    <StepAllergies key="allergies" />,
+    <StepSocialMedeia key="sm" />,
+  ];
 
   return (
     <div>
@@ -27,16 +41,10 @@ export default function Apply():JSX.Element {
         currentStep={currentStep}
         updateStepState={updateStepState}
         userStartedForm={userStartedForm}
-        slots={10}
+        slots={8}
       />
       <div className="QUESTIONS_WRAPPER">
-
-        {currentStep === 0 && <StepZero />}
-        {currentStep === 1 && <StepOne />}
-        {currentStep === 2 && <StepTwo />}
-        {currentStep === 3 && <StepThree />}
-        {currentStep === 4 && <StepFour />}
-        {currentStep === 5 && <StepFive />}
+        {currentStep < allSteps.length && allSteps[currentStep]}
       </div>
       <div className="BUTTONS-WRAPPER">
         <button type="button">reset form</button>

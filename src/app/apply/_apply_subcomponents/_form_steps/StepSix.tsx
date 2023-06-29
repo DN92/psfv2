@@ -1,30 +1,12 @@
 'use client';
 
 import useLocalStorage from '@/lib/hooks/useLocalStorage';
-import { ChangeEvent } from 'react';
 import QuestionWrapper from '../QuestionWrapper';
 
 export default function StepSix():JSX.Element {
   const [traits, setTraits] = useLocalStorage('traits', '');
   const [timing, setTiming] = useLocalStorage('timing', '');
   const [specificKitten, setSpecificKitten] = useLocalStorage('specificKitten', '');
-
-  const handleTraitChange = (event:ChangeEvent<HTMLInputElement>):void => {
-    const { value, checked } = event.target;
-    if (checked) {
-      setTraits((prevTraits) => [...prevTraits, value]);
-    } else {
-      setTraits((prevTraits) => prevTraits.filter((trait) => trait !== value));
-    }
-  };
-
-  const handleTimingChange = (event) => {
-    setTiming(event.target.value);
-  };
-
-  const handleSpecificKittenChange = (event) => {
-    setSpecificKitten(event.target.value);
-  };
 
   return (
     <QuestionWrapper>
@@ -37,8 +19,14 @@ export default function StepSix():JSX.Element {
             <input
               type="checkbox"
               value="Health"
-              checked={traits.includes('Health')}
-              onChange={(handleTraitChange)}
+              checked={traits === 'Health'}
+              onChange={(e):void => {
+                if (e.target.checked) {
+                  setTraits('Health');
+                } else {
+                  setTraits('');
+                }
+              }}
             />
           </label>
           <label>
@@ -46,8 +34,14 @@ export default function StepSix():JSX.Element {
             <input
               type="checkbox"
               value="Personality"
-              checked={traits.includes('Personality')}
-              onChange={(e):void => handleTraitChange(e)}
+              checked={traits === 'Personality'}
+              onChange={(e):void => {
+                if (e.target.checked) {
+                  setTraits('Personality');
+                } else {
+                  setTraits('');
+                }
+              }}
             />
           </label>
           <label>
@@ -55,8 +49,14 @@ export default function StepSix():JSX.Element {
             <input
               type="checkbox"
               value="Appearance"
-              checked={traits.includes('Appearance')}
-              onChange={handleTraitChange}
+              checked={traits === 'Appearance'}
+              onChange={(e):void => {
+                if (e.target.checked) {
+                  setTraits('Appearance');
+                } else {
+                  setTraits('');
+                }
+              }}
             />
           </label>
           <label>
@@ -64,31 +64,66 @@ export default function StepSix():JSX.Element {
             <input
               type="checkbox"
               value="Show Quality"
-              checked={traits.includes('Show Quality')}
-              onChange={handleTraitChange}
+              checked={traits === 'Show Quality'}
+              onChange={(e):void => {
+                if (e.target.checked) {
+                  setTraits('Show Quality');
+                } else {
+                  setTraits('');
+                }
+              }}
             />
           </label>
         </div>
 
         <div>
-          <p>How soon are you looking to bring a new kitten into your home?</p>
           <label>
-            <input type="radio" name="timing" value="Immediately" checked={timing === 'Immediately'} onChange={handleTimingChange} />
+            <input
+              type="radio"
+              name="timing"
+              value="Immediately"
+              checked={timing === 'Immediately'}
+              onChange={(e):void => {
+                if (e.target.checked) {
+                  setTiming('Immediately');
+                }
+              }}
+            />
             Immediately
           </label>
           <label>
-            <input type="radio" name="timing" value="In a few weeks" checked={timing === 'In a few weeks'} onChange={handleTimingChange} />
+            <input
+              type="radio"
+              name="timing"
+              value="In a few weeks"
+              checked={timing === 'In a few weeks'}
+              onChange={(e):void => {
+                if (e.target.checked) {
+                  setTiming('In a few weeks');
+                }
+              }}
+            />
             In a few weeks
           </label>
           <label>
-            <input type="radio" name="timing" value="In a few months" checked={timing === 'In a few months'} onChange={handleTimingChange} />
+            <input
+              type="radio"
+              name="timing"
+              value="In a few months"
+              checked={timing === 'In a few months'}
+              onChange={(e):void => {
+                if (e.target.checked) {
+                  setTiming('In a few months');
+                }
+              }}
+            />
             In a few months
           </label>
         </div>
 
         <div>
           <p>Do you have a specific kitten in mind from our available litters? If yes, please provide details:</p>
-          <textarea value={specificKitten} onChange={handleSpecificKittenChange} />
+          <textarea value={specificKitten} onChange={(e):void => setSpecificKitten(e.target.value)} />
         </div>
 
         <button type="submit">Submit</button>

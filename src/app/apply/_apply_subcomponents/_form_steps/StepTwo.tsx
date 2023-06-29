@@ -14,36 +14,82 @@ export default function StepTwo():JSX.Element {
       <h3>Kitten Preferences</h3>
       <form>
         <div>
-          <label htmlFor="gender">Preferred Gender:</label>
-          <select
-            id="gender"
-            value={gender}
-            onChange={(e):void => setGender(e.target.value)}
-          >
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="No Preference">No Preference</option>
-          </select>
+          <label>
+            Preferred Gender:
+            <label>
+              <input
+                type="radio"
+                name="gender"
+                value="Male"
+                checked={gender === 'Male'}
+                onChange={(e): void => setGender(e.target.value)}
+              />
+              Male
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="gender"
+                value="Female"
+                checked={gender === 'Female'}
+                onChange={(e): void => setGender(e.target.value)}
+              />
+              Female
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="gender"
+                value="No Preference"
+                checked={gender === 'No Preference'}
+                onChange={(e): void => setGender(e.target.value)}
+              />
+              No Preference
+            </label>
+          </label>
         </div>
         <div>
           <label htmlFor="coatColors">Preferred Coat Color(s):</label>
           <textarea
             id="coatColors"
             value={coatColors}
-            onChange={(e):void => setCoatColors(e.target.value)}
+            onChange={(e): void => setCoatColors(e.target.value)}
           />
         </div>
         <div>
-          <label htmlFor="earType">Preferred Ear Type:</label>
-          <select
-            id="earType"
-            value={earType}
-            onChange={(e):void => setEarType(e.target.value)}
-          >
-            <option value="Folded">Folded</option>
-            <option value="Straight">Straight</option>
-            <option value="No Preference">No Preference</option>
-          </select>
+          <label>
+            Preferred Ear Type:
+            <label>
+              <input
+                type="radio"
+                name="earType"
+                value="Folded"
+                checked={earType === 'Folded'}
+                onChange={(e): void => setEarType(e.target.value)}
+              />
+              Folded
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="earType"
+                value="Straight"
+                checked={earType === 'Straight'}
+                onChange={(e): void => setEarType(e.target.value)}
+              />
+              Straight
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="earType"
+                value="No Preference"
+                checked={earType === 'No Preference'}
+                onChange={(e): void => setEarType(e.target.value)}
+              />
+              No Preference
+            </label>
+          </label>
         </div>
         <button type="submit">Submit</button>
       </form>
