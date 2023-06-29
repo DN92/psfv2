@@ -5,3 +5,18 @@
   justify-content: center;
   margin: 3rem 0 0 0;
 }
+
+.image_container {
+  margin: auto;
+  position: relative;
+}
+
+.image_container_one {
+  aspect-ratio: 1 / 1;
+  width: 35%;
+}
+
+.image_container_two {
+  aspect-ratio: 107 / 50;
+  width: 45%;
+}
