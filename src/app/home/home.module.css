@@ -20,3 +20,23 @@
   aspect-ratio: 107 / 50;
   width: 45%;
 }
+.image_container_three {
+  aspect-ratio: 77 /100;
+  width: 45%;
+}
+.image_container_four {
+  aspect-ratio: 1 / 1;
+  width: 45%;
+}
+.image_container_five {
+  aspect-ratio: 5/8;
+  width: 45%;
+}
+.image_container_six {
+  aspect-ratio: 98 / 100;
+  width: 45%;
+}
+.image_container_seven {
+  aspect-ratio: 1 / 1;
+  width: 45%;
+}

@@ -60,7 +60,7 @@ export default function ProgressBar({ currentStep, updateStepState, userStartedF
     <nav>
       <li className={styles.progress_bar}>
         {
-          progressBarDividers.map((ele) => (ele))
+          progressBarDividers
         }
       </li>
     </nav>

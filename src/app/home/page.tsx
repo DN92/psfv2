@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRef } from 'react';
@@ -13,16 +11,12 @@ import HomeSiteNav from './_subComponents/HomeSiteNav';
 import WelcomeTo from './_subComponents/WelcomeTo';
 import MyPassion from './_subComponents/MyPassion';
 import TheBreed from './_subComponents/TheBreed';
+import OurKittens from './_subComponents/OurKittens';
+import Recieve from './_subComponents/Receive';
 
 export default function Home(): JSX.Element {
 
-  const pageNavRefs = useRef([]);
-
-  function addToPageNav(ele: Element):void {
-    if (!pageNavRefs.current.includes(ele)) {
-      pageNavRefs.current.push(ele);
-    }
-  }
+  // TODO: PAGE NAV
 
   const message = [
     'Furry Summer Sale! Get 20% off any of our kittens till the end of June!', ' All kittens come with a health guarantee, video chats available on request!',
@@ -36,7 +30,7 @@ export default function Home(): JSX.Element {
       <div className={`${styles.image_container} ${styles.image_container_one}`}>
         <Image fill src={ownerWith3Kittens} alt="ownerWith3Kittens" />
       </div>
-      <PageScrollNavigation refArray={pageNavRefs.current} />
+      <PageScrollNavigation />
       <HomeSiteNav />
       <div className={`${styles.image_container} ${styles.image_container_two}`}>
         <Image fill src={ticaReg} alt="ticaReg" />
@@ -44,7 +38,9 @@ export default function Home(): JSX.Element {
       <WelcomeTo />
       <MyPassion />
       <TheBreed />
-      {/* TODO : SIZE UP THOSE IMAGES TO SCREEN */}
+      <OurKittens />
+      <Recieve />
+
     </main>
   );
 }
