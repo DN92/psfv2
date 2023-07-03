@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { SiLapce } from 'react-icons/si';
 import { AiOutlineUser } from 'react-icons/ai';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { useRouter } from 'next/router';
 import DropDownItem from './DropDownItem';
 import DropDownMenuOption from './DropDownMenuOption';
 import styles from './userIcon.module.css';
@@ -12,7 +13,27 @@ import styles from './userIcon.module.css';
 
 export default function DropDownUserMenu(): JSX.Element {
 
+  const router = useRouter();
+
   const [user, setUser] = useState<any>();
+  const [activeMenu, setActiveMenu] = useState('primary');
+  const [menuHeight, setMenuHeight] = useState<null | number>(null);
+  const emailRoot = user?.email?.split('@')[0] ?? 'NO CURRENT SESSION';
+
+  function calculateHeight(domEle: HTMLElement): void {
+    setMenuHeight(domEle.offsetHeight + 40);
+  }
+
+  async function handleSignOut():Promise<void> {
+    const supabase = createClientComponentClient<Database>();
+    const { error } = await supabase.auth.signOut();
+    localStorage.clear();
+    router.push('/');
+  }
+
+  function navToSignIn():void {
+    router.push('/auth');
+  }
 
   useEffect(() => {
     async function getUser():Promise<void> {
@@ -26,15 +47,6 @@ export default function DropDownUserMenu(): JSX.Element {
     getUser();
   }, []);
 
-  console.log('user', user);
-
-  const [activeMenu, setActiveMenu] = useState('primary');
-  const [menuHeight, setMenuHeight] = useState<null | number>(null);
-
-  const calculateHeight = (domEle: HTMLElement): void => {
-    setMenuHeight(domEle.offsetHeight + 40);
-  };
-  const emailRoot = user?.email?.split('@')[0] ?? 'NO CURRENT SESSION';
 
   // CSSTransitions seem to be incompatible with css-modules
   // css for CSSTransitions are their children are located: @/globalCSS/cssTranisitons
@@ -69,6 +81,20 @@ export default function DropDownUserMenu(): JSX.Element {
           <DropDownMenuOption className={styles.dropdown_item}>
             {user?.role}
           </DropDownMenuOption>
+          {
+            user ?
+              (
+                <DropDownMenuOption className={styles.dropdown_item} onClick={handleSignOut}>
+                  Sign Out
+                </DropDownMenuOption>
+              )
+              :
+              (
+                <DropDownMenuOption className={styles.dropdown_item} onClick={navToSignIn}>
+                  Sign In
+                </DropDownMenuOption>
+              )
+          }
         </div>
 
       </CSSTransition>

@@ -3,332 +3,441 @@ export type Json =
   | number
   | boolean
   | null
-  | { [key: string]: Json }
-  | Json[];
+  | { [key: string]: Json | undefined }
+  | Json[]
 
 export interface Database {
   public: {
     Tables: {
       application: {
         Row: {
-          createdAt: string | null
+          createdAt: string
           data: Json | null
           id: number
-          updatedAt: string | null
+          updatedAt: string
         }
         Insert: {
-          createdAt?: string | null
+          createdAt?: string
           data?: Json | null
           id: number
-          updatedAt?: string | null
+          updatedAt?: string
         }
         Update: {
-          createdAt?: string | null
+          createdAt?: string
           data?: Json | null
           id?: number
-          updatedAt?: string | null
+          updatedAt?: string
         }
         Relationships: []
       }
       catAsKitten: {
         Row: {
-          breed: string | null
-          createdAt: string | null
-          description: string | null
-          dob: string | null
-          ears: string | null
-          eyeColor: string | null
-          furColor: string | null
-          gender: string | null
+          breed: string
+          createdAt: string
+          description: string
+          dob: string
+          ears: string
+          eyeColor: string
+          furColor: string
+          gender: string
           id: number
-          isAdminHidden: boolean | null
-          isAdultCat: boolean | null
-          isHidden: boolean | null
-          location: string | null
-          mainImageSrcValue: string | null
-          name: string | null
-          price: number | null
-          regNum: string | null
-          status: string | null
-          updatedAt: string | null
+          isAdminHidden: boolean
+          isAdultCat: string
+          isHidden: boolean
+          location: string
+          mainImageSrcValue: string
+          name: string
+          price: string
+          regNum: string
+          status: string
+          updatedAt: string
         }
         Insert: {
-          breed?: string | null
-          createdAt?: string | null
-          description?: string | null
-          dob?: string | null
-          ears?: string | null
-          eyeColor?: string | null
-          furColor?: string | null
-          gender?: string | null
+          breed?: string
+          createdAt?: string
+          description?: string
+          dob?: string
+          ears?: string
+          eyeColor?: string
+          furColor?: string
+          gender?: string
           id: number
-          isAdminHidden?: boolean | null
-          isAdultCat?: boolean | null
-          isHidden?: boolean | null
-          location?: string | null
-          mainImageSrcValue?: string | null
-          name?: string | null
-          price?: number | null
-          regNum?: string | null
-          status?: string | null
-          updatedAt?: string | null
+          isAdminHidden?: boolean
+          isAdultCat?: string
+          isHidden?: boolean
+          location?: string
+          mainImageSrcValue?: string
+          name?: string
+          price?: string
+          regNum?: string
+          status?: string
+          updatedAt?: string
         }
         Update: {
-          breed?: string | null
-          createdAt?: string | null
-          description?: string | null
-          dob?: string | null
-          ears?: string | null
-          eyeColor?: string | null
-          furColor?: string | null
-          gender?: string | null
+          breed?: string
+          createdAt?: string
+          description?: string
+          dob?: string
+          ears?: string
+          eyeColor?: string
+          furColor?: string
+          gender?: string
           id?: number
-          isAdminHidden?: boolean | null
-          isAdultCat?: boolean | null
-          isHidden?: boolean | null
-          location?: string | null
-          mainImageSrcValue?: string | null
-          name?: string | null
-          price?: number | null
-          regNum?: string | null
-          status?: string | null
-          updatedAt?: string | null
+          isAdminHidden?: boolean
+          isAdultCat?: string
+          isHidden?: boolean
+          location?: string
+          mainImageSrcValue?: string
+          name?: string
+          price?: string
+          regNum?: string
+          status?: string
+          updatedAt?: string
         }
         Relationships: []
       }
       contactRequest: {
         Row: {
-          createdAt: string | null
-          eMail: string | null
-          hidden: boolean | null
+          createdAt: string
+          eMail: string
+          hidden: boolean
           id: number
-          message: string | null
-          name: string | null
-          phone: string | null
-          updatedAt: string | null
-          wasRead: boolean | null
+          message: string
+          name: string
+          phone: string
+          updatedAt: string
+          wasRead: boolean
         }
         Insert: {
-          createdAt?: string | null
-          eMail?: string | null
-          hidden?: boolean | null
+          createdAt?: string
+          eMail: string
+          hidden?: boolean
           id: number
-          message?: string | null
-          name?: string | null
-          phone?: string | null
-          updatedAt?: string | null
-          wasRead?: boolean | null
+          message?: string
+          name: string
+          phone: string
+          updatedAt?: string
+          wasRead?: boolean
         }
         Update: {
-          createdAt?: string | null
-          eMail?: string | null
-          hidden?: boolean | null
+          createdAt?: string
+          eMail?: string
+          hidden?: boolean
           id?: number
-          message?: string | null
-          name?: string | null
-          phone?: string | null
-          updatedAt?: string | null
-          wasRead?: boolean | null
+          message?: string
+          name?: string
+          phone?: string
+          updatedAt?: string
+          wasRead?: boolean
         }
         Relationships: []
       }
       kitten: {
         Row: {
-          breed: string | null
-          createdAt: string | null
-          description: string | null
-          dob: string | null
-          ears: string | null
-          eyeColor: string | null
-          father: string | null
-          furColor: string | null
-          gender: string | null
+          breed: string
+          createdAt: string
+          description: string
+          dob: string
+          ears: string
+          eyeColor: string
+          father: string
+          furColor: string
+          gender: string
           id: number
-          isAdminHidden: boolean | null
-          isHidden: boolean | null
-          location: string | null
-          mainImageSrcValue: string | null
-          mother: string | null
-          name: string | null
-          price: number | null
-          regNum: string | null
-          slug: string | null
-          status: string | null
+          isAdminHidden: boolean
+          isHidden: boolean
+          location: string
+          mainImageSrcValue: string
+          mother: string
+          name: string
+          price: number
+          regNum: string
+          slug: string
+          status: string
           type: string
-          updatedAt: string | null
-          uuid_column: string | null
+          updatedAt: string
+          uuid_column: string
         }
         Insert: {
-          breed?: string | null
-          createdAt?: string | null
-          description?: string | null
-          dob?: string | null
-          ears?: string | null
-          eyeColor?: string | null
-          father?: string | null
-          furColor?: string | null
-          gender?: string | null
-          id: number
-          isAdminHidden?: boolean | null
-          isHidden?: boolean | null
-          location?: string | null
-          mainImageSrcValue?: string | null
-          mother?: string | null
-          name?: string | null
-          price?: number | null
-          regNum?: string | null
-          slug?: string | null
-          status?: string | null
+          breed?: string
+          createdAt?: string
+          description?: string
+          dob?: string
+          ears?: string
+          eyeColor?: string
+          father?: string
+          furColor?: string
+          gender?: string
+          id?: number
+          isAdminHidden?: boolean
+          isHidden?: boolean
+          location?: string
+          mainImageSrcValue?: string
+          mother?: string
+          name?: string
+          price?: number
+          regNum?: string
+          slug?: string
+          status?: string
           type?: string
-          updatedAt?: string | null
-          uuid_column?: string | null
+          updatedAt?: string
+          uuid_column?: string
         }
         Update: {
-          breed?: string | null
-          createdAt?: string | null
-          description?: string | null
-          dob?: string | null
-          ears?: string | null
-          eyeColor?: string | null
-          father?: string | null
-          furColor?: string | null
-          gender?: string | null
+          breed?: string
+          createdAt?: string
+          description?: string
+          dob?: string
+          ears?: string
+          eyeColor?: string
+          father?: string
+          furColor?: string
+          gender?: string
           id?: number
-          isAdminHidden?: boolean | null
-          isHidden?: boolean | null
-          location?: string | null
-          mainImageSrcValue?: string | null
-          mother?: string | null
-          name?: string | null
-          price?: number | null
-          regNum?: string | null
-          slug?: string | null
-          status?: string | null
+          isAdminHidden?: boolean
+          isHidden?: boolean
+          location?: string
+          mainImageSrcValue?: string
+          mother?: string
+          name?: string
+          price?: number
+          regNum?: string
+          slug?: string
+          status?: string
           type?: string
-          updatedAt?: string | null
-          uuid_column?: string | null
+          updatedAt?: string
+          uuid_column?: string
         }
         Relationships: []
       }
       mother: {
         Row: {
-          breed: string | null
-          createdAt: string | null
-          description: string | null
-          dob: string | null
-          ears: string | null
-          eyeColor: string | null
-          furColor: string | null
+          breed: string
+          createdAt: string
+          description: string
+          dob: string
+          ears: string
+          eyeColor: string
+          furColor: string
           id: number
-          isAdminHidden: boolean | null
-          isHidden: boolean | null
-          mainImageSrcValue: string | null
-          name: string | null
-          regNum: string | null
-          slug: string | null
-          status: string | null
+          isAdminHidden: boolean
+          isHidden: boolean
+          mainImageSrcValue: string
+          name: string
+          regNum: string
+          slug: string
+          status: string
           type: string
-          updatedAt: string | null
+          updatedAt: string
         }
         Insert: {
-          breed?: string | null
-          createdAt?: string | null
-          description?: string | null
-          dob?: string | null
-          ears?: string | null
-          eyeColor?: string | null
-          furColor?: string | null
+          breed?: string
+          createdAt?: string
+          description?: string
+          dob?: string
+          ears?: string
+          eyeColor?: string
+          furColor?: string
           id: number
-          isAdminHidden?: boolean | null
-          isHidden?: boolean | null
-          mainImageSrcValue?: string | null
-          name?: string | null
-          regNum?: string | null
-          slug?: string | null
-          status?: string | null
+          isAdminHidden?: boolean
+          isHidden?: boolean
+          mainImageSrcValue?: string
+          name?: string
+          regNum?: string
+          slug?: string
+          status?: string
           type?: string
-          updatedAt?: string | null
+          updatedAt?: string
         }
         Update: {
-          breed?: string | null
-          createdAt?: string | null
-          description?: string | null
-          dob?: string | null
-          ears?: string | null
-          eyeColor?: string | null
-          furColor?: string | null
+          breed?: string
+          createdAt?: string
+          description?: string
+          dob?: string
+          ears?: string
+          eyeColor?: string
+          furColor?: string
           id?: number
-          isAdminHidden?: boolean | null
-          isHidden?: boolean | null
-          mainImageSrcValue?: string | null
-          name?: string | null
-          regNum?: string | null
-          slug?: string | null
-          status?: string | null
+          isAdminHidden?: boolean
+          isHidden?: boolean
+          mainImageSrcValue?: string
+          name?: string
+          regNum?: string
+          slug?: string
+          status?: string
           type?: string
-          updatedAt?: string | null
+          updatedAt?: string
         }
         Relationships: []
       }
       stud: {
         Row: {
-          breed: string | null
-          createdAt: string | null
-          description: string | null
-          dob: string | null
-          ears: string | null
-          eyeColor: string | null
-          furColor: string | null
+          breed: string
+          createdAt: string
+          description: string
+          dob: string
+          ears: string
+          eyeColor: string
+          furColor: string
           id: number
-          isAdminHidden: boolean | null
-          isHidden: boolean | null
-          mainImageSrcValue: string | null
-          name: string | null
-          regNum: string | null
-          slug: string | null
-          status: string | null
+          isAdminHidden: boolean
+          isHidden: boolean
+          mainImageSrcValue: string
+          name: string
+          regNum: string
+          slug: string
+          status: string
           type: string
-          updatedAt: string | null
+          updatedAt: string
         }
         Insert: {
-          breed?: string | null
-          createdAt?: string | null
-          description?: string | null
-          dob?: string | null
-          ears?: string | null
-          eyeColor?: string | null
-          furColor?: string | null
+          breed?: string
+          createdAt?: string
+          description?: string
+          dob?: string
+          ears?: string
+          eyeColor?: string
+          furColor?: string
           id: number
-          isAdminHidden?: boolean | null
-          isHidden?: boolean | null
-          mainImageSrcValue?: string | null
-          name?: string | null
-          regNum?: string | null
-          slug?: string | null
-          status?: string | null
+          isAdminHidden?: boolean
+          isHidden?: boolean
+          mainImageSrcValue?: string
+          name?: string
+          regNum?: string
+          slug?: string
+          status?: string
           type?: string
-          updatedAt?: string | null
+          updatedAt?: string
         }
         Update: {
-          breed?: string | null
-          createdAt?: string | null
-          description?: string | null
-          dob?: string | null
-          ears?: string | null
-          eyeColor?: string | null
-          furColor?: string | null
+          breed?: string
+          createdAt?: string
+          description?: string
+          dob?: string
+          ears?: string
+          eyeColor?: string
+          furColor?: string
           id?: number
-          isAdminHidden?: boolean | null
-          isHidden?: boolean | null
-          mainImageSrcValue?: string | null
-          name?: string | null
-          regNum?: string | null
-          slug?: string | null
-          status?: string | null
+          isAdminHidden?: boolean
+          isHidden?: boolean
+          mainImageSrcValue?: string
+          name?: string
+          regNum?: string
+          slug?: string
+          status?: string
           type?: string
-          updatedAt?: string | null
+          updatedAt?: string
         }
         Relationships: []
+      }
+      user_questionaire: {
+        Row: {
+          age: number
+          can_receive: string
+          cat_gender: string
+          city: string
+          created_at: string
+          ear_type: string
+          email: string
+          found_us_by: string
+          full_name: string
+          fur_color: string
+          household_size: number
+          household_smoking: string
+          id: number
+          kitten_primary: string
+          occupation: string
+          own_home: string
+          pets_allergies: string
+          pets_allowed: string
+          pets_previously_owned: string
+          pets_restrictions: string
+          phone_number: string
+          rehome_details: string
+          time_to_dedicate: string
+          trait_primary: string
+          user_fb: string
+          user_id: string | null
+          user_ig: string
+          vet_commitment: string
+          why_us: string
+          will_breed: string
+          will_declaw: string
+        }
+        Insert: {
+          age?: number
+          can_receive?: string
+          cat_gender?: string
+          city?: string
+          created_at?: string
+          ear_type?: string
+          email?: string
+          found_us_by?: string
+          full_name?: string
+          fur_color?: string
+          household_size?: number
+          household_smoking?: string
+          id?: number
+          kitten_primary?: string
+          occupation?: string
+          own_home?: string
+          pets_allergies?: string
+          pets_allowed?: string
+          pets_previously_owned?: string
+          pets_restrictions?: string
+          phone_number?: string
+          rehome_details?: string
+          time_to_dedicate?: string
+          trait_primary?: string
+          user_fb?: string
+          user_id?: string | null
+          user_ig?: string
+          vet_commitment?: string
+          why_us?: string
+          will_breed?: string
+          will_declaw?: string
+        }
+        Update: {
+          age?: number
+          can_receive?: string
+          cat_gender?: string
+          city?: string
+          created_at?: string
+          ear_type?: string
+          email?: string
+          found_us_by?: string
+          full_name?: string
+          fur_color?: string
+          household_size?: number
+          household_smoking?: string
+          id?: number
+          kitten_primary?: string
+          occupation?: string
+          own_home?: string
+          pets_allergies?: string
+          pets_allowed?: string
+          pets_previously_owned?: string
+          pets_restrictions?: string
+          phone_number?: string
+          rehome_details?: string
+          time_to_dedicate?: string
+          trait_primary?: string
+          user_fb?: string
+          user_id?: string | null
+          user_ig?: string
+          vet_commitment?: string
+          why_us?: string
+          will_breed?: string
+          will_declaw?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_questionaire_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
       }
     }
     Views: {

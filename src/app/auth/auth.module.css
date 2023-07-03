@@ -52,11 +52,13 @@
 
 .auth_input {
   width: 100%;
-  height: 1.75rem;
+  height: 2.5rem;
   font-size: 1.15rem;
   border-radius: .3rem;
   border: 1px solid grey;
   text-indent: .75rem;
+  text-align: center;
+  padding-right: 2rem;
 }
 
 .auth_checkbox_wrapper {
@@ -67,6 +69,19 @@
 .auth_checkbox {
   height: 1.25rem;
   aspect-ratio: 1/1;
+}
+
+.auth_password_wrapper {
+  position: relative;
+}
+
+.auth_password_toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-51%);
+  cursor: pointer;
+  padding: .5rem;
 }
 
 .auth_sign_in_button_wrapper {

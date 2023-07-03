@@ -2,6 +2,7 @@ import { createServerActionClient } from '@supabase/auth-helpers-nextjs';
 import Link from 'next/link';
 import { cookies } from 'next/headers';
 import styles from './auth.module.css';
+import PasswordInputWithEyeBall from './_auth_subcomponents/PasswordInputWithEyeBall';
 
 // TODO
 // add parameter for sign in / sign up and combine routes
@@ -73,7 +74,7 @@ export default async function Login(): Promise<JSX.Element> {
           </div>
         </div>
         <div className={styles.auth_container_section}>
-          <div className={styles.auth_section_partition}>
+          <div className={`${styles.auth_section_partition}`}>
             <label
               className={styles.auth_section_partition_span1}
               htmlFor="input_password"
@@ -82,14 +83,7 @@ export default async function Login(): Promise<JSX.Element> {
             </label>
             <span className={styles.auth_section_partition_span2}>Forgot Password?</span>
           </div>
-          <div className={styles.auth_input_wrapper}>
-            <input
-              id="input_password"
-              className={styles.auth_input}
-              type="text"
-              name="pw"
-            />
-          </div>
+          <PasswordInputWithEyeBall />
         </div>
         <div className={styles.auth_sign_in_button_wrapper}>
           <button
@@ -98,24 +92,6 @@ export default async function Login(): Promise<JSX.Element> {
           >
             Sign In
           </button>
-        </div>
-        <div className={styles.auth_container_section}>
-          <div className={styles.auth_section_partition}>
-            <label
-              className={styles.auth_section_partition_span1}
-              htmlFor="input_confirm_password"
-            >
-              Confirm Password
-            </label>
-          </div>
-          <div className={styles.auth_input_wrapper}>
-            <input
-              id="input_confirm_password"
-              className={styles.auth_input}
-              type="text"
-              name="confirmPW"
-            />
-          </div>
         </div>
       </form>
       <div className={styles.auth_sign_up_wrapper}>

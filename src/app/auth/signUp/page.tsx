@@ -1,17 +1,34 @@
 import { createServerActionClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
+import Link from 'next/link';
 import styles from '../auth.module.css';
 
 export const dynamic = 'force-dynamic';
 
 export default async function SignUp(): Promise<JSX.Element> {
 
-  const handleSignUp = async (formData: FormData): Promise<void> => {
+  async function handleSignUp(formData: FormData): Promise<void> {
     'use server';
+
 
     const email = String(formData.get('email'));
     const pw = String(formData.get('password'));
     const confirmPw = String(formData.get('confirmPW'));
+
+    function validatedInputs():boolean {
+      if (email.length < 10) return false;
+      if (pw.length < 7) return false;
+      if (confirmPw.length < 7) return false;
+      if (pw !== confirmPw) return false;
+      if (/[<>*]/.test(pw)) return false;
+      if (/[<>*]/.test(email)) return false;
+      return true;
+    }
+
+    if (!validatedInputs()) {
+      console.log('bad inputs');
+      return;
+    }
 
     const supabase = createServerActionClient({ cookies });
 
@@ -26,11 +43,11 @@ export default async function SignUp(): Promise<JSX.Element> {
 
     if (data) console.log('A user has signed up :: ', email, ' + ', data);
     if (error) console.log('Error occured during sign up:: ', error);
-  };
+  }
 
   return (
     <form action={handleSignUp} className={styles.auth_container}>
-      <h2 className={styles.auth_container_h2}>Sign up to Planet Scottish Fold</h2>
+      <h2 className={styles.auth_container_h2}>Sign Up</h2>
       <div className={styles.auth_container_section}>
         <div className={styles.auth_section_partition}>
           <label
@@ -85,6 +102,7 @@ export default async function SignUp(): Promise<JSX.Element> {
           />
         </div>
       </div>
+
       <div className={styles.auth_sign_in_button_wrapper}>
         <button
           type="submit"
@@ -92,6 +110,10 @@ export default async function SignUp(): Promise<JSX.Element> {
         >
           Sign Up
         </button>
+        <p>
+          Already have an account?
+          <Link href="/auth">Sign In</Link>
+        </p>
       </div>
     </form>
   );
