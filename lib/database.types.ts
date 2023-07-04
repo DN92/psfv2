@@ -4,7 +4,7 @@ export type Json =
   | boolean
   | null
   | { [key: string]: Json | undefined }
-  | Json[]
+  | Json[];
 
 export interface Database {
   public: {
@@ -432,11 +432,11 @@ export interface Database {
         }
         Relationships: [
           {
-            foreignKeyName: "user_questionaire_user_id_fkey"
-            columns: ["user_id"]
-            referencedRelation: "users"
-            referencedColumns: ["id"]
-          }
+            foreignKeyName: 'user_questionaire_user_id_fkey'
+            columns: ['user_id']
+            referencedRelation: 'users'
+            referencedColumns: ['id']
+          },
         ]
       }
     }
