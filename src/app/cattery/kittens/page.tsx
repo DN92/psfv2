@@ -13,7 +13,7 @@ export default async function Kittens(): Promise<JSX.Element> {
   }
 
   const availableKittens: Array<Kitten> = kittens.filter((kitten: Kitten) => (
-    kitten.status === 'Reserved'
+    kitten.status === 'Available' || kitten.status === 'Reserved'
   ));
 
   const soldKittens: Array<Kitten> = kittens.filter((kitten: Kitten) => (

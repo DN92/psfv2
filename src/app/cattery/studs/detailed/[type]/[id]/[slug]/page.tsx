@@ -1,7 +1,6 @@
 import DetailedCat from '@/src/app/cattery/_shared_components/DetailedCat';
 import supabase from '@/lib/supabaseConfig';
 
-
 type ParamsObject = {
   type: 'kitten' | 'mother' | 'stud',
   id: string,

@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { SiLapce } from 'react-icons/si';
 import { AiOutlineUser } from 'react-icons/ai';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import DropDownItem from './DropDownItem';
 import DropDownMenuOption from './DropDownMenuOption';
 import styles from './userIcon.module.css';
