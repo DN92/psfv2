@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
-import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context';
+import type { AppRouterInstance } from 'next/dist/shared/lib/app-router-context';
 
 export default function LandingRedirectToHome():React.ReactNode {
   const router: AppRouterInstance = useRouter();

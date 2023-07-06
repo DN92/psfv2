@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 export default function ApplyStart(): JSX.Element {
@@ -9,7 +9,7 @@ export default function ApplyStart(): JSX.Element {
 
   useEffect(() => {
     router.push('/apply');
-  }, []);
+  }, [router]);
 
   return (
     <div>
