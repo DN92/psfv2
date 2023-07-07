@@ -12,7 +12,7 @@ export const getUserBE = async (): Promise<null | ExtendedUser> => {
 
   const extendedUser: ExtendedUser = { ...session.user, permissions: permissions.level ?? '' };
 
-  console.log('new user model', extendedUser);
+  // console.log(extendedUser);
 
   return extendedUser;
 };

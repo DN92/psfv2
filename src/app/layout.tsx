@@ -5,9 +5,9 @@ import { NextFont } from 'next/dist/compiled/@next/font';
 import Header from './_layout_components/Header';
 import Footer from './_layout_components/Footer';
 
-interface RootLayoutProps {
+type RootLayoutProps = {
   children: React.ReactNode;
-}
+};
 
 const cinzel: NextFont = Cinzel({
   subsets: ['latin'],
