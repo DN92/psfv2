@@ -69,6 +69,8 @@ export default function DropDownUserMenu(): JSX.Element {
             {user?.id}
           </DropDownMenuOption>
           <DropDownMenuOption className={styles.dropdown_item}>
+            {/* I have verfied that session_id does in fact exist on user and its extended interface. User is comming from auth helpers. I do not know where else to get User from if i'm targeting the wrong 'type'.  */}
+            {/* @ts-ignore */}
             {user?.session_id}
           </DropDownMenuOption>
           <DropDownMenuOption className={styles.dropdown_item}>

@@ -26,12 +26,13 @@ declare global {
   interface ExtendedUser extends User {
     permissions: string
   }
+  type Cat = Kitten | Mother | Stud | null;
 
   type Database = DB;
   type Kitten = DB['public']['Tables']['kitten']['Row'];
   type Mother = DB['public']['Tables']['mother']['Row'];
   type Stud = DB['public']['Tables']['stud']['Row'];
-  type Cat = Kitten | Mother | Stud | null;
+  type Application = DB['public']['Tables']['application']['Row'];
 
   interface CatSchema {
     id: number,

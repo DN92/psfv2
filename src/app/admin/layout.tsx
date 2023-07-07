@@ -5,7 +5,9 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
-export default async function AdminLayout({ children }: LayoutProps): Promise<React.ReactNode> {
+export const dynamic = 'force-dynamic';
+
+export default async function AdminLayout({ children }: LayoutProps): Promise<JSX.Element> {
   const user = await getUserBE();
   const hasPermission = (user?.permissions === 'ADMIN');
   if (!hasPermission) {
