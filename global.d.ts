@@ -1,5 +1,6 @@
 import { StaticImageData } from 'next/image';
 import type { Database as DB } from '@/lib/database.types';
+import type { User } from '@supabase/auth-helpers-nextjs';
 
 declare global {
 
@@ -21,6 +22,10 @@ declare global {
   };
 
   // DATABASE SCHEMAS
+
+  interface ExtendedUser extends User {
+    permissions: string
+  }
 
   type Database = DB;
   type Kitten = DB['public']['Tables']['kitten']['Row'];

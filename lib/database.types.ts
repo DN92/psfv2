@@ -330,6 +330,34 @@ export interface Database {
         }
         Relationships: []
       }
+      user_permissions: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          level: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string
+          id: string
+          level?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          level?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: 'user_permissions_id_fkey'
+            columns: ['id']
+            referencedRelation: 'users'
+            referencedColumns: ['id']
+          },
+        ]
+      }
       user_questionaire: {
         Row: {
           age: number

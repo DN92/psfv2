@@ -6,6 +6,7 @@ import { SiLapce } from 'react-icons/si';
 import { AiOutlineUser } from 'react-icons/ai';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { useRouter } from 'next/navigation';
+import { getUserFE } from '@/lib/functions/getUserFE';
 import DropDownItem from './DropDownItem';
 import DropDownMenuOption from './DropDownMenuOption';
 import styles from './userIcon.module.css';
@@ -15,7 +16,7 @@ export default function DropDownUserMenu(): JSX.Element {
 
   const router = useRouter();
 
-  const [user, setUser] = useState<any>();
+  const [user, setUser] = useState<ExtendedUser>();
   const [activeMenu, setActiveMenu] = useState('primary');
   const [menuHeight, setMenuHeight] = useState<null | number>(null);
   const emailRoot = user?.email?.split('@')[0] ?? 'NO CURRENT SESSION';
@@ -36,15 +37,7 @@ export default function DropDownUserMenu(): JSX.Element {
   }
 
   useEffect(() => {
-    async function getUser():Promise<void> {
-      const supabase = createClientComponentClient<Database>();
-      const { data, error } = await supabase.auth.getSession();
-      if (data) {
-        setUser(data.session?.user ?? null);
-      }
-      console.log('data', data?.session?.user ?? null);
-    }
-    getUser();
+    getUserFE(setUser);
   }, []);
 
 
