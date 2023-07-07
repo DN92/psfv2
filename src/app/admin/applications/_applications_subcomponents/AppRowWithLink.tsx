@@ -1,8 +1,9 @@
 type ComponentProps = {
-  application: Application
+  applicationData: ApplicationData,
+  createdAt: string,
 };
 
-export default function ApplicantRowWithLink({ application }: ComponentProps):React.ReactNode {
+export default function ApplicantRowWithLink({ applicationData, createdAt }: ComponentProps):React.ReactNode {
 
   return (
     <div>ph</div>

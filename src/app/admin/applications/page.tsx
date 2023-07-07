@@ -14,7 +14,8 @@ export default async function Applications():Promise<JSX.Element> {
     );
   }
 
-  console.log('the applications::', applications);
+  console.log('the applications::', applications[0].data);
+  console.log('type', typeof applications[0].data);
 
   return (
     <div>

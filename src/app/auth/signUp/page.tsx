@@ -10,7 +10,6 @@ export default async function SignUp(): Promise<JSX.Element> {
   async function handleSignUp(formData: FormData): Promise<void> {
     'use server';
 
-
     const email = String(formData.get('email'));
     const pw = String(formData.get('password'));
     const confirmPw = String(formData.get('confirmPW'));
@@ -37,7 +36,7 @@ export default async function SignUp(): Promise<JSX.Element> {
       password: pw,
       options: {
         // emailRedirectTo: `${window.location.origin}/auth/callback`,
-        emailRedirectTo: '$http://localhost:3000/auth/callback',
+        emailRedirectTo: 'http://localhost:3000/auth/callback',
       },
     });
 

@@ -4,34 +4,12 @@ import { cookies } from 'next/headers';
 import styles from './auth.module.css';
 import PasswordInputWithEyeBall from './_auth_subcomponents/PasswordInputWithEyeBall';
 
-// TODO
+// TODO (OPTIONAL)
 // add parameter for sign in / sign up and combine routes
 
 export const dynamic = 'force-dynamic';
 
 export default async function Login(): Promise<JSX.Element> {
-
-  const handleSignUp = async (formData: FormData): Promise<void> => {
-    'use server';
-
-    const email = String(formData.get('email'));
-    const pw = String(formData.get('password'));
-    const confirmPw = String(formData.get('confirmPW'));
-
-    const supabase = createServerActionClient({ cookies });
-
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password: pw,
-      options: {
-        // emailRedirectTo: `${window.location.origin}/auth/callback`,
-        emailRedirectTo: '$http://localhost:3000/auth/callback',
-      },
-    });
-
-    if (data) console.log('A user has signed up :: ', email, ' + ', data);
-    if (error) console.log('Error occured during sign up:: ', error);
-  };
 
   const handleSignIn = async (formData: FormData): Promise<void> => {
     'use server';
@@ -44,11 +22,6 @@ export default async function Login(): Promise<JSX.Element> {
       email: email,
       password: pw,
     });
-    // const { data: { session } } = await supabase.auth.getSession();
-  };
-
-  const handleSignOut = async (): Promise<void> => {
-    // const { error } = await supabase.auth.signOut();
   };
 
   return (
@@ -81,7 +54,7 @@ export default async function Login(): Promise<JSX.Element> {
             >
               Password
             </label>
-            <span className={styles.auth_section_partition_span2}>Forgot Password?</span>
+            <Link className={styles.auth_section_partition_span2} href="/auth/password_reset_request">Forgot Password?</Link>
           </div>
           <PasswordInputWithEyeBall />
         </div>

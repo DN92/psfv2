@@ -33,6 +33,7 @@ declare global {
   type Mother = DB['public']['Tables']['mother']['Row'];
   type Stud = DB['public']['Tables']['stud']['Row'];
   type Application = DB['public']['Tables']['application']['Row'];
+  type ApplicationData = Application['data'];
 
   interface CatSchema {
     id: number,
