@@ -1,0 +1,13 @@
+.user_row_wrapper {
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  max-width: 60%;
+  margin: auto;
+}
+
+.user_row_column {
+  border: 1px solid black;
+  flex-grow: 1;
+  text-align: center;
+}

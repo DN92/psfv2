@@ -34,6 +34,7 @@ declare global {
   type Stud = DB['public']['Tables']['stud']['Row'];
   type Application = DB['public']['Tables']['application']['Row'];
   type ApplicationData = Application['data'];
+  type UserQ = DB['public']['Tables']['user_questionaire']['Row'];
 
   interface CatSchema {
     id: number,

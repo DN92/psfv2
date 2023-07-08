@@ -22,6 +22,8 @@ export default async function Login(): Promise<JSX.Element> {
       email: email,
       password: pw,
     });
+
+    console.log('logging in:: ', data);
   };
 
   return (

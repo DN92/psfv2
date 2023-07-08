@@ -11,7 +11,7 @@ export default async function ResetPassword(): Promise<JSX.Element> {
   async function handlePasswordReset(formData: FormData): Promise<void> {
     'use server';
 
-    const pw = String(formData.get('password'));
+    const pw = String(formData.get('pw'));
     const confirmPw = String(formData.get('confirmPW'));
 
     function validatedInputs():boolean {
@@ -25,6 +25,8 @@ export default async function ResetPassword(): Promise<JSX.Element> {
     }
 
     if (!validatedInputs()) {
+      console.log('pw::', pw);
+      console.log('confirmed:: ', confirmPw);
       console.log('bad inputs');
       return;
     }

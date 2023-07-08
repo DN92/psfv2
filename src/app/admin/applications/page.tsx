@@ -5,6 +5,7 @@ import ApplicantRowWithLink from './_applications_subcomponents/AppRowWithLink';
 export const dynamic = 'force-dynamic';
 
 export default async function Applications():Promise<JSX.Element> {
+
   const supabase = createServerComponentClient<Database>({ cookies });
   const { data: applications, error } = await supabase.from('application').select('*').order('id', { ascending: false });
 

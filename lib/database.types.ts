@@ -361,6 +361,7 @@ export interface Database {
       user_questionaire: {
         Row: {
           age: number
+          approved: boolean | null
           can_receive: string
           cat_gender: string
           city: string
@@ -370,6 +371,7 @@ export interface Database {
           found_us_by: string
           full_name: string
           fur_color: string
+          hidden: boolean | null
           household_size: number
           household_smoking: string
           id: number
@@ -394,6 +396,7 @@ export interface Database {
         }
         Insert: {
           age?: number
+          approved?: boolean | null
           can_receive?: string
           cat_gender?: string
           city?: string
@@ -403,6 +406,7 @@ export interface Database {
           found_us_by?: string
           full_name?: string
           fur_color?: string
+          hidden?: boolean | null
           household_size?: number
           household_smoking?: string
           id?: number
@@ -427,6 +431,7 @@ export interface Database {
         }
         Update: {
           age?: number
+          approved?: boolean | null
           can_receive?: string
           cat_gender?: string
           city?: string
@@ -436,6 +441,7 @@ export interface Database {
           found_us_by?: string
           full_name?: string
           fur_color?: string
+          hidden?: boolean | null
           household_size?: number
           household_smoking?: string
           id?: number
