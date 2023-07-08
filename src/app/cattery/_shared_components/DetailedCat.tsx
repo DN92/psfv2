@@ -15,13 +15,10 @@ export default async function Detailedkitten({ params: { type, id } }: Params): 
     .from(`${type}`)
     .select('*')
     .eq('id', id)
+    .limit(1)
     .single();
 
-  if (!cat) {
-    return (
-      <div>fetch fail</div>
-    );
-  }
+  if (!cat) return <div>fetch fail</div>;
 
   const kitten: Kitten | null = cat.type === 'kitten' ? cat as Kitten : null;
   const adultCat: Mother | Stud | null = (cat.type === 'mother' || cat.type === 'stud') ? cat : null;

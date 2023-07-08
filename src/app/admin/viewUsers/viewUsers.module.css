@@ -11,3 +11,22 @@
   flex-grow: 1;
   text-align: center;
 }
+
+.details_wrapper {
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+}
+
+.details_row {
+  display: flex;
+  width: 70%;
+  margin: 0 22% 0 28%;
+  gap: 2rem
+}
+
+.details_row_entry {
+  flex-grow: 1;
+  flex-basis: .5;
+  text-align: left;
+}
