@@ -9,17 +9,6 @@ type Params = {
 
 export const dynamic = 'force-dynamic';
 
-// export async function generateStaticParams():Promise<Array<Params>> {
-//   const { data: usersIds, error } = await supabase.from('user_questionaire').select('id');
-
-//   if (!usersIds) return [];
-//   return usersIds.map((id) => ({
-//     params: {
-//       id: String(id),
-//     },
-//   }));
-// }
-
 export default async function UserDetails({ params: { id } }):Promise<JSX.Element> {
 
   const { data: user_questionaire, error } = await supabase
