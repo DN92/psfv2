@@ -69,6 +69,7 @@ module.exports = {
     'no-loop-func': 0,
     'no-multiple-empty-lines': ['error', { max: 2 }],
     'no-plusplus': 0,
+    'no-restricted-syntax': 0,
     'no-shadow': 0,
     'no-trailing-spaces': 1,
     'no-underscore-dangle': 0,
