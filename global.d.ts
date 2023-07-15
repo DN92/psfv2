@@ -30,6 +30,7 @@ declare global {
 
   type Database = DB;
   type Kitten = DB['public']['Tables']['kitten']['Row'];
+  type KittenInsert = DB['public']['Tables']['kitten']['Insert'];
   type Mother = DB['public']['Tables']['mother']['Row'];
   type Stud = DB['public']['Tables']['stud']['Row'];
   type Application = DB['public']['Tables']['application']['Row'];

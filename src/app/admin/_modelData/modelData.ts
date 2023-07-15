@@ -14,7 +14,7 @@ const myConfig = {
   ],
   // end last comment
   furColorsAdmin: [
-    'No Preference',
+    '',
     'White',
     'Silver',
     'Gold',
@@ -36,7 +36,7 @@ const myConfig = {
     'Blue Colorpoint',
   ],
   eyeColors: [
-    'No Preference',
+    '',
     'Green',
     'Blue',
     'Yellow',
@@ -50,7 +50,6 @@ const myConfig = {
     'Yellow',
     'Copper',
     'Odd',
-    // 'No Preference'
   ],
 
   //  for public file serving
@@ -66,7 +65,7 @@ const myConfig = {
 
   // most important feature (of product - cat)
   mifOptions: [
-    'No Preference',
+    '',
     'Health',
     'Appearance',
     'Show Quality',
@@ -84,12 +83,12 @@ const myConfig = {
     'Available',
   ],
   earOptions: [
-    'No Preference',
+    '',
     'Fold',
     'Straight',
   ],
   genderOptions: [
-    'No Preference',
+    '',
     'Boy',
     'Girl',
   ],
