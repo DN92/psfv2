@@ -4,7 +4,7 @@ export type Json =
   | boolean
   | null
   | { [key: string]: Json | undefined }
-  | Json[];
+  | Json[]
 
 export interface Database {
   public: {
@@ -143,7 +143,6 @@ export interface Database {
           father: string
           furColor: string
           gender: string
-          id: number
           isAdminHidden: boolean
           isHidden: boolean
           location: string
@@ -156,7 +155,7 @@ export interface Database {
           status: string
           type: string
           updatedAt: string
-          uuid_column: string
+          uuid: string
         }
         Insert: {
           breed?: string
@@ -168,7 +167,6 @@ export interface Database {
           father?: string
           furColor?: string
           gender?: string
-          id?: number
           isAdminHidden?: boolean
           isHidden?: boolean
           location?: string
@@ -181,7 +179,7 @@ export interface Database {
           status?: string
           type?: string
           updatedAt?: string
-          uuid_column?: string
+          uuid?: string
         }
         Update: {
           breed?: string
@@ -193,7 +191,6 @@ export interface Database {
           father?: string
           furColor?: string
           gender?: string
-          id?: number
           isAdminHidden?: boolean
           isHidden?: boolean
           location?: string
@@ -206,7 +203,7 @@ export interface Database {
           status?: string
           type?: string
           updatedAt?: string
-          uuid_column?: string
+          uuid?: string
         }
         Relationships: []
       }
@@ -351,18 +348,18 @@ export interface Database {
         }
         Relationships: [
           {
-            foreignKeyName: 'user_permissions_id_fkey'
-            columns: ['id']
-            referencedRelation: 'users'
-            referencedColumns: ['id']
-          },
+            foreignKeyName: "user_permissions_id_fkey"
+            columns: ["id"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
         ]
       }
       user_questionaire: {
         Row: {
           age: number
           approved: boolean | null
-          can_receive: string
+          canreceive: string
           cat_gender: string
           city: string
           created_at: string
@@ -397,7 +394,7 @@ export interface Database {
         Insert: {
           age?: number
           approved?: boolean | null
-          can_receive?: string
+          canreceive?: string
           cat_gender?: string
           city?: string
           created_at?: string
@@ -432,7 +429,7 @@ export interface Database {
         Update: {
           age?: number
           approved?: boolean | null
-          can_receive?: string
+          canreceive?: string
           cat_gender?: string
           city?: string
           created_at?: string
@@ -466,11 +463,11 @@ export interface Database {
         }
         Relationships: [
           {
-            foreignKeyName: 'user_questionaire_user_id_fkey'
-            columns: ['user_id']
-            referencedRelation: 'users'
-            referencedColumns: ['id']
-          },
+            foreignKeyName: "user_questionaire_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
         ]
       }
     }

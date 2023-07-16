@@ -28,7 +28,7 @@ export default async function Kittens(): Promise<JSX.Element> {
       <section className={`${styles.kitten_section}`}>
         {availableKittens.map((kitten: Kitten) => (
           <KittenSingleton
-            key={kitten.id}
+            key={kitten.uuid}
             kitten={kitten}
             wrapperClasses={['background100']}
           />

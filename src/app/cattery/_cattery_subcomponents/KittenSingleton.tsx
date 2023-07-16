@@ -6,14 +6,15 @@ import ReservedSpan from './ReservedSpan';
 type ComponentProps = {
   kitten: Kitten,
   wrapperClasses?: Array<string>,
+  asAdmin: boolean,
 };
 
-const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = [] }: ComponentProps) => {
+const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = [], asAdmin }: ComponentProps) => {
 
   const classesToAddToWrapper: string = wrapperClasses.map((cssClass: string) => (styles[cssClass]) ?? '').join(' ');
 
   const {
-    id,
+    uuid,
     name,
     gender,
     breed,
@@ -29,7 +30,10 @@ const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = []
   return (
     <Link
       className={`${styles.kitten_singleton_wrapper} ${classesToAddToWrapper}`}
-      href={`/cattery/kittens/detailed/kitten/${kitten.id}`}
+      href={asAdmin ?
+        `/admin/kittenUpdate/${kitten.uuid}`
+        :
+        `/cattery/kittens/detailed/kitten/${kitten.uuid}`}
     >
       <div className={`${styles.kitten_singleton_image_card}`}>
         <Image

@@ -3,36 +3,9 @@
 import supabase from '@/lib/supabaseConfig';
 import { toTitleCase } from '@/lib/functions/toTitleCase';
 import { z } from 'zod';
-import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { PostgrestError } from '@supabase/supabase-js';
-import myConfig from '../_modelData/modelData';
-
-type FormErrors = {
-  name: string,
-  breed: string,
-  gender: string,
-  mother: string,
-  father: string,
-  dob: string,
-  ears: string,
-  furColor: string,
-  eyeColor: string,
-  location: string,
-  description: string,
-  price: number | null,
-  slug: string,
-};
-
-type zError = {
-  code: string,
-  minimum: number,
-  type: string,
-  inclusive: boolean,
-  exact: boolean,
-  message: string,
-  path: string[],
-};
+import myConfig from '../../_modelData/modelData';
 
 const insertSchema = z.object({
   name: z
@@ -69,7 +42,33 @@ const insertSchema = z.object({
     .enum(['Sold', 'Reserved', 'Available', '']),
 });
 
-  type InsertSchema = z.infer<typeof insertSchema>;
+type FormErrors = {
+  name: string,
+  breed: string,
+  gender: string,
+  mother: string,
+  father: string,
+  dob: string,
+  ears: string,
+  furColor: string,
+  eyeColor: string,
+  location: string,
+  description: string,
+  price: number | null,
+  slug: string,
+};
+
+type zError = {
+  code: string,
+  minimum: number,
+  type: string,
+  inclusive: boolean,
+  exact: boolean,
+  message: string,
+  path: string[],
+};
+
+type InsertSchema = z.infer<typeof insertSchema>;
 
 export default function KittenInsert(): React.ReactNode {
 
@@ -77,21 +76,6 @@ export default function KittenInsert(): React.ReactNode {
 
   const [dams, setDams] = useState([]);
   const [studs, setStuds] = useState([]);
-  const [attemptInsert, setAttemptInsert] = useState(false);
-
-
-  useEffect(() => {
-    (async (): Promise<void> => {
-      const [res1, res2] = await Promise.all([
-        await supabase.from('mother').select('name'),
-        await supabase.from('stud').select('name'),
-      ]);
-      if (res1.data) setDams(res1.data);
-      if (res2.data) setStuds(res2.data);
-    })();
-  }, []);
-
-  const [firstFormAttempt, setFirstFormAttempt] = useState(true);
   const [formErrors, setFormErrors] = useState<Partial<FormErrors>>({
     name: '',
     breed: '',
@@ -107,6 +91,23 @@ export default function KittenInsert(): React.ReactNode {
     price: null,
     slug: '',
   });
+  const [pgresError, setPgresError] = useState('');
+
+  useEffect(() => {
+    (async (): Promise<void> => {
+      const [res1, res2] = await Promise.all([
+        await supabase.from('mother').select('name'),
+        await supabase.from('stud').select('name'),
+      ]);
+      if (res1.data) setDams(res1.data);
+      if (res2.data) setStuds(res2.data);
+    })();
+  }, []);
+
+  useEffect(() => {
+    // TODO HANDLE POSTGRES ERROR
+    console.log('postgrestError:: ', pgresError);
+  }, [pgresError]);
 
   function handleSubmit(formData: FormData):void {
 
@@ -129,14 +130,15 @@ export default function KittenInsert(): React.ReactNode {
 
     async function insertItem(item: KittenInsert): Promise<Kitten | PostgrestError> {
       console.log('attempting to insert new item:: ', item);
-      const { data, error } = await supabase.from('kitten').insert([item]).select();
+      const { data, error } = await supabase.from('kitte').insert([item]).select();
+      if (error) {
+        setPgresError(error.message ?? '');
+      }
       if (data) {
         console.log('insert success', data);
         // @ts-ignore
         return data;
       }
-      console.log('insert failure', error);
-      return error;
     }
 
     try {
@@ -156,74 +158,13 @@ export default function KittenInsert(): React.ReactNode {
 
       setFormErrors({ ...updatedErrors });
     }
-
-    // setFirstFormAttempt(false);
-
-    // const updatedErrors: FormErrors = {
-    //   // @ts-ignore next-line
-    //   name: insertSchema.shape.name.safeParse(String(formData.get('name'))).error?.issues[0]?.message ?? '',
-    //   // @ts-ignore next-line
-    //   breed: insertSchema.shape.breed.safeParse(String(formData.get('breed'))).error?.issues[0]?.message ?? '',
-    //   // @ts-ignore next-line
-    //   gender: insertSchema.shape.gender.safeParse(String(formData.get('gender'))).error?.issues[0]?.message ?? '',
-    //   // @ts-ignore next-line
-    //   mother: insertSchema.shape.mother.safeParse(toTitleCase(String(formData.get('mother')))).error?.issues[0]?.message ?? '',
-    //   // @ts-ignore next-line
-    //   father: insertSchema.shape.father.safeParse(toTitleCase(String(formData.get('father')))).error?.issues[0]?.message ?? '',
-    //   // @ts-ignore next-line
-    //   dob: insertSchema.shape.dob.safeParse(String(formData.get('dob'))).error?.issues[0]?.message ?? '',
-    //   // @ts-ignore next-line
-    //   ears: insertSchema.shape.ears.safeParse(String(formData.get('ears'))).error?.issues[0]?.message ?? '',
-    //   // @ts-ignore next-line
-    //   furColor: insertSchema.shape.furColor.safeParse(String(formData.get('furColor'))).error?.issues[0]?.message ?? '',
-    //   // @ts-ignore next-line
-    //   eyeColor: insertSchema.shape.eyeColor.safeParse(String(formData.get('eyeColor'))).error?.issues[0]?.message ?? '',
-    //   // @ts-ignore next-line
-    //   location: insertSchema.shape.location.safeParse(String(formData.get('location'))).error?.issues[0]?.message ?? '',
-    //   // @ts-ignore next-line
-    //   description: insertSchema.shape.description.safeParse(String(formData.get('description'))).error?.issues[0]?.message ?? '',
-    //   // @ts-ignore next-line
-    //   price: insertSchema.shape.price.safeParse(Number(formData.get('price') || -1)).error?.issues[0]?.message ?? '',
-    //   // @ts-ignore next-line
-    //   slug: insertSchema.shape.slug.safeParse(String(formData.get('slug'))).error?.issues[0]?.message ?? '',
-    // };
-
-    // setFormErrors(updatedErrors);
-
-
-    // let attempInsert = true;
-
-    // for (const key in formErrors) {
-    //   if (formErrors[key]) {
-    //     attempInsert = false;
-    //   }
-    // }
-
-
-    // if (attempInsert) {
-    //   insertItem(itemToInsert);
-    // }
-
   }
-
-  useEffect(() => {
-    if (attemptInsert) {
-      for (const key in formErrors) {
-        if (formErrors[key]) {
-          setAttemptInsert(false);
-          return;
-        }
-      }
-    }
-  }, [attemptInsert]);
 
   return (
     <form action={handleSubmit} autoComplete="off">
       <h3>Create A Kitten Model</h3>
       <div>
-        {
-          !firstFormAttempt && <p>{formErrors.name ?? ''}</p>
-        }
+        <p>{formErrors.name ?? ''}</p>
         <label htmlFor="catToCreateName">Name</label>
         <input
           id="catToCreateName"
@@ -233,9 +174,7 @@ export default function KittenInsert(): React.ReactNode {
         />
       </div>
       <div>
-        {
-          !firstFormAttempt && <p>{formErrors.price ?? ''}</p>
-        }
+        <p>{formErrors.price ?? ''}</p>
         <label htmlFor="kittenToCreatePrice">Price</label>
         <input
           type="number"
@@ -244,9 +183,7 @@ export default function KittenInsert(): React.ReactNode {
         />
       </div>
       <div>
-        {
-          !firstFormAttempt && <p>{formErrors.breed ?? ''}</p>
-        }
+        <p>{formErrors.breed ?? ''}</p>
         <label htmlFor="catToCreateBreed">Breed</label>
         <input
           id="catToCreateBreed"
@@ -256,9 +193,7 @@ export default function KittenInsert(): React.ReactNode {
         />
       </div>
       <div>
-        {
-          !firstFormAttempt && <p>{formErrors.gender ?? ''}</p>
-        }
+        <p>{formErrors.gender ?? ''}</p>
         <label htmlFor="kittenToCreateGender">Gender</label>
         <select
           id="kittenToCreateGender"
@@ -271,9 +206,7 @@ export default function KittenInsert(): React.ReactNode {
         </select>
       </div>
       <div>
-        {
-          !firstFormAttempt && <p>{formErrors.dob ?? ''}</p>
-        }
+        <p>{formErrors.dob ?? ''}</p>
         <label htmlFor="catToCreateDob">Date of Birth</label>
         <input
           id="catToCreateDob"
@@ -283,9 +216,7 @@ export default function KittenInsert(): React.ReactNode {
         />
       </div>
       <div>
-        {
-          !firstFormAttempt && <p>{formErrors.mother ?? ''}</p>
-        }
+        <p>{formErrors.mother ?? ''}</p>
         <label htmlFor="kittenToCreateMother">Mother</label>
         <select
           id="kittenToCreateMother"
@@ -298,9 +229,7 @@ export default function KittenInsert(): React.ReactNode {
         </select>
       </div>
       <div>
-        {
-          !firstFormAttempt && <p>{formErrors.father ?? ''}</p>
-        }
+        <p>{formErrors.father ?? ''}</p>
         <label htmlFor="kittenToCreate">Father</label>
         <select
           id="kittenToCreateFather"
@@ -313,9 +242,7 @@ export default function KittenInsert(): React.ReactNode {
         </select>
       </div>
       <div>
-        {
-          !firstFormAttempt && <p>{formErrors.ears ?? ''}</p>
-        }
+        <p>{formErrors.ears ?? ''}</p>
         <label htmlFor="catToCreate">Ears</label>
         <select
           name="ears"
@@ -327,9 +254,7 @@ export default function KittenInsert(): React.ReactNode {
         </select>
       </div>
       <div>
-        {
-          !firstFormAttempt && <p>{formErrors.furColor ?? ''}</p>
-        }
+        <p>{formErrors.furColor ?? ''}</p>
         <label htmlFor="catToCreateFur">Fur Color</label>
         <input
           id="catToCreateFur"
@@ -349,9 +274,7 @@ export default function KittenInsert(): React.ReactNode {
         </select>
       </div>
       <div>
-        {
-          !firstFormAttempt && <p>{formErrors.location ?? ''}</p>
-        }
+        <p>{formErrors.location ?? ''}</p>
         <label htmlFor="catToCreateLocation">Location</label>
         <select
           id="catToCreateLocation"
@@ -364,16 +287,12 @@ export default function KittenInsert(): React.ReactNode {
         </select>
       </div>
       <div>
-        {
-          !firstFormAttempt && <p>{formErrors.description ?? ''}</p>
-        }
+        <p>{formErrors.description ?? ''}</p>
         <label htmlFor="catToCreateDescription">Description</label>
         <textarea id="catToCreateDescription" name="description" cols={50} rows={8} placeholder="Description" />
       </div>
       <div>
-        {
-          !firstFormAttempt && <p>{formErrors.slug ?? ''}</p>
-        }
+        <p>{formErrors.slug ?? ''}</p>
         <label htmlFor="catToCreateSlug">Seo Slug</label>
         <input
           id="catToCreateName"

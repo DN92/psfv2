@@ -84,6 +84,7 @@ module.exports = {
     'prefer-const': 0,
     'react/function-component-definition': 'off',
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx', 'css', 'json'] }],
+    'react/self-closing-comp': 1,
     'react/jsx-no-bind': 0,
     'react/no-array-index-key': 0,
     'react/no-unknown-property': [1, { ignore: ['cell-coor'] }],
