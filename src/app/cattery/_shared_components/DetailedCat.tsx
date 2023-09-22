@@ -9,23 +9,23 @@ type Params = {
   }
 };
 
-export default async function Detailedkitten({ params: { type, id } }: Params): Promise<JSX.Element> {
+export default async function Detailedkitten( { params: { type, id } }: Params ): Promise<JSX.Element> {
 
   const { data: cat, error } = await supabase
-    .from(`${type}`)
-    .select('*')
-    .eq('id', id)
-    .limit(1)
+    .from( `${type}` )
+    .select( '*' )
+    .eq( 'id', id )
+    .limit( 1 )
     .single();
 
-  if (!cat) return <div>fetch fail</div>;
+  if ( !cat ) return <div>fetch fail</div>;
 
   const kitten: Kitten | null = cat.type === 'kitten' ? cat as Kitten : null;
-  const adultCat: Mother | Stud | null = (cat.type === 'mother' || cat.type === 'stud') ? cat : null;
+  const adultCat: Mother | Stud | null = ( cat.type === 'mother' || cat.type === 'stud' ) ? cat : null;
 
   let descriptionSection: JSX.Element;
 
-  if (kitten) {
+  if ( kitten ) {
     descriptionSection = (
       <section className={styles.animal_description}>
         des
@@ -42,7 +42,7 @@ export default async function Detailedkitten({ params: { type, id } }: Params): 
       </section>
     );
   }
-  if (adultCat) {
+  if ( adultCat ) {
     descriptionSection = (
       <section>
         <h3>{adultCat.name}</h3>

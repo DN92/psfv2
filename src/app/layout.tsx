@@ -9,12 +9,12 @@ type RootLayoutProps = {
   children: React.ReactNode;
 };
 
-const cinzel: NextFont = Cinzel({
+const cinzel: NextFont = Cinzel( {
   subsets: ['latin'],
   display: 'swap',
   style: ['normal'],
   weight: ['400', '500', '700'],
-});
+} );
 
 export const metadata = {
   title: 'Create Next App',
@@ -22,7 +22,7 @@ export const metadata = {
 };
 
 
-export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
+export default function RootLayout( { children }: RootLayoutProps ): JSX.Element {
   return (
     <html lang="en">
       <body className={cinzel.className}>

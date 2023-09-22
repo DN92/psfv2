@@ -7,10 +7,10 @@ interface ComponentProps {
   cssClasses?: Array<string>,
 }
 
-const CatteryMenuSelectionSingle: React.FC<ComponentProps> = ({ href, name, cssClasses = [] }: ComponentProps) => {
-  const secondChildCssClasses: string = cssClasses.map((cssClass: string) => {
+const CatteryMenuSelectionSingle: React.FC<ComponentProps> = ( { href, name, cssClasses = [] }: ComponentProps ) => {
+  const secondChildCssClasses: string = cssClasses.map( ( cssClass: string ) => {
     return styles[cssClass];
-  }).join(' ');
+  } ).join( ' ' );
 
   return (
     <Link href={href}>

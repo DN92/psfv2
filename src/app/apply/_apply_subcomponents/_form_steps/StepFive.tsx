@@ -4,10 +4,10 @@ import useLocalStorage from '@/lib/hooks/useLocalStorage';
 import QuestionWrapper from '../QuestionWrapper';
 
 export default function StepFive():JSX.Element {
-  const [ownedCats, setOwnedCats] = useLocalStorage('ownedCats', '');
-  const [rehomeDetails, setRehomeDetails] = useLocalStorage('rehomeDetails', '');
-  const [declawOption, setDeclawOption] = useLocalStorage('declawOption', '');
-  const [careDetails, setCareDetails] = useLocalStorage('careDetails', '');
+  const [ownedCats, setOwnedCats] = useLocalStorage( 'ownedCats', '' );
+  const [rehomeDetails, setRehomeDetails] = useLocalStorage( 'rehomeDetails', '' );
+  const [declawOption, setDeclawOption] = useLocalStorage( 'declawOption', '' );
+  const [careDetails, setCareDetails] = useLocalStorage( 'careDetails', '' );
 
   return (
 
@@ -19,7 +19,7 @@ export default function StepFive():JSX.Element {
           <textarea
             id="ownedCats"
             value={ownedCats}
-            onChange={(e):void => setOwnedCats(e.target.value)}
+            onChange={( e ):void => setOwnedCats( e.target.value )}
             required
           />
         </div>
@@ -29,7 +29,7 @@ export default function StepFive():JSX.Element {
           <textarea
             id="rehomeDetails"
             value={rehomeDetails}
-            onChange={(e):void => setRehomeDetails(e.target.value)}
+            onChange={( e ):void => setRehomeDetails( e.target.value )}
           />
         </div>
 
@@ -41,7 +41,7 @@ export default function StepFive():JSX.Element {
               id="declawOptionYes"
               value="Yes, I would consider declawing a cat."
               checked={declawOption === 'Yes, I would consider declawing a cat.'}
-              onChange={(e):void => setDeclawOption(e.target.value)}
+              onChange={( e ):void => setDeclawOption( e.target.value )}
             />
             <label htmlFor="declawOptionYes">Yes</label>
           </div>
@@ -51,7 +51,7 @@ export default function StepFive():JSX.Element {
               id="declawOptionNo"
               value="No, I would not consider declawing a cat."
               checked={declawOption === 'No, I would not consider declawing a cat.'}
-              onChange={(e):void => setDeclawOption(e.target.value)}
+              onChange={( e ):void => setDeclawOption( e.target.value )}
             />
             <label htmlFor="declawOptionNo">No</label>
           </div>
@@ -61,7 +61,7 @@ export default function StepFive():JSX.Element {
               id="declawOptionUnsure"
               value="I’m not sure, I would like more information about it."
               checked={declawOption === 'I’m not sure, I would like more information about it.'}
-              onChange={(e):void => setDeclawOption(e.target.value)}
+              onChange={( e ):void => setDeclawOption( e.target.value )}
             />
             <label htmlFor="declawOptionUnsure">I am not sure</label>
           </div>
@@ -72,7 +72,7 @@ export default function StepFive():JSX.Element {
           <textarea
             id="careDetails"
             value={careDetails}
-            onChange={(e):void => setCareDetails(e.target.value)}
+            onChange={( e ):void => setCareDetails( e.target.value )}
             required
           />
         </div>

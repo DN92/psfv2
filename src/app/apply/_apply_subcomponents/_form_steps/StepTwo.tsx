@@ -5,9 +5,9 @@ import QuestionWrapper from '../QuestionWrapper';
 
 export default function StepTwo():JSX.Element {
 
-  const [gender, setGender] = useLocalStorage('gender', 'No Preference');
-  const [coatColors, setCoatColors] = useLocalStorage('coatColors', '');
-  const [earType, setEarType] = useLocalStorage('earType', 'No Preference');
+  const [gender, setGender] = useLocalStorage( 'gender', 'No Preference' );
+  const [coatColors, setCoatColors] = useLocalStorage( 'coatColors', '' );
+  const [earType, setEarType] = useLocalStorage( 'earType', 'No Preference' );
 
   return (
     <QuestionWrapper>
@@ -22,7 +22,7 @@ export default function StepTwo():JSX.Element {
                 name="gender"
                 value="Male"
                 checked={gender === 'Male'}
-                onChange={(e): void => setGender(e.target.value)}
+                onChange={( e ): void => setGender( e.target.value )}
               />
               Male
             </label>
@@ -32,7 +32,7 @@ export default function StepTwo():JSX.Element {
                 name="gender"
                 value="Female"
                 checked={gender === 'Female'}
-                onChange={(e): void => setGender(e.target.value)}
+                onChange={( e ): void => setGender( e.target.value )}
               />
               Female
             </label>
@@ -42,7 +42,7 @@ export default function StepTwo():JSX.Element {
                 name="gender"
                 value="No Preference"
                 checked={gender === 'No Preference'}
-                onChange={(e): void => setGender(e.target.value)}
+                onChange={( e ): void => setGender( e.target.value )}
               />
               No Preference
             </label>
@@ -53,7 +53,7 @@ export default function StepTwo():JSX.Element {
           <textarea
             id="coatColors"
             value={coatColors}
-            onChange={(e): void => setCoatColors(e.target.value)}
+            onChange={( e ): void => setCoatColors( e.target.value )}
           />
         </div>
         <div>
@@ -65,7 +65,7 @@ export default function StepTwo():JSX.Element {
                 name="earType"
                 value="Folded"
                 checked={earType === 'Folded'}
-                onChange={(e): void => setEarType(e.target.value)}
+                onChange={( e ): void => setEarType( e.target.value )}
               />
               Folded
             </label>
@@ -75,7 +75,7 @@ export default function StepTwo():JSX.Element {
                 name="earType"
                 value="Straight"
                 checked={earType === 'Straight'}
-                onChange={(e): void => setEarType(e.target.value)}
+                onChange={( e ): void => setEarType( e.target.value )}
               />
               Straight
             </label>
@@ -85,7 +85,7 @@ export default function StepTwo():JSX.Element {
                 name="earType"
                 value="No Preference"
                 checked={earType === 'No Preference'}
-                onChange={(e): void => setEarType(e.target.value)}
+                onChange={( e ): void => setEarType( e.target.value )}
               />
               No Preference
             </label>

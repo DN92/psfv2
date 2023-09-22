@@ -10,19 +10,19 @@ type ComponentProps = {
   children: ReactNode,
 };
 
-export default function UserNavItem({ src, alt, children }: ComponentProps): JSX.Element {
+export default function UserNavItem( { src, alt, children }: ComponentProps ): JSX.Element {
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState( false );
 
   return (
     <li
       className={styles.header_icon_nav_li}
-      onMouseLeave={():void => setOpen(false)}
+      onMouseLeave={():void => setOpen( false )}
     >
       <button
         className={styles.portrait_card}
         type="button"
-        onClick={(): void => setOpen((prev) => !prev)}
+        onClick={(): void => setOpen( ( prev ) => !prev )}
       >
         <Image fill src={src} alt={alt} />
       </button>

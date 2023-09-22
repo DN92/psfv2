@@ -5,12 +5,12 @@ import QuestionWrapper from '../QuestionWrapper';
 
 export default function StepFour():JSX.Element {
 
-  const [peopleCount, setPeopleCount] = useLocalStorage('peopleCount', '');
-  const [homeOwnership, setHomeOwnership] = useLocalStorage('homeOwnership', '');
-  const [allowPets, setAllowPets] = useLocalStorage('allowPets', '');
-  const [petRestrictions, setPetRestrictions] = useLocalStorage('petRestrictions', '');
-  const [smoking, setSmoking] = useLocalStorage('smoking', '');
-  const [otherPets, setOtherPets] = useLocalStorage('otherPets', '');
+  const [peopleCount, setPeopleCount] = useLocalStorage( 'peopleCount', '' );
+  const [homeOwnership, setHomeOwnership] = useLocalStorage( 'homeOwnership', '' );
+  const [allowPets, setAllowPets] = useLocalStorage( 'allowPets', '' );
+  const [petRestrictions, setPetRestrictions] = useLocalStorage( 'petRestrictions', '' );
+  const [smoking, setSmoking] = useLocalStorage( 'smoking', '' );
+  const [otherPets, setOtherPets] = useLocalStorage( 'otherPets', '' );
 
   return (
     <QuestionWrapper>
@@ -21,7 +21,7 @@ export default function StepFour():JSX.Element {
           <input
             type="number"
             value={peopleCount}
-            onChange={(e):void => setPeopleCount(e.target.value)}
+            onChange={( e ):void => setPeopleCount( e.target.value )}
             required
           />
         </label>
@@ -30,7 +30,7 @@ export default function StepFour():JSX.Element {
           Do you own or rent your home?
           <select
             value={homeOwnership}
-            onChange={(e):void => setHomeOwnership(e.target.value)}
+            onChange={( e ):void => setHomeOwnership( e.target.value )}
             required
           >
             <option value="">Select</option>
@@ -47,7 +47,7 @@ export default function StepFour():JSX.Element {
                 type="checkbox"
                 value="yes"
                 checked={allowPets === 'yes'}
-                onChange={(e):void => setAllowPets(e.target.checked ? 'yes' : '')}
+                onChange={( e ):void => setAllowPets( e.target.checked ? 'yes' : '' )}
               />
               Yes
             </label>
@@ -56,7 +56,7 @@ export default function StepFour():JSX.Element {
                 type="checkbox"
                 value="no"
                 checked={allowPets === 'no'}
-                onChange={(e):void => setAllowPets(e.target.checked ? 'no' : '')}
+                onChange={( e ):void => setAllowPets( e.target.checked ? 'no' : '' )}
               />
               No
             </label>
@@ -68,7 +68,7 @@ export default function StepFour():JSX.Element {
           <input
             type="checkbox"
             checked={petRestrictions === 'yes'}
-            onChange={(e):void => setPetRestrictions(e.target.checked ? 'yes' : '')}
+            onChange={( e ):void => setPetRestrictions( e.target.checked ? 'yes' : '' )}
           />
           Yes
         </label>
@@ -81,7 +81,7 @@ export default function StepFour():JSX.Element {
                 type="checkbox"
                 value="yes"
                 checked={smoking === 'yes'}
-                onChange={(e):void => setSmoking(e.target.checked ? 'yes' : '')}
+                onChange={( e ):void => setSmoking( e.target.checked ? 'yes' : '' )}
               />
               Yes
             </label>
@@ -90,7 +90,7 @@ export default function StepFour():JSX.Element {
                 type="checkbox"
                 value="no"
                 checked={smoking === 'no'}
-                onChange={(e):void => setSmoking(e.target.checked ? 'no' : '')}
+                onChange={( e ):void => setSmoking( e.target.checked ? 'no' : '' )}
               />
               No
             </label>
@@ -101,7 +101,7 @@ export default function StepFour():JSX.Element {
           Do you currently have any other pets? If yes, please provide details.
           <textarea
             value={otherPets}
-            onChange={(e):void => setOtherPets(e.target.value)}
+            onChange={( e ):void => setOtherPets( e.target.value )}
           />
         </label>
 

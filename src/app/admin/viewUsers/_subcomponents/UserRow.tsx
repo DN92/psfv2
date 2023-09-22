@@ -1,13 +1,15 @@
 import Link from 'next/link';
 import styles from '../viewUsers.module.css';
 
+
 type ComponentProps = {
   user: UserQ
 };
 
-export default async function UserRow({ user }: ComponentProps): Promise<JSX.Element> {
+export default async function UserRow( { user }: ComponentProps ): Promise<JSX.Element> {
 
   const { id, full_name, email, approved, created_at } = user;
+
   return (
     <div className={styles.user_row_wrapper}>
       <Link href={`/admin/viewUsers/${id}/userDetails`}>VIEW</Link>

@@ -4,41 +4,41 @@ import { useState, ChangeEvent, FormEvent, FormEventHandler, ChangeEventHandler 
 import styles from '../contact.module.css';
 
 export default function ContactUsForm(): JSX.Element {
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [formError, setFormError] = useState('');
+  const [name, setName] = useState( '' );
+  const [phone, setPhone] = useState( '' );
+  const [email, setEmail] = useState( '' );
+  const [message, setMessage] = useState( '' );
+  const [formError, setFormError] = useState( '' );
 
-  const handleNameChange: ChangeEventHandler<HTMLInputElement> = (event: ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
+  const handleNameChange: ChangeEventHandler<HTMLInputElement> = ( event: ChangeEvent<HTMLInputElement> ) => {
+    setName( event.target.value );
   };
 
-  const handlePhoneChange: ChangeEventHandler<HTMLInputElement> = (event: ChangeEvent<HTMLInputElement>) => {
-    setPhone(event.target.value);
+  const handlePhoneChange: ChangeEventHandler<HTMLInputElement> = ( event: ChangeEvent<HTMLInputElement> ) => {
+    setPhone( event.target.value );
   };
 
-  const handleEmailChange: ChangeEventHandler<HTMLInputElement> = (event: ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
+  const handleEmailChange: ChangeEventHandler<HTMLInputElement> = ( event: ChangeEvent<HTMLInputElement> ) => {
+    setEmail( event.target.value );
   };
 
-  const handleMessageChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(event.target.value);
+  const handleMessageChange: React.ChangeEventHandler<HTMLTextAreaElement> = ( event: ChangeEvent<HTMLTextAreaElement> ) => {
+    setMessage( event.target.value );
   };
 
   const resetForm: () => void = () => {
-    setName('');
-    setPhone('');
-    setEmail('');
-    setMessage('');
-    setFormError('');
+    setName( '' );
+    setPhone( '' );
+    setEmail( '' );
+    setMessage( '' );
+    setFormError( '' );
   };
 
-  const handleSubmit: FormEventHandler<HTMLFormElement> = (event: FormEvent<HTMLFormElement>):void => {
+  const handleSubmit: FormEventHandler<HTMLFormElement> = ( event: FormEvent<HTMLFormElement> ):void => {
     event.preventDefault();
 
-    if (!name || !phone || !email || !message) {
-      setFormError('Please fill in all fields.');
+    if ( !name || !phone || !email || !message ) {
+      setFormError( 'Please fill in all fields.' );
       return;
     }
 

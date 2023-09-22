@@ -5,15 +5,15 @@ type ComponenetProps = {
   children: React.ReactNode
 };
 
-export default function ScrollButton({ elementId, children }: ComponenetProps):JSX.Element {
+export default function ScrollButton( { elementId, children }: ComponenetProps ):JSX.Element {
   function handleClick():void {
-    const element = document.getElementById(elementId);
-    if (element) {
+    const element = document.getElementById( elementId );
+    if ( element ) {
       const { offsetTop } = element;
-      window.scrollTo({
+      window.scrollTo( {
         top: offsetTop,
         behavior: 'smooth',
-      });
+      } );
     }
   }
 

@@ -1,4 +1,4 @@
-export default function QuestionWrapper({ children }:{ children: React.ReactNode }):JSX.Element {
+export default function QuestionWrapper( { children }:{ children: React.ReactNode } ):JSX.Element {
 
   return (
     <div className="">

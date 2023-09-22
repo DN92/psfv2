@@ -7,9 +7,9 @@ import type { AppRouterInstance } from 'next/dist/shared/lib/app-router-context'
 export default function LandingRedirectToHome():React.ReactNode {
   const router: AppRouterInstance = useRouter();
 
-  useEffect(() => {
-    router.push('/home');
-  }, [router]);
+  useEffect( () => {
+    router.push( '/home' );
+  }, [router] );
 
   return (
     <p>You should not be able to see this</p>

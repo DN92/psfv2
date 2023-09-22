@@ -6,13 +6,13 @@ export const dynamic = 'force-dynamic';
 
 export default async function Unathenticated(): Promise<JSX.Element> {
 
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createServerComponentClient( { cookies } );
   const { data: { session } } = await supabase.auth.getSession();
 
-  if (session) {
-    console.log('Unathenticated page recieved a user with a session:: ', session);
-    console.log('redirecting');
-    redirect('/');
+  if ( session ) {
+    console.log( 'Unathenticated page recieved a user with a session:: ', session );
+    console.log( 'redirecting' );
+    redirect( '/' );
   }
 
   return (

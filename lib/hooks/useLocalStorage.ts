@@ -1,23 +1,23 @@
 import { useState, useEffect, Dispatch } from 'react';
 
-const useLocalStorage = (key: string, defaultValue: string): [string, Dispatch<string>] => {
-  const [value, setValue] = useState(() => {
+const useLocalStorage = ( key: string, defaultValue: string ): [string, Dispatch<string>] => {
+  const [value, setValue] = useState( () => {
     let currentValue;
 
     try {
       currentValue = JSON.parse(
-        localStorage.getItem(key) || String(defaultValue),
+        localStorage.getItem( key ) || String( defaultValue ),
       );
-    } catch (error) {
+    } catch ( error ) {
       currentValue = defaultValue;
     }
 
     return currentValue;
-  });
+  } );
 
-  useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value));
-  }, [value, key]);
+  useEffect( () => {
+    localStorage.setItem( key, JSON.stringify( value ) );
+  }, [value, key] );
 
   return [value, setValue];
 };

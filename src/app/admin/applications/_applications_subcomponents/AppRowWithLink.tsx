@@ -7,9 +7,9 @@ type ComponentProps = {
   createdAt: string,
 };
 
-export default async function ApplicantRowWithLink({ id, applicationData, createdAt }: ComponentProps):Promise<JSX.Element> {
+export default async function ApplicantRowWithLink( { id, applicationData, createdAt }: ComponentProps ):Promise<JSX.Element> {
 
-  const applicant = JSON.parse(applicationData as string);
+  const applicant = JSON.parse( applicationData as string );
   const { firstName, lastName, eMail } = applicant;
   // const keys = Object.keys(applicant).join(' ');
 

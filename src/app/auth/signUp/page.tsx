@@ -7,41 +7,41 @@ export const dynamic = 'force-dynamic';
 
 export default async function SignUp(): Promise<JSX.Element> {
 
-  async function handleSignUp(formData: FormData): Promise<void> {
+  async function handleSignUp( formData: FormData ): Promise<void> {
     'use server';
 
-    const email = String(formData.get('email'));
-    const pw = String(formData.get('password'));
-    const confirmPw = String(formData.get('confirmPW'));
+    const email = String( formData.get( 'email' ) );
+    const pw = String( formData.get( 'password' ) );
+    const confirmPw = String( formData.get( 'confirmPW' ) );
 
     function validatedInputs():boolean {
-      if (email.length < 10) return false;
-      if (pw.length < 7) return false;
-      if (confirmPw.length < 7) return false;
-      if (pw !== confirmPw) return false;
-      if (/[<>*]/.test(pw)) return false;
-      if (/[<>*]/.test(email)) return false;
+      if ( email.length < 10 ) return false;
+      if ( pw.length < 7 ) return false;
+      if ( confirmPw.length < 7 ) return false;
+      if ( pw !== confirmPw ) return false;
+      if ( /[<>*]/.test( pw ) ) return false;
+      if ( /[<>*]/.test( email ) ) return false;
       return true;
     }
 
-    if (!validatedInputs()) {
-      console.log('bad inputs');
+    if ( !validatedInputs() ) {
+      console.log( 'bad inputs' );
       return;
     }
 
-    const supabase = createServerActionClient({ cookies });
+    const supabase = createServerActionClient( { cookies } );
 
-    const { data, error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp( {
       email,
       password: pw,
       options: {
         // emailRedirectTo: `${window.location.origin}/auth/callback`,
         emailRedirectTo: 'http://localhost:3000/auth/callback',
       },
-    });
+    } );
 
-    if (data) console.log('A user has signed up :: ', email, ' + ', data);
-    if (error) console.log('Error occured during sign up:: ', error);
+    if ( data ) console.log( 'A user has signed up :: ', email, ' + ', data );
+    if ( error ) console.log( 'Error occured during sign up:: ', error );
   }
 
   return (

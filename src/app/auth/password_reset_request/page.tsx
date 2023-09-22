@@ -6,26 +6,26 @@ export const dynamic = 'force-dynamic';
 
 export default async function PasswordResetRequest():Promise<JSX.Element> {
 
-  async function handlePasswordReset(formData: FormData):Promise<void> {
+  async function handlePasswordReset( formData: FormData ):Promise<void> {
     'use server';
 
-    const email = String(formData.get('email'));
+    const email = String( formData.get( 'email' ) );
 
     function validatedInputs():boolean {
-      if (email.length < 10) return false;
-      if (/[<>*]/.test(email)) return false;
+      if ( email.length < 10 ) return false;
+      if ( /[<>*]/.test( email ) ) return false;
       return true;
     }
 
-    if (!validatedInputs()) {
-      console.log('bad inputs');
+    if ( !validatedInputs() ) {
+      console.log( 'bad inputs' );
       return;
     }
 
-    const supabase = createServerActionClient<Database>({ cookies });
-    const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+    const supabase = createServerActionClient<Database>( { cookies } );
+    const { data, error } = await supabase.auth.resetPasswordForEmail( email, {
       redirectTo: 'http://localhost:3000/auth/callback?redir=auth/reset_password',
-    });
+    } );
   }
 
   return (

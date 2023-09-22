@@ -11,19 +11,19 @@ export const dynamic = 'force-dynamic';
 
 export default async function Login(): Promise<JSX.Element> {
 
-  const handleSignIn = async (formData: FormData): Promise<void> => {
+  const handleSignIn = async ( formData: FormData ): Promise<void> => {
     'use server';
 
-    const email = String(formData.get('email'));
-    const pw = String(formData.get('pw'));
+    const email = String( formData.get( 'email' ) );
+    const pw = String( formData.get( 'pw' ) );
 
-    const supabase = createServerActionClient({ cookies });
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const supabase = createServerActionClient( { cookies } );
+    const { data, error } = await supabase.auth.signInWithPassword( {
       email: email,
       password: pw,
-    });
+    } );
 
-    console.log('logging in:: ', data);
+    console.log( 'logging in:: ', data );
   };
 
   return (

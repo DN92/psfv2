@@ -8,34 +8,34 @@ export const dynamic = 'force-dynamic';
 
 export default async function ResetPassword(): Promise<JSX.Element> {
 
-  async function handlePasswordReset(formData: FormData): Promise<void> {
+  async function handlePasswordReset( formData: FormData ): Promise<void> {
     'use server';
 
-    const pw = String(formData.get('pw'));
-    const confirmPw = String(formData.get('confirmPW'));
+    const pw = String( formData.get( 'pw' ) );
+    const confirmPw = String( formData.get( 'confirmPW' ) );
 
     function validatedInputs():boolean {
-      if (pw.length < 7 ||
+      if ( pw.length < 7 ||
       confirmPw.length < 7 ||
       pw !== confirmPw ||
-      /[<>*]/.test(pw)) {
+      /[<>*]/.test( pw ) ) {
         return false;
       }
       return true;
     }
 
-    if (!validatedInputs()) {
-      console.log('pw::', pw);
-      console.log('confirmed:: ', confirmPw);
-      console.log('bad inputs');
+    if ( !validatedInputs() ) {
+      console.log( 'pw::', pw );
+      console.log( 'confirmed:: ', confirmPw );
+      console.log( 'bad inputs' );
       return;
     }
 
-    const supabase = createServerActionClient<Database>({ cookies });
+    const supabase = createServerActionClient<Database>( { cookies } );
 
-    const { data, error } = await supabase.auth.updateUser({
+    const { data, error } = await supabase.auth.updateUser( {
       password: pw,
-    });
+    } );
 
   }
 

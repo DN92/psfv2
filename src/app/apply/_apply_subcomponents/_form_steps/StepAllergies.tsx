@@ -3,9 +3,9 @@ import QuestionWrapper from '../QuestionWrapper';
 
 export default function StepAllergies():JSX.Element {
 
-  const [allergicToCats, setAllergicToCats] = useLocalStorage('allergicToCats', '');
-  const [otherAllergies, setOtherAllergies] = useLocalStorage('otherAllergies', '');
-  const [allergyDetails, setAllergyDetails] = useLocalStorage('allergyDetails', '');
+  const [allergicToCats, setAllergicToCats] = useLocalStorage( 'allergicToCats', '' );
+  const [otherAllergies, setOtherAllergies] = useLocalStorage( 'otherAllergies', '' );
+  const [allergyDetails, setAllergyDetails] = useLocalStorage( 'allergyDetails', '' );
 
   return (
     <QuestionWrapper>
@@ -20,7 +20,7 @@ export default function StepAllergies():JSX.Element {
                 name="allergicToCats"
                 value="yes"
                 checked={allergicToCats === 'yes'}
-                onChange={():void => setAllergicToCats('yes')}
+                onChange={():void => setAllergicToCats( 'yes' )}
               />
               Yes
             </label>
@@ -30,7 +30,7 @@ export default function StepAllergies():JSX.Element {
                 name="allergicToCats"
                 value="no"
                 checked={!allergicToCats}
-                onChange={():void => setAllergicToCats('no')}
+                onChange={():void => setAllergicToCats( 'no' )}
               />
               No
             </label>
@@ -46,7 +46,7 @@ export default function StepAllergies():JSX.Element {
                 name="otherAllergies"
                 value="yes"
                 checked={otherAllergies === 'yes'}
-                onChange={():void => setOtherAllergies('yes')}
+                onChange={():void => setOtherAllergies( 'yes' )}
               />
               Yes
             </label>
@@ -56,7 +56,7 @@ export default function StepAllergies():JSX.Element {
                 name="otherAllergies"
                 value="no"
                 checked={otherAllergies === 'no'}
-                onChange={():void => setOtherAllergies('yes')}
+                onChange={():void => setOtherAllergies( 'yes' )}
               />
               No
             </label>
@@ -69,7 +69,7 @@ export default function StepAllergies():JSX.Element {
             <textarea
               id="allergyDetails"
               value={allergyDetails}
-              onChange={(e):void => setAllergyDetails(e.target.value)}
+              onChange={( e ):void => setAllergyDetails( e.target.value )}
             />
           </div>
         )}

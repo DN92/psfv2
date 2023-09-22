@@ -5,11 +5,11 @@ import QuestionWrapper from '../QuestionWrapper';
 
 export default function StepOne():JSX.Element {
 
-  const [fullName, setFullName] = useLocalStorage('fullName', '');
-  const [email, setEmail] = useLocalStorage('email', '');
-  const [phoneNumber, setPhoneNumber] = useLocalStorage('phoneNumber', '');
-  const [residence, setResidence] = useLocalStorage('residence', '');
-  const [age, setAge] = useLocalStorage('age', '');
+  const [fullName, setFullName] = useLocalStorage( 'fullName', '' );
+  const [email, setEmail] = useLocalStorage( 'email', '' );
+  const [phoneNumber, setPhoneNumber] = useLocalStorage( 'phoneNumber', '' );
+  const [residence, setResidence] = useLocalStorage( 'residence', '' );
+  const [age, setAge] = useLocalStorage( 'age', '' );
 
   return (
     <QuestionWrapper>
@@ -21,7 +21,7 @@ export default function StepOne():JSX.Element {
             type="text"
             id="fullName"
             value={fullName}
-            onChange={(e):void => setFullName(e.target.value)}
+            onChange={( e ):void => setFullName( e.target.value )}
           />
         </div>
         <div>
@@ -30,7 +30,7 @@ export default function StepOne():JSX.Element {
             type="email"
             id="email"
             value={email}
-            onChange={(e):void => setEmail(e.target.value)}
+            onChange={( e ):void => setEmail( e.target.value )}
           />
         </div>
         <div>
@@ -39,7 +39,7 @@ export default function StepOne():JSX.Element {
             type="tel"
             id="phoneNumber"
             value={phoneNumber}
-            onChange={(e):void => setPhoneNumber(e.target.value)}
+            onChange={( e ):void => setPhoneNumber( e.target.value )}
           />
         </div>
         <div>
@@ -48,7 +48,7 @@ export default function StepOne():JSX.Element {
             type="text"
             id="residence"
             value={residence}
-            onChange={(e):void => setResidence(e.target.value)}
+            onChange={( e ):void => setResidence( e.target.value )}
           />
         </div>
         <div>
@@ -57,7 +57,7 @@ export default function StepOne():JSX.Element {
             type="text"
             id="age"
             value={age}
-            onChange={(e):void => setAge(e.target.value)}
+            onChange={( e ):void => setAge( e.target.value )}
           />
         </div>
       </form>

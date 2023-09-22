@@ -5,21 +5,21 @@ import { ChangeEvent } from 'react';
 import QuestionWrapper from '../QuestionWrapper';
 
 export default function StepSix(): JSX.Element {
-  const [traits, setTraits] = useLocalStorage('traits', '');
-  const [timing, setTiming] = useLocalStorage('timing', '');
-  const [specificKitten, setSpecificKitten] = useLocalStorage('specificKitten', '');
+  const [traits, setTraits] = useLocalStorage( 'traits', '' );
+  const [timing, setTiming] = useLocalStorage( 'timing', '' );
+  const [specificKitten, setSpecificKitten] = useLocalStorage( 'specificKitten', '' );
 
-  const handleTraitChange = (event: ChangeEvent<HTMLInputElement>): void => {
+  const handleTraitChange = ( event: ChangeEvent<HTMLInputElement> ): void => {
     const { value } = event.target;
-    setTraits(value);
+    setTraits( value );
   };
 
-  const handleTimingChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    setTiming(event.target.value);
+  const handleTimingChange = ( event: ChangeEvent<HTMLInputElement> ): void => {
+    setTiming( event.target.value );
   };
 
-  const handleSpecificKittenChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
-    setSpecificKitten(event.target.value);
+  const handleSpecificKittenChange = ( event: ChangeEvent<HTMLTextAreaElement> ): void => {
+    setSpecificKitten( event.target.value );
   };
 
   return (

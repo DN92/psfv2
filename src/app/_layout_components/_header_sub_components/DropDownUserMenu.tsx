@@ -17,28 +17,28 @@ export default function DropDownUserMenu(): JSX.Element {
   const router = useRouter();
 
   const [user, setUser] = useState<ExtendedUser>();
-  const [activeMenu, setActiveMenu] = useState('primary');
-  const [menuHeight, setMenuHeight] = useState<null | number>(null);
-  const emailRoot = user?.email?.split('@')[0] ?? 'NO CURRENT SESSION';
+  const [activeMenu, setActiveMenu] = useState( 'primary' );
+  const [menuHeight, setMenuHeight] = useState<null | number>( null );
+  const emailRoot = user?.email?.split( '@' )[0] ?? 'NO CURRENT SESSION';
 
-  function calculateHeight(domEle: HTMLElement): void {
-    setMenuHeight(domEle.offsetHeight + 40);
+  function calculateHeight( domEle: HTMLElement ): void {
+    setMenuHeight( domEle.offsetHeight + 40 );
   }
 
   async function handleSignOut():Promise<void> {
     const supabase = createClientComponentClient<Database>();
     const { error } = await supabase.auth.signOut();
     localStorage.clear();
-    router.push('/');
+    router.push( '/' );
   }
 
   function navToSignIn():void {
-    router.push('/auth');
+    router.push( '/auth' );
   }
 
-  useEffect(() => {
-    getUserFE(setUser);
-  }, []);
+  useEffect( () => {
+    getUserFE( setUser );
+  }, [] );
 
 
   // CSSTransitions seem to be incompatible with css-modules
@@ -61,7 +61,7 @@ export default function DropDownUserMenu(): JSX.Element {
             className={styles.dropdown_item}
             iconLeft={<AiOutlineUser style={{ scale: 2.2 }} />}
             iconRight={<SiLapce style={{ scale: 1.7 }} />}
-            onClick={():void => setActiveMenu('secondary')}
+            onClick={():void => setActiveMenu( 'secondary' )}
           >
             <p>{emailRoot}</p>
           </DropDownMenuOption>

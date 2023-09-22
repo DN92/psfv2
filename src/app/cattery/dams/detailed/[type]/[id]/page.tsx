@@ -10,25 +10,25 @@ type Params = {
 };
 
 export async function generateStaticParams():Promise<Array<Params>> {
-  const { data, error } = await supabase.from('mother').select('id, slug');
+  const { data, error } = await supabase.from( 'mother' ).select( 'id, slug' );
 
-  if (!data) return [];
-  return data.map((ele) => ({
+  if ( !data ) return [];
+  return data.map( ( ele ) => ( {
     params: {
       type: 'stud',
-      id: String(ele.id),
+      id: String( ele.id ),
     },
-  }));
+  } ) );
 }
 
-export default async function RedirectToUrlWithSlug({ params: { type, id } }: Params):Promise<JSX.Element> {
+export default async function RedirectToUrlWithSlug( { params: { type, id } }: Params ):Promise<JSX.Element> {
 
-  const { data, error } = await supabase.from('mother').select('id, slug').eq('id', id).single();
+  const { data, error } = await supabase.from( 'mother' ).select( 'id, slug' ).eq( 'id', id ).single();
 
-  if (!data) notFound();
+  if ( !data ) notFound();
 
-  if (id && data.slug) {
-    redirect(`/cattery/dams/detailed/${type}/${id}/${data.slug}`);
+  if ( id && data.slug ) {
+    redirect( `/cattery/dams/detailed/${type}/${id}/${data.slug}` );
   }
   return (
     <h3>REdirecting</h3>

@@ -12,21 +12,21 @@ type DropDownItemProps = {
   children: ReactNode,
 };
 
-export default function DropDownItem({
+export default function DropDownItem( {
   iconLeft,
   iconRight,
   setActiveMenu,
   goToMenu,
   children,
-}: DropDownItemProps): JSX.Element {
+}: DropDownItemProps ): JSX.Element {
 
   return (
     <button
       className={styles.dropdown_item}
       type="button"
       onClick={():void => {
-        if (!goToMenu || !setActiveMenu) return;
-        setActiveMenu(goToMenu);
+        if ( !goToMenu || !setActiveMenu ) return;
+        setActiveMenu( goToMenu );
       }}
       onMouseOver={():void => {}}
       onFocus={():void => {}}

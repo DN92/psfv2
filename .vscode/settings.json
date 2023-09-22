@@ -1,6 +1,6 @@
 {
   "workbench.tree.indent": 21,
-    "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 100
-  
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 100,
+
 }

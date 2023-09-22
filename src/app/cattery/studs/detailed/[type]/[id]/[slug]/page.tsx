@@ -8,14 +8,14 @@ type ParamsObject = {
 };
 
 export async function generateStaticParams():Promise<Array<ParamsObject>> {
-  const { data, error } = await supabase.from('stud').select('id, slug');
+  const { data, error } = await supabase.from( 'stud' ).select( 'id, slug' );
 
-  if (!data) return [];
-  return data.map((ele) => ({
+  if ( !data ) return [];
+  return data.map( ( ele ) => ( {
     type: 'stud',
-    id: String(ele.id),
+    id: String( ele.id ),
     slug: ele.slug,
-  }));
+  } ) );
 }
 
 export default DetailedCat;

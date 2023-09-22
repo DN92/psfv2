@@ -8,14 +8,14 @@ export default function Unauthorized():React.ReactNode {
 
   const router = useRouter();
 
-  useEffect(() => {
+  useEffect( () => {
     handleSignOut();
-    const timeout = setTimeout(() => {
-      router.push('/auth');
-    }, 10000);
+    const timeout = setTimeout( () => {
+      router.push( '/auth' );
+    }, 10000 );
 
-    return () => clearInterval(timeout);
-  }, [router]);
+    return () => clearInterval( timeout );
+  }, [router] );
 
   return (
     <div>

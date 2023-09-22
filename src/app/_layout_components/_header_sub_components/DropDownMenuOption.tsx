@@ -10,17 +10,17 @@ type DropDownItemProps = Partial<{
   href: string,
   iconLeft: ReactNode | null,
   iconRight: ReactNode | null,
-  onClick: (...args: []) => void,
-  onMouseOver: (...args: []) => void,
-  onMouseEnter: (...args: []) => void,
-  onMouseLeave: (...args: []) => void,
-  onFocus: (...args: []) => void,
+  onClick: ( ...args: [] ) => void,
+  onMouseOver: ( ...args: [] ) => void,
+  onMouseEnter: ( ...args: [] ) => void,
+  onMouseLeave: ( ...args: [] ) => void,
+  onFocus: ( ...args: [] ) => void,
   setActiveMenu: Dispatch<SetStateAction<string>>,
   goToMenu: string,
   children: ReactNode,
 }>;
 
-export default function DropDownMenuOption({
+export default function DropDownMenuOption( {
   type = 'button',
   href = '/',
   className = '',
@@ -32,9 +32,9 @@ export default function DropDownMenuOption({
   iconLeft = null,
   iconRight = null,
   children,
-}: DropDownItemProps): JSX.Element {
+}: DropDownItemProps ): JSX.Element {
 
-  switch (type) {
+  switch ( type ) {
     case 'link': {
       return (
         <Link

@@ -8,14 +8,14 @@ import DropDownMenuOption from './DropDownMenuOption';
 
 export default function CatsAndKittensNavigationDropDown():JSX.Element {
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState( false );
 
   function openMenu():void {
-    setOpen(true);
+    setOpen( true );
   }
 
   function closeMenu():void {
-    setOpen(false);
+    setOpen( false );
   }
 
   const iconScaler = { scale: 2.0 };

@@ -4,10 +4,10 @@ import useLocalStorage from '@/lib/hooks/useLocalStorage';
 import QuestionWrapper from '../QuestionWrapper';
 
 export default function StepSocialMedeia():JSX.Element {
-  const [heardAbout, setHeardAbout] = useLocalStorage('heardAbout', '');
-  const [reason, setReason] = useLocalStorage('reason', '');
-  const [instagram, setInstagram] = useLocalStorage('instagram', '');
-  const [facebook, setFacebook] = useLocalStorage('facebook', '');
+  const [heardAbout, setHeardAbout] = useLocalStorage( 'heardAbout', '' );
+  const [reason, setReason] = useLocalStorage( 'reason', '' );
+  const [instagram, setInstagram] = useLocalStorage( 'instagram', '' );
+  const [facebook, setFacebook] = useLocalStorage( 'facebook', '' );
 
   return (
     <QuestionWrapper>
@@ -18,7 +18,7 @@ export default function StepSocialMedeia():JSX.Element {
           <select
             id="heard-about"
             value={heardAbout}
-            onChange={(e):void => setHeardAbout(e.target.value)}
+            onChange={( e ):void => setHeardAbout( e.target.value )}
             required
           >
             {/* Options */}
@@ -30,7 +30,7 @@ export default function StepSocialMedeia():JSX.Element {
           <textarea
             id="reason"
             value={reason}
-            onChange={(e):void => setReason(e.target.value)}
+            onChange={( e ):void => setReason( e.target.value )}
             required
           />
         </div>
@@ -41,7 +41,7 @@ export default function StepSocialMedeia():JSX.Element {
             type="text"
             id="instagram"
             value={instagram}
-            onChange={(e):void => setInstagram(e.target.value)}
+            onChange={( e ):void => setInstagram( e.target.value )}
           />
         </div>
 
@@ -51,7 +51,7 @@ export default function StepSocialMedeia():JSX.Element {
             type="text"
             id="facebook"
             value={facebook}
-            onChange={(e):void => setFacebook(e.target.value)}
+            onChange={( e ):void => setFacebook( e.target.value )}
           />
         </div>
 

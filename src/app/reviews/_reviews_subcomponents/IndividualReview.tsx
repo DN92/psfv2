@@ -5,7 +5,7 @@ type ComponentProps = {
   review: string,
 };
 
-const IndividualReview: React.FC<ComponentProps> = ({ review }: ComponentProps) => {
+const IndividualReview: React.FC<ComponentProps> = ( { review }: ComponentProps ) => {
 
   return (
     <div className={styles.review__singleton_wrapper}>

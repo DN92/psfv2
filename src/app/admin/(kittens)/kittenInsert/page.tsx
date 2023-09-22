@@ -7,13 +7,13 @@ import { useState, useEffect } from 'react';
 import { PostgrestError } from '@supabase/supabase-js';
 import myConfig from '../../_modelData/modelData';
 
-const insertSchema = z.object({
+const insertSchema = z.object( {
   name: z
-    .string().trim().min(2, { message: 'Name must be at least 2 characters.' }),
+    .string().trim().min( 2, { message: 'Name must be at least 2 characters.' } ),
   breed: z
-    .string().trim().min(2, { message: 'Breed must be at least 2 characters' }),
+    .string().trim().min( 2, { message: 'Breed must be at least 2 characters' } ),
   gender: z
-    .enum(['boy', 'girl', '']),
+    .enum( ['boy', 'girl', ''] ),
   mother: z
     .string().trim().toLowerCase().optional(),
   father: z
@@ -21,26 +21,26 @@ const insertSchema = z.object({
   dob: z
     .string().trim().optional(),
   ears: z
-    .enum(['FOLD', 'STRAIGHT', 'tbd', '']),
+    .enum( ['FOLD', 'STRAIGHT', 'tbd', ''] ),
   furColor: z
     .string().trim().toLowerCase().optional()
-    .default(''),
+    .default( '' ),
   eyeColor: z
     .string().trim().toLowerCase().optional()
-    .default(''),
+    .default( '' ),
   location: z
     .string().trim().toLowerCase(),
   description: z
     .string().trim().optional()
-    .default(''),
+    .default( '' ),
   price: z
     .number().int(),
   slug: z
     .string().trim().toLowerCase().optional()
-    .default('cute-scottish-fold-kitten-from-planet-scottish-fold'),
+    .default( 'cute-scottish-fold-kitten-from-planet-scottish-fold' ),
   status: z
-    .enum(['Sold', 'Reserved', 'Available', '']),
-});
+    .enum( ['Sold', 'Reserved', 'Available', ''] ),
+} );
 
 type FormErrors = {
   name: string,
@@ -74,9 +74,9 @@ export default function KittenInsert(): React.ReactNode {
 
   const { genderOptions, earOptions, eyeColorsAdmin, locationOptions } = myConfig;
 
-  const [dams, setDams] = useState([]);
-  const [studs, setStuds] = useState([]);
-  const [formErrors, setFormErrors] = useState<Partial<FormErrors>>({
+  const [dams, setDams] = useState<Array<Mother>>( [] );
+  const [studs, setStuds] = useState<Array<Stud>>( [] );
+  const [formErrors, setFormErrors] = useState<Partial<FormErrors>>( {
     name: '',
     breed: '',
     gender: '',
@@ -90,73 +90,78 @@ export default function KittenInsert(): React.ReactNode {
     description: '',
     price: null,
     slug: '',
-  });
-  const [pgresError, setPgresError] = useState('');
+  } );
+  const [pgresError, setPgresError] = useState( '' );
 
-  useEffect(() => {
-    (async (): Promise<void> => {
-      const [res1, res2] = await Promise.all([
-        await supabase.from('mother').select('name'),
-        await supabase.from('stud').select('name'),
-      ]);
-      if (res1.data) setDams(res1.data);
-      if (res2.data) setStuds(res2.data);
-    })();
-  }, []);
+  useEffect( () => {
+    ( async (): Promise<void> => {
+      const [res1, res2] = await Promise.all( [
+        supabase.from( 'mother' ).select( 'name' ),
+        supabase.from( 'stud' ).select( 'name' ),
+      ] );
+      if ( res1?.data ) {
 
-  useEffect(() => {
+        setDams( res1.data as Mother[] );
+      }
+      if ( res2?.data ) setStuds( res2?.data as Stud[] );
+    } )();
+  }, [] );
+
+  useEffect( () => {
     // TODO HANDLE POSTGRES ERROR
-    console.log('postgrestError:: ', pgresError);
-  }, [pgresError]);
+    console.log( 'postgrestError:: ', pgresError );
+  }, [pgresError] );
 
-  function handleSubmit(formData: FormData):void {
+  function handleSubmit( formData: FormData ):void {
 
     const itemToInsert = {
-      name: String(formData.get('name')),
-      breed: String(formData.get('breed')),
-      gender: String(formData.get('gender')),
-      mother: toTitleCase(String(formData.get('mother'))),
-      father: toTitleCase(String(formData.get('father'))),
-      dob: String(formData.get('dob')),
-      ears: String(formData.get('ears')),
-      furColor: String(formData.get('furColor')),
-      eyeColor: String(formData.get('eyeColor')),
-      location: String(formData.get('location')),
-      description: String(formData.get('description')),
-      price: Number(formData.get('price')) || -1,
-      slug: String(formData.get('slug')),
+      name: String( formData.get( 'name' ) ),
+      breed: String( formData.get( 'breed' ) ),
+      gender: String( formData.get( 'gender' ) ),
+      mother: toTitleCase( String( formData.get( 'mother' ) ) ),
+      father: toTitleCase( String( formData.get( 'father' ) ) ),
+      dob: String( formData.get( 'dob' ) ),
+      ears: String( formData.get( 'ears' ) ),
+      furColor: String( formData.get( 'furColor' ) ),
+      eyeColor: String( formData.get( 'eyeColor' ) ),
+      location: String( formData.get( 'location' ) ),
+      description: String( formData.get( 'description' ) ),
+      price: Number( formData.get( 'price' ) ) || -1,
+      slug: String( formData.get( 'slug' ) ),
       status: 'Available',
     };
 
-    async function insertItem(item: KittenInsert): Promise<Kitten | PostgrestError> {
-      console.log('attempting to insert new item:: ', item);
-      const { data, error } = await supabase.from('kitte').insert([item]).select();
-      if (error) {
-        setPgresError(error.message ?? '');
+    async function insertItem( item: KittenInsert ): Promise<Kitten | PostgrestError | undefined> {
+      console.log( 'attempting to insert new item:: ', item );
+      const { data, error } = await supabase.from( 'kitten' ).insert( [item] ).select();
+      if ( error ) {
+        setPgresError( error.message ?? '' );
       }
-      if (data) {
-        console.log('insert success', data);
+      if ( data ) {
+        console.log( 'insert success', data );
         // @ts-ignore
         return data;
       }
     }
 
     try {
-      const data = insertSchema.parse(itemToInsert);
-      console.log('success:: ', data);
-      insertItem(data);
-    } catch (zodError) {
+      const data = insertSchema.parse( itemToInsert );
+      console.log( 'success:: ', data );
+      insertItem( data );
+    } catch ( zodError ) {
 
-      const updatedErrors: Partial<FormErrors> = {};
-
-      zodError.issues.forEach((error: zError) => {
+      const updatedErrors: { [key:string]:string } = {};
+      // @ts-ignore
+      if ( !zodError.issues ) return;
+      // @ts-ignore
+      zodError.issues.forEach( ( error: zError ) => {
         const key = error.path[0];
         updatedErrors[key] = error.message;
-      });
+      } );
 
-      console.log(updatedErrors);
+      console.log( updatedErrors );
 
-      setFormErrors({ ...updatedErrors });
+      setFormErrors( { ...updatedErrors } );
     }
   }
 
@@ -200,9 +205,9 @@ export default function KittenInsert(): React.ReactNode {
           name="gender"
         >
           <option value={genderOptions[0]}>Boy or Girl</option>
-          {genderOptions.map((gender, index) => (
+          {genderOptions.map( ( gender, index ) => (
             <option key={index} value={gender}>{gender}</option>
-          ))}
+          ) )}
         </select>
       </div>
       <div>
@@ -223,9 +228,9 @@ export default function KittenInsert(): React.ReactNode {
           name="mother"
         >
           <option value="">Select Dam</option>
-          {dams.map((dam, index) => (
-            <option key={index} value={dam.name}>{dam.name}</option>
-          ))}
+          {dams.map( ( dam, index ) => (
+            <option key={`${dam.name}${index}`} value={dam.name}>{dam.name}</option>
+          ) )}
         </select>
       </div>
       <div>
@@ -236,9 +241,9 @@ export default function KittenInsert(): React.ReactNode {
           name="father"
         >
           <option value="">Select Stud</option>
-          {studs.map((stud, index) => (
+          {studs.map( ( stud, index ) => (
             <option key={index} value={stud.name}>{stud.name}</option>
-          ))}
+          ) )}
         </select>
       </div>
       <div>
@@ -248,9 +253,9 @@ export default function KittenInsert(): React.ReactNode {
           name="ears"
         >
           <option value={earOptions[0]}>Fold or Straight</option>
-          {earOptions.map((ear, index) => (
+          {earOptions.map( ( ear, index ) => (
             <option key={index} value={ear}>{ear}</option>
-          ))}
+          ) )}
         </select>
       </div>
       <div>
@@ -268,9 +273,9 @@ export default function KittenInsert(): React.ReactNode {
           name="eyeColor"
         >
           <option value="">Eye Color</option>
-          {eyeColorsAdmin.map((color, index) => (
+          {eyeColorsAdmin.map( ( color, index ) => (
             <option key={index} value={color}>{color}</option>
-          ))}
+          ) )}
         </select>
       </div>
       <div>
@@ -281,9 +286,9 @@ export default function KittenInsert(): React.ReactNode {
           name="location"
           placeholder="Location"
         >
-          {locationOptions.map((loc, idx) => (
+          {locationOptions.map( ( loc, idx ) => (
             <option key={idx + loc} value={loc}>{loc}</option>
-          ))}
+          ) )}
         </select>
       </div>
       <div>

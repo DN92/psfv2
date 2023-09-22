@@ -7,9 +7,9 @@ export default function ApplyStart(): JSX.Element {
 
   const router = useRouter();
 
-  useEffect(() => {
-    router.push('/apply');
-  }, [router]);
+  useEffect( () => {
+    router.push( '/apply' );
+  }, [router] );
 
   return (
     <div>

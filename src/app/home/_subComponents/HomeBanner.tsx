@@ -7,9 +7,9 @@ type ComponenetProps = {
   message: Array<string | JSX.Element>,
   whenClosedText: string,
 };
-export default function HomeBanner({ message, whenClosedText }: ComponenetProps):JSX.Element {
+export default function HomeBanner( { message, whenClosedText }: ComponenetProps ):JSX.Element {
 
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState( true );
 
 
   return (
@@ -17,18 +17,18 @@ export default function HomeBanner({ message, whenClosedText }: ComponenetProps)
       {show && (
         <div className="box_container">
           <div className="box_buttons">
-            <button aria-label="close" type="button" onClick={():void => setShow(false)}><IoCloseSharp /></button>
+            <button aria-label="close" type="button" onClick={():void => setShow( false )}><IoCloseSharp /></button>
           </div>
           <div className="messagebox-message">
-            {message.map((msg, idx) => (
+            {message.map( ( msg, idx ) => (
               // @ts-ignore
               <p key={`${msg}${idx}`} style={{ margin: '.5rem 0 .5rem 0' }}>{msg}</p>
-            ))}
+            ) )}
           </div>
         </div>
       )}
       {!show && (
-        <button className="box_closed" type="button" onClick={():void => setShow(true)}>
+        <button className="box_closed" type="button" onClick={():void => setShow( true )}>
           {whenClosedText}
         </button>
       )}

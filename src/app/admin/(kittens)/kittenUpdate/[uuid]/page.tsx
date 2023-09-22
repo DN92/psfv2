@@ -7,13 +7,13 @@ import { useState, useEffect } from 'react';
 import { PostgrestError } from '@supabase/supabase-js';
 import myConfig from '../../../_modelData/modelData';
 
-const insertSchema = z.object({
+const insertSchema = z.object( {
   name: z
-    .string().trim().min(2, { message: 'Name must be at least 2 characters.' }),
+    .string().trim().min( 2, { message: 'Name must be at least 2 characters.' } ),
   breed: z
-    .string().trim().min(2, { message: 'Breed must be at least 2 characters' }),
+    .string().trim().min( 2, { message: 'Breed must be at least 2 characters' } ),
   gender: z
-    .enum(['boy', 'girl', '']),
+    .enum( ['boy', 'girl', ''] ),
   mother: z
     .string().trim().toLowerCase().optional(),
   father: z
@@ -21,26 +21,26 @@ const insertSchema = z.object({
   dob: z
     .string().trim().optional(),
   ears: z
-    .enum(['FOLD', 'STRAIGHT', 'tbd', '']),
+    .enum( ['FOLD', 'STRAIGHT', 'tbd', ''] ),
   furColor: z
     .string().trim().toLowerCase().optional()
-    .default(''),
+    .default( '' ),
   eyeColor: z
     .string().trim().toLowerCase().optional()
-    .default(''),
+    .default( '' ),
   location: z
     .string().trim().toLowerCase(),
   description: z
     .string().trim().optional()
-    .default(''),
+    .default( '' ),
   price: z
     .number().int(),
   slug: z
     .string().trim().toLowerCase().optional()
-    .default('cute-scottish-fold-kitten-from-planet-scottish-fold'),
+    .default( 'cute-scottish-fold-kitten-from-planet-scottish-fold' ),
   status: z
-    .enum(['Sold', 'Reserved', 'Available', '']),
-});
+    .enum( ['Sold', 'Reserved', 'Available', ''] ),
+} );
 
 type Params = {
   params: {
@@ -48,55 +48,55 @@ type Params = {
   }
 };
 
-export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNode {
+export default function KittenUpdate( { params: { uuid } }: Params ):React.ReactNode {
 
   const [kitten, setKitten] = useState<Kitten | undefined>();
-  const [pgresError, setPgresError] = useState('');
+  const [pgresError, setPgresError] = useState( '' );
 
-  const [allowChangeName, setAllowChangeName] = useState(false);
-  const [allowChangePrice, setAllowChangePrice] = useState(false);
-  const [allowChangeBreed, setAllowChangeBreed] = useState(false);
-  const [allowChangeGender, setAllowChangeGender] = useState(false);
-  const [allowChangeDob, setAllowChangeDob] = useState(false);
-  const [allowChangeMother, setAllowChangeMother] = useState(false);
-  const [allowChangeFather, setAllowChangeFather] = useState(false);
-  const [allowChangeEars, setAllowChangeEars] = useState(false);
-  const [allowChangeFurColor, setAllowChangeFurColor] = useState(false);
-  const [allowChangeLocation, setAllowChangeLocation] = useState(false);
-  const [allowChangeDescription, setAllowChangeDescription] = useState(false);
-  const [allowChangeSlug, setAllowChangeSlug] = useState(false);
-  const [allowChangeStatus, setAllowChangeStatus] = useState(false);
+  const [allowChangeName, setAllowChangeName] = useState( false );
+  const [allowChangePrice, setAllowChangePrice] = useState( false );
+  const [allowChangeBreed, setAllowChangeBreed] = useState( false );
+  const [allowChangeGender, setAllowChangeGender] = useState( false );
+  const [allowChangeDob, setAllowChangeDob] = useState( false );
+  const [allowChangeMother, setAllowChangeMother] = useState( false );
+  const [allowChangeFather, setAllowChangeFather] = useState( false );
+  const [allowChangeEars, setAllowChangeEars] = useState( false );
+  const [allowChangeFurColor, setAllowChangeFurColor] = useState( false );
+  const [allowChangeLocation, setAllowChangeLocation] = useState( false );
+  const [allowChangeDescription, setAllowChangeDescription] = useState( false );
+  const [allowChangeSlug, setAllowChangeSlug] = useState( false );
+  const [allowChangeStatus, setAllowChangeStatus] = useState( false );
 
-  const [newName, setNewName] = useState('');
-  const [newPrice, setNewPrice] = useState(-1);
-  const [newBreed, setNewBreed] = useState('');
-  const [newGender, setNewGender] = useState('');
-  const [newDob, setNewDob] = useState('');
-  const [newMother, setNewMother] = useState('');
-  const [newFather, setNewFather] = useState('');
-  const [newEars, setNewEars] = useState('');
-  const [newFurColor, setNewFurColor] = useState('');
-  const [newLocation, setNewLocation] = useState('');
-  const [newDescription, setNewDescription] = useState('');
-  const [newSlug, setNewSlug] = useState('');
-  const [newStatus, setNewStatus] = useState('');
+  const [newName, setNewName] = useState( '' );
+  const [newPrice, setNewPrice] = useState( -1 );
+  const [newBreed, setNewBreed] = useState( '' );
+  const [newGender, setNewGender] = useState( '' );
+  const [newDob, setNewDob] = useState( '' );
+  const [newMother, setNewMother] = useState( '' );
+  const [newFather, setNewFather] = useState( '' );
+  const [newEars, setNewEars] = useState( '' );
+  const [newFurColor, setNewFurColor] = useState( '' );
+  const [newLocation, setNewLocation] = useState( '' );
+  const [newDescription, setNewDescription] = useState( '' );
+  const [newSlug, setNewSlug] = useState( '' );
+  const [newStatus, setNewStatus] = useState( '' );
 
 
-  useEffect(() => {
-    (async ():Promise<void> => {
-      const { data, error } = await supabase.from('kitten').select('*').match({ uuid: uuid }).single();
-      if (error) setPgresError(error.message);
-      if (data) setKitten(data);
-    })();
-  }, [uuid]);
+  useEffect( () => {
+    ( async ():Promise<void> => {
+      const { data, error } = await supabase.from( 'kitten' ).select( '*' ).match( { uuid: uuid } ).single();
+      if ( error ) setPgresError( error.message );
+      if ( data ) setKitten( data );
+    } )();
+  }, [uuid] );
 
-  useEffect(() => {
-    console.log('item:: ', kitten);
-  }, [kitten]);
+  useEffect( () => {
+    console.log( 'item:: ', kitten );
+  }, [kitten] );
 
-  useEffect(() => {
-    console.log('fetchError:: ', pgresError);
-  }, [pgresError]);
+  useEffect( () => {
+    console.log( 'fetchError:: ', pgresError );
+  }, [pgresError] );
 
   return (
     <form action="" autoComplete="off">
@@ -108,7 +108,7 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             id="changeName"
             type="checkbox"
             checked={allowChangeName}
-            onClick={():void => setAllowChangeName((prev) => !prev)}
+            onClick={():void => setAllowChangeName( ( prev ) => !prev )}
           />
         </div>
         <div>
@@ -118,10 +118,10 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             type="text"
             name="name"
             disabled={!allowChangeName}
-            value={allowChangeName ? (newName) : (kitten?.name ?? '')}
-            onChange={(e):void => {
-              if (allowChangeName) {
-                setNewName(e.target.value);
+            value={allowChangeName ? ( newName ) : ( kitten?.name ?? '' )}
+            onChange={( e ):void => {
+              if ( allowChangeName ) {
+                setNewName( e.target.value );
               }
             }}
           />
@@ -134,7 +134,7 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             id="changePrice"
             type="checkbox"
             checked={allowChangePrice}
-            onClick={():void => setAllowChangePrice((prev) => !prev)}
+            onClick={():void => setAllowChangePrice( ( prev ) => !prev )}
           />
         </div>
         <div>
@@ -144,10 +144,10 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             type="number"
             name="price"
             disabled
-            value={allowChangePrice ? (newPrice) : (kitten?.price ?? -1)}
-            onChange={(e):void => {
-              if (allowChangePrice) {
-                setNewPrice(Number(e.target.value));
+            value={allowChangePrice ? ( newPrice ) : ( kitten?.price ?? -1 )}
+            onChange={( e ):void => {
+              if ( allowChangePrice ) {
+                setNewPrice( Number( e.target.value ) );
               }
             }}
           />
@@ -160,7 +160,7 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             id="changeBreed"
             type="checkbox"
             checked={allowChangeBreed}
-            onClick={():void => { setAllowChangeBreed((prev) => !prev); }}
+            onClick={():void => { setAllowChangeBreed( ( prev ) => !prev ); }}
           />
         </div>
         <div>
@@ -170,10 +170,10 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             type="text"
             name="breed"
             disabled={!allowChangeBreed}
-            value={allowChangeBreed ? (newBreed) : (kitten?.breed ?? '')}
-            onChange={(e):void => {
-              if (allowChangeBreed) {
-                setNewBreed((e.target.value));
+            value={allowChangeBreed ? ( newBreed ) : ( kitten?.breed ?? '' )}
+            onChange={( e ):void => {
+              if ( allowChangeBreed ) {
+                setNewBreed( ( e.target.value ) );
               }
             }}
           />
@@ -196,7 +196,7 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             id="changeDob"
             type="checkbox"
             checked={allowChangeDob}
-            onClick={():void => setAllowChangeDob((prev) => !prev)}
+            onClick={():void => setAllowChangeDob( ( prev ) => !prev )}
           />
         </div>
         <div>
@@ -206,10 +206,10 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             type="text"
             name="dob"
             disabled={allowChangeDob}
-            value={allowChangeDob ? (newDob) : (kitten?.dob ?? '')}
-            onChange={(e):void => {
-              if (allowChangeDob) {
-                setNewDob(e.target.value);
+            value={allowChangeDob ? ( newDob ) : ( kitten?.dob ?? '' )}
+            onChange={( e ):void => {
+              if ( allowChangeDob ) {
+                setNewDob( e.target.value );
               }
             }}
           />
@@ -252,7 +252,7 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             id="changeFurColor"
             type="text"
             checked={allowChangeFurColor}
-            onClick={():void => setAllowChangeFurColor((prev) => !prev)}
+            onClick={():void => setAllowChangeFurColor( ( prev ) => !prev )}
           />
         </div>
         <div>
@@ -262,10 +262,10 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             type="text"
             name="furColor"
             disabled={!allowChangeFurColor}
-            value={allowChangeFurColor ? (newFurColor) : (kitten?.furColor ?? '')}
-            onChange={(e):void => {
-              if (allowChangeFurColor) {
-                setNewFurColor(e.target.value);
+            value={allowChangeFurColor ? ( newFurColor ) : ( kitten?.furColor ?? '' )}
+            onChange={( e ):void => {
+              if ( allowChangeFurColor ) {
+                setNewFurColor( e.target.value );
               }
             }}
           />
@@ -288,7 +288,7 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             id="changeLocation"
             type="text"
             checked={allowChangeLocation}
-            onClick={():void => setAllowChangeLocation((prev) => !prev)}
+            onClick={():void => setAllowChangeLocation( ( prev ) => !prev )}
           />
         </div>
         <div>
@@ -298,10 +298,10 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             type="text"
             name="location"
             disabled={!allowChangeLocation}
-            value={allowChangeLocation ? (newLocation) : (kitten?.location ?? '')}
-            onChange={(e):void => {
-              if (allowChangeLocation) {
-                setNewLocation(e.target.value);
+            value={allowChangeLocation ? ( newLocation ) : ( kitten?.location ?? '' )}
+            onChange={( e ):void => {
+              if ( allowChangeLocation ) {
+                setNewLocation( e.target.value );
               }
             }}
           />
@@ -314,7 +314,7 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             id="changeDescription"
             type="checkbox"
             checked={allowChangeDescription}
-            onClick={():void => setAllowChangeDescription((prev) => !prev)}
+            onClick={():void => setAllowChangeDescription( ( prev ) => !prev )}
           />
         </div>
         <div>
@@ -324,10 +324,10 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             type="text"
             name="description"
             disabled={!allowChangeDescription}
-            value={allowChangeDescription ? (newDescription) : (kitten?.description ?? '')}
-            onChange={(e):void => {
-              if (allowChangeDescription) {
-                setNewDescription(e.target.value);
+            value={allowChangeDescription ? ( newDescription ) : ( kitten?.description ?? '' )}
+            onChange={( e ):void => {
+              if ( allowChangeDescription ) {
+                setNewDescription( e.target.value );
               }
             }}
           />
@@ -340,7 +340,7 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             id="changeSlug"
             type="checkbox"
             checked={allowChangeSlug}
-            onClick={():void => setAllowChangeSlug((prev) => !prev)}
+            onClick={():void => setAllowChangeSlug( ( prev ) => !prev )}
           />
         </div>
         <div>
@@ -350,10 +350,10 @@ export default function KittenUpdate({ params: { uuid } }: Params):React.ReactNo
             type="text"
             name="slug"
             disabled={!setAllowChangeSlug}
-            value={allowChangeSlug ? (newSlug) : (kitten?.slug ?? '')}
-            onChange={(e):void => {
-              if (allowChangeSlug) {
-                setNewSlug(e.target.value);
+            value={allowChangeSlug ? ( newSlug ) : ( kitten?.slug ?? '' )}
+            onChange={( e ):void => {
+              if ( allowChangeSlug ) {
+                setNewSlug( e.target.value );
               }
             }}
           />

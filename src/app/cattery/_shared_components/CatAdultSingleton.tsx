@@ -8,9 +8,9 @@ interface ComponentProps {
   wrapperClasses?: Array<string>,
 }
 
-export default function CatAdultSingleton({ adultCat, model, wrapperClasses = [] }: ComponentProps): JSX.Element {
+export default function CatAdultSingleton( { adultCat, model, wrapperClasses = [] }: ComponentProps ): JSX.Element {
 
-  const classesToAddToWrapper: string = wrapperClasses.map((cssClass: string) => (styles[cssClass]) ?? '').join(' ');
+  const classesToAddToWrapper: string = wrapperClasses.map( ( cssClass: string ) => ( styles[cssClass] ) ?? '' ).join( ' ' );
 
   const {
     id,

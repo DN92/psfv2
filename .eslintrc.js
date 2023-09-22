@@ -47,6 +47,7 @@ module.exports = {
     'arrow-body-style': 0,
     'arrow-parens': 1,
     'consistent-return': 0,
+    'comma-dangle': 0,
     'css/emptyRules': 'off',
     'import/extensions': [
       'error',
@@ -78,6 +79,7 @@ module.exports = {
     'no-useless-concat': 0,
     'no-useless-return': 1,
     'object-curly-newline': 0,
+    'object-curly-spacing': ['warn', 'always'],
     'object-shorthand': 0,
     'operator-linebreak': 0,
     'padded-blocks': 0,
@@ -90,6 +92,7 @@ module.exports = {
     'react/no-unknown-property': [1, { ignore: ['cell-coor'] }],
     'react/prop-types': 0,
     'react/require-default-props': 0,
+    'space-in-parens': ['warn', 'always'],
     semi: 1,
   },
 

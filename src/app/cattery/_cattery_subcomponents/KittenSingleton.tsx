@@ -9,9 +9,9 @@ type ComponentProps = {
   asAdmin: boolean,
 };
 
-const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = [], asAdmin }: ComponentProps) => {
+const KittenSingleton: React.FC<ComponentProps> = ( { kitten, wrapperClasses = [], asAdmin }: ComponentProps ) => {
 
-  const classesToAddToWrapper: string = wrapperClasses.map((cssClass: string) => (styles[cssClass]) ?? '').join(' ');
+  const classesToAddToWrapper: string = wrapperClasses.map( ( cssClass: string ) => ( styles[cssClass] ) ?? '' ).join( ' ' );
 
   const {
     uuid,
@@ -44,7 +44,7 @@ const KittenSingleton: React.FC<ComponentProps> = ({ kitten, wrapperClasses = []
         {kitten.status === 'Reserved' && <ReservedSpan />}
       </div>
       <div className={styles.kitten_singleton_text}>
-        {(kitten.status === 'Available' || kitten.status === 'Reserved') ? (
+        {( kitten.status === 'Available' || kitten.status === 'Reserved' ) ? (
           <>
             <p>{`Hi, I am ${name}`}</p>
             <p>{`I am a ${breed} ${gender}`}</p>

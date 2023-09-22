@@ -6,7 +6,7 @@ import styles from '../auth.module.css';
 
 export default function PasswordInputWithEyeBall():JSX.Element {
 
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState( false );
 
 
   return (
@@ -21,9 +21,9 @@ export default function PasswordInputWithEyeBall():JSX.Element {
       />
       {
         showPassword ?
-          <BsEyeFill className={styles.auth_password_toggle} onClick={():void => setShowPassword((prev) => !prev)} />
+          <BsEyeFill className={styles.auth_password_toggle} onClick={():void => setShowPassword( ( prev ) => !prev )} />
           :
-          <BsEyeSlashFill className={styles.auth_password_toggle} onClick={():void => setShowPassword((prev) => !prev)} />
+          <BsEyeSlashFill className={styles.auth_password_toggle} onClick={():void => setShowPassword( ( prev ) => !prev )} />
       }
     </div>
   );

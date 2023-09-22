@@ -9,7 +9,7 @@
     ],
     "allowJs": true,
     "skipLibCheck": false,
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "noEmit": true,

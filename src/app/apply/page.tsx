@@ -14,13 +14,13 @@ import StepSocialMedeia from './_apply_subcomponents/_form_steps/StepSocialMedia
 
 export default function Apply():JSX.Element {
 
-  const [currentStep, setCurrentStep] = useState<number>(0);
-  const [previousStep, setPreviousStep] = useState<number>(0);
-  const [userStartedForm, setUserStartedForm] = useState(true);
+  const [currentStep, setCurrentStep] = useState<number>( 0 );
+  const [previousStep, setPreviousStep] = useState<number>( 0 );
+  const [userStartedForm, setUserStartedForm] = useState( true );
 
-  function updateStepState(nextState:number):void {
-    setPreviousStep(currentStep);
-    setCurrentStep(nextState);
+  function updateStepState( nextState:number ):void {
+    setPreviousStep( currentStep );
+    setCurrentStep( nextState );
   }
 
   const allSteps = [
@@ -49,13 +49,13 @@ export default function Apply():JSX.Element {
       <div className="BUTTONS-WRAPPER">
         <button type="button">reset form</button>
         {currentStep !== 0 && (
-          <button type="button" onClick={():void => { updateStepState(currentStep - 1); }}>back</button>
+          <button type="button" onClick={():void => { updateStepState( currentStep - 1 ); }}>back</button>
         )}
         <button type="button">next</button>
         {currentStep === 0 && (
           <button
             type="button"
-            onClick={():void => { setUserStartedForm(true); updateStepState(1); }}
+            onClick={():void => { setUserStartedForm( true ); updateStepState( 1 ); }}
           >
             Begin
           </button>
