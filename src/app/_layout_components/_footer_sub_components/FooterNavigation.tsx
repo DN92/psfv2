@@ -12,8 +12,8 @@ function FooterNavigation(): ReactElement {
       </nav>
       <nav className="footer-nav footer-nav-right">
         <Link href="/apply">Apply</Link>
-        <Link href="/auth">Reviews</Link>
-        <Link href="/reviews">Login</Link>
+        <Link href="/reviews">Reviews</Link>
+        <Link href="/auth">Login</Link>
       </nav>
     </div>
   );

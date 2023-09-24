@@ -4,7 +4,7 @@ export type Json =
   | boolean
   | null
   | { [key: string]: Json | undefined }
-  | Json[];
+  | Json[]
 
 export interface Database {
   public: {
@@ -150,7 +150,6 @@ export interface Database {
           mother: string
           name: string
           price: number
-          regNum: string
           slug: string
           status: string
           type: string
@@ -174,7 +173,6 @@ export interface Database {
           mother?: string
           name?: string
           price?: number
-          regNum?: string
           slug?: string
           status?: string
           type?: string
@@ -198,7 +196,6 @@ export interface Database {
           mother?: string
           name?: string
           price?: number
-          regNum?: string
           slug?: string
           status?: string
           type?: string
@@ -348,11 +345,11 @@ export interface Database {
         }
         Relationships: [
           {
-            foreignKeyName: 'user_permissions_id_fkey'
-            columns: ['id']
-            referencedRelation: 'users'
-            referencedColumns: ['id']
-          },
+            foreignKeyName: "user_permissions_id_fkey"
+            columns: ["id"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
         ]
       }
       user_questionaire: {
@@ -463,11 +460,11 @@ export interface Database {
         }
         Relationships: [
           {
-            foreignKeyName: 'user_questionaire_user_id_fkey'
-            columns: ['user_id']
-            referencedRelation: 'users'
-            referencedColumns: ['id']
-          },
+            foreignKeyName: "user_questionaire_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
         ]
       }
     }
