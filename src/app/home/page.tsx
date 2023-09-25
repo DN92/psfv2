@@ -5,7 +5,7 @@ import ownerWith3Kittens from './_assets/ownerWith3Kittens.jpg';
 import ticaReg from './_assets/ticaReg.jpg';
 import PageScrollNavigation from './_subComponents/_page_scroll_navigation/PageScrollNavigation';
 import HomeSiteNav from './_subComponents/_homeSiteNav/HomeSiteNav';
-import WelcomeTo from './_subComponents/WelcomeTo';
+import WelcomeTo from './_subComponents/welcomeTo/WelcomeTo';
 import MyPassion from './_subComponents/MyPassion';
 import TheBreed from './_subComponents/TheBreed';
 import OurKittens from './_subComponents/OurKittens';
