@@ -14,16 +14,16 @@ export default async function Studs(): Promise<JSX.Element> {
 
   return (
     <div>
-      <h2 className={styles.h2}>Our Sires</h2>
-      <section className={styles.adult_cat_section}>
-        {studs.map( ( cat: Stud ) => (
+      <h2 className={ styles.h2 }>Our Sires</h2>
+      <section className={ styles.adult_cat_section }>
+        { studs.map( ( cat: Stud ) => (
           <CatAdultSingleton
-            key={cat.id}
-            adultCat={cat}
+            key={ cat.id }
+            adultCat={ cat }
             model="stud"
-            wrapperClasses={['background100']}
+            wrapperClasses={ ['background100'] }
           />
-        ) )}
+        ) ) }
       </section>
     </div>
   );

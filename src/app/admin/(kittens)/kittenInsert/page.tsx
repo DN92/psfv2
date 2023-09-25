@@ -166,10 +166,13 @@ export default function KittenInsert(): React.ReactNode {
   }
 
   return (
-    <form action={handleSubmit} autoComplete="off">
+    <form
+      action={ handleSubmit }
+      autoComplete="off"
+    >
       <h3>Create A Kitten Model</h3>
       <div>
-        <p>{formErrors.name ?? ''}</p>
+        <p>{ formErrors.name ?? '' }</p>
         <label htmlFor="catToCreateName">Name</label>
         <input
           id="catToCreateName"
@@ -179,7 +182,7 @@ export default function KittenInsert(): React.ReactNode {
         />
       </div>
       <div>
-        <p>{formErrors.price ?? ''}</p>
+        <p>{ formErrors.price ?? '' }</p>
         <label htmlFor="kittenToCreatePrice">Price</label>
         <input
           type="number"
@@ -188,7 +191,7 @@ export default function KittenInsert(): React.ReactNode {
         />
       </div>
       <div>
-        <p>{formErrors.breed ?? ''}</p>
+        <p>{ formErrors.breed ?? '' }</p>
         <label htmlFor="catToCreateBreed">Breed</label>
         <input
           id="catToCreateBreed"
@@ -198,20 +201,25 @@ export default function KittenInsert(): React.ReactNode {
         />
       </div>
       <div>
-        <p>{formErrors.gender ?? ''}</p>
+        <p>{ formErrors.gender ?? '' }</p>
         <label htmlFor="kittenToCreateGender">Gender</label>
         <select
           id="kittenToCreateGender"
           name="gender"
         >
-          <option value={genderOptions[0]}>Boy or Girl</option>
-          {genderOptions.map( ( gender, index ) => (
-            <option key={index} value={gender}>{gender}</option>
-          ) )}
+          <option value={ genderOptions[0] }>Boy or Girl</option>
+          { genderOptions.map( ( gender, index ) => (
+            <option
+              key={ index }
+              value={ gender }
+            >
+              { gender }
+            </option>
+          ) ) }
         </select>
       </div>
       <div>
-        <p>{formErrors.dob ?? ''}</p>
+        <p>{ formErrors.dob ?? '' }</p>
         <label htmlFor="catToCreateDob">Date of Birth</label>
         <input
           id="catToCreateDob"
@@ -221,45 +229,60 @@ export default function KittenInsert(): React.ReactNode {
         />
       </div>
       <div>
-        <p>{formErrors.mother ?? ''}</p>
+        <p>{ formErrors.mother ?? '' }</p>
         <label htmlFor="kittenToCreateMother">Mother</label>
         <select
           id="kittenToCreateMother"
           name="mother"
         >
           <option value="">Select Dam</option>
-          {dams.map( ( dam, index ) => (
-            <option key={`${dam.name}${index}`} value={dam.name}>{dam.name}</option>
-          ) )}
+          { dams.map( ( dam, index ) => (
+            <option
+              key={ `${dam.name}${index}` }
+              value={ dam.name }
+            >
+              { dam.name }
+            </option>
+          ) ) }
         </select>
       </div>
       <div>
-        <p>{formErrors.father ?? ''}</p>
+        <p>{ formErrors.father ?? '' }</p>
         <label htmlFor="kittenToCreate">Father</label>
         <select
           id="kittenToCreateFather"
           name="father"
         >
           <option value="">Select Stud</option>
-          {studs.map( ( stud, index ) => (
-            <option key={index} value={stud.name}>{stud.name}</option>
-          ) )}
+          { studs.map( ( stud, index ) => (
+            <option
+              key={ index }
+              value={ stud.name }
+            >
+              { stud.name }
+            </option>
+          ) ) }
         </select>
       </div>
       <div>
-        <p>{formErrors.ears ?? ''}</p>
+        <p>{ formErrors.ears ?? '' }</p>
         <label htmlFor="catToCreate">Ears</label>
         <select
           name="ears"
         >
-          <option value={earOptions[0]}>Fold or Straight</option>
-          {earOptions.map( ( ear, index ) => (
-            <option key={index} value={ear}>{ear}</option>
-          ) )}
+          <option value={ earOptions[0] }>Fold or Straight</option>
+          { earOptions.map( ( ear, index ) => (
+            <option
+              key={ index }
+              value={ ear }
+            >
+              { ear }
+            </option>
+          ) ) }
         </select>
       </div>
       <div>
-        <p>{formErrors.furColor ?? ''}</p>
+        <p>{ formErrors.furColor ?? '' }</p>
         <label htmlFor="catToCreateFur">Fur Color</label>
         <input
           id="catToCreateFur"
@@ -273,31 +296,47 @@ export default function KittenInsert(): React.ReactNode {
           name="eyeColor"
         >
           <option value="">Eye Color</option>
-          {eyeColorsAdmin.map( ( color, index ) => (
-            <option key={index} value={color}>{color}</option>
-          ) )}
+          { eyeColorsAdmin.map( ( color, index ) => (
+            <option
+              key={ index }
+              value={ color }
+            >
+              { color }
+            </option>
+          ) ) }
         </select>
       </div>
       <div>
-        <p>{formErrors.location ?? ''}</p>
+        <p>{ formErrors.location ?? '' }</p>
         <label htmlFor="catToCreateLocation">Location</label>
         <select
           id="catToCreateLocation"
           name="location"
           placeholder="Location"
         >
-          {locationOptions.map( ( loc, idx ) => (
-            <option key={idx + loc} value={loc}>{loc}</option>
-          ) )}
+          { locationOptions.map( ( loc, idx ) => (
+            <option
+              key={ idx + loc }
+              value={ loc }
+            >
+              { loc }
+            </option>
+          ) ) }
         </select>
       </div>
       <div>
-        <p>{formErrors.description ?? ''}</p>
+        <p>{ formErrors.description ?? '' }</p>
         <label htmlFor="catToCreateDescription">Description</label>
-        <textarea id="catToCreateDescription" name="description" cols={50} rows={8} placeholder="Description" />
+        <textarea
+          id="catToCreateDescription"
+          name="description"
+          cols={ 50 }
+          rows={ 8 }
+          placeholder="Description"
+        />
       </div>
       <div>
-        <p>{formErrors.slug ?? ''}</p>
+        <p>{ formErrors.slug ?? '' }</p>
         <label htmlFor="catToCreateSlug">Seo Slug</label>
         <input
           id="catToCreateName"
@@ -306,7 +345,12 @@ export default function KittenInsert(): React.ReactNode {
         />
       </div>
       <div className="buttonsWrapper">
-        <button className="buttonStyle2" type="submit">Create</button>
+        <button
+          className="buttonStyle2"
+          type="submit"
+        >
+          Create
+        </button>
       </div>
     </form>
 

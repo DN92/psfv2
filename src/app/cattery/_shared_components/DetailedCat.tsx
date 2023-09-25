@@ -27,17 +27,17 @@ export default async function Detailedkitten( { params: { type, id } }: Params )
 
   if ( kitten ) {
     descriptionSection = (
-      <section className={styles.animal_description}>
+      <section className={ styles.animal_description }>
         des
-        <h3>{kitten.name}</h3>
-        <p>{`Date of Birth ${kitten.dob}`}</p>
-        <p>{`A ${kitten.furColor} ${kitten.gender}`}</p>
-        <p>{`with ${kitten.eyeColor} eyes`}</p>
-        <p>{`STATUS: ${kitten.status}`}</p>
-        <p>{`$${kitten.price}`}</p>
+        <h3>{ kitten.name }</h3>
+        <p>{ `Date of Birth ${kitten.dob}` }</p>
+        <p>{ `A ${kitten.furColor} ${kitten.gender}` }</p>
+        <p>{ `with ${kitten.eyeColor} eyes` }</p>
+        <p>{ `STATUS: ${kitten.status}` }</p>
+        <p>{ `$${kitten.price}` }</p>
         <h4>Parents</h4>
-        <p>{`Dam: ${kitten.mother}`}</p>
-        <p>{`Sire: ${kitten.father}`}</p>
+        <p>{ `Dam: ${kitten.mother}` }</p>
+        <p>{ `Sire: ${kitten.father}` }</p>
         <p />
       </section>
     );
@@ -45,37 +45,58 @@ export default async function Detailedkitten( { params: { type, id } }: Params )
   if ( adultCat ) {
     descriptionSection = (
       <section>
-        <h3>{adultCat.name}</h3>
-        {adultCat.dob && <p>{`Date of Birth ${adultCat.dob}`}</p>}
-        <p>{`A ${adultCat.furColor}`}</p>
-        <p>{`${adultCat.ears} Ears`}</p>
-        <p>{`${adultCat.furColor} Fur`}</p>
-        <p>{`Description: ${adultCat.description}`}</p>
+        <h3>{ adultCat.name }</h3>
+        { adultCat.dob && <p>{ `Date of Birth ${adultCat.dob}` }</p> }
+        <p>{ `A ${adultCat.furColor}` }</p>
+        <p>{ `${adultCat.ears} Ears` }</p>
+        <p>{ `${adultCat.furColor} Fur` }</p>
+        <p>{ `Description: ${adultCat.description}` }</p>
       </section>
     );
   }
 
 
   return (
-    <div className={styles.page_wrapper}>
-      <div className={styles.page_left}>
-        <div className={styles.card}>
+    <div className={ styles.page_wrapper }>
+      <div className={ styles.page_left }>
+        <div className={ styles.card }>
           card
-          {/* <Image src={kitten.mainImageSrcValue} alt="kitty picture" /> */}
+          { /* <Image src={kitten.mainImageSrcValue} alt="kitty picture" /> */ }
         </div>
         { kitten?.type === 'kitten' && (
-          <div className={styles.carousel}>
+          <div className={ styles.carousel }>
             carousel
           </div>
-        )}
+        ) }
       </div>
-      <div className={styles.page_right}>
-        {descriptionSection}
+      <div className={ styles.page_right }>
+        { descriptionSection }
         <nav>
-          <ul className={styles.page_navigation}>
-            <li className={styles.navigation_button_wrapper}><button type="button" className="button_style1"><Link href="/kittentery/kittens">BACK</Link></button></li>
-            <li className={styles.navigation_button_wrapper}><button type="button" className="button_style1"><Link href="/apply">APPLY</Link></button></li>
-            <li className={styles.navigation_button_wrapper}><button type="button" className="button_style1"><Link href="/contact">CONTACT US</Link></button></li>
+          <ul className={ styles.page_navigation }>
+            <li className={ styles.navigation_button_wrapper }>
+              <button
+                type="button"
+                className="button_style1"
+              >
+                <Link href="/kittentery/kittens">BACK</Link>
+              </button>
+            </li>
+            <li className={ styles.navigation_button_wrapper }>
+              <button
+                type="button"
+                className="button_style1"
+              >
+                <Link href="/apply">APPLY</Link>
+              </button>
+            </li>
+            <li className={ styles.navigation_button_wrapper }>
+              <button
+                type="button"
+                className="button_style1"
+              >
+                <Link href="/contact">CONTACT US</Link>
+              </button>
+            </li>
           </ul>
         </nav>
       </div>

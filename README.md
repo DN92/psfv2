@@ -16,9 +16,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## SUPABASE TYPE GENERATION STEPS
 
 1. login to supabase CLI
-    - run 
+    - run
         npx supabase login
     - get login token from provided link and log in
-    - run 
+    - run
         run supabase command with project id and file destination
         npx supabase gen types typescript --project-id jfbyqhzzothodtxblxdi > lib/database.types.ts^C
+
+## CLI COMMANDS
+
+    -lint and fix errors on all files if able
+        npx eslint "src/**/*.{js,jsx,ts,tsx}" --fix

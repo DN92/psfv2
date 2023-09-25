@@ -51,43 +51,75 @@ export default function ContactUsForm(): JSX.Element {
   };
 
   return (
-    <div className={styles.contact_right}>
-      <form className={styles.contact_form} onSubmit={handleSubmit}>
-        <div className={styles.contact_form_group}>
+    <div className={ styles.contact_right }>
+      <form
+        className={ styles.contact_form }
+        onSubmit={ handleSubmit }
+      >
+        <div className={ styles.contact_form_group }>
           <label htmlFor="name">
             Full Name:
           </label>
-          <input id="name" type="text" value={name} onChange={handleNameChange} />
+          <input
+            id="name"
+            type="text"
+            value={ name }
+            onChange={ handleNameChange }
+          />
         </div>
 
-        <div className={styles.contact_form_group}>
+        <div className={ styles.contact_form_group }>
           <label htmlFor="phone-number">
             Phone Number:
           </label>
-          <input id="phone-number" type="text" value={phone} onChange={handlePhoneChange} />
+          <input
+            id="phone-number"
+            type="text"
+            value={ phone }
+            onChange={ handlePhoneChange }
+          />
         </div>
 
-        <div className={styles.contact_form_group}>
+        <div className={ styles.contact_form_group }>
           <label htmlFor="email">
             Email:
           </label>
-          <input id="email" type="email" value={email} onChange={handleEmailChange} />
+          <input
+            id="email"
+            type="email"
+            value={ email }
+            onChange={ handleEmailChange }
+          />
         </div>
 
-        <div className={styles.contact_form_group}>
+        <div className={ styles.contact_form_group }>
           <label htmlFor="message">
             Message:
           </label>
-          <textarea id="message" value={message} onChange={handleMessageChange} />
+          <textarea
+            id="message"
+            value={ message }
+            onChange={ handleMessageChange }
+          />
         </div>
 
-        {formError && <div className={styles.error}>{formError}</div>}
-        <div className={styles.form_button_container}>
-          <div className={styles.form_button_container}>
-            <button className={styles.form_button} type="button">Reset</button>
+        { formError && <div className={ styles.error }>{ formError }</div> }
+        <div className={ styles.form_button_container }>
+          <div className={ styles.form_button_container }>
+            <button
+              className={ styles.form_button }
+              type="button"
+            >
+              Reset
+            </button>
           </div>
-          <div className={styles.form_button_container}>
-            <button className={styles.form_button} type="submit">Submit</button>
+          <div className={ styles.form_button_container }>
+            <button
+              className={ styles.form_button }
+              type="submit"
+            >
+              Submit
+            </button>
           </div>
         </div>
       </form>

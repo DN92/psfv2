@@ -38,28 +38,33 @@ export default function Apply():JSX.Element {
   return (
     <div>
       <ProgressBar
-        currentStep={currentStep}
-        updateStepState={updateStepState}
-        userStartedForm={userStartedForm}
-        slots={8}
+        currentStep={ currentStep }
+        updateStepState={ updateStepState }
+        userStartedForm={ userStartedForm }
+        slots={ 8 }
       />
       <div className="QUESTIONS_WRAPPER">
-        {currentStep < allSteps.length && allSteps[currentStep]}
+        { currentStep < allSteps.length && allSteps[currentStep] }
       </div>
       <div className="BUTTONS-WRAPPER">
         <button type="button">reset form</button>
-        {currentStep !== 0 && (
-          <button type="button" onClick={():void => { updateStepState( currentStep - 1 ); }}>back</button>
-        )}
-        <button type="button">next</button>
-        {currentStep === 0 && (
+        { currentStep !== 0 && (
           <button
             type="button"
-            onClick={():void => { setUserStartedForm( true ); updateStepState( 1 ); }}
+            onClick={ ():void => { updateStepState( currentStep - 1 ); } }
+          >
+            back
+          </button>
+        ) }
+        <button type="button">next</button>
+        { currentStep === 0 && (
+          <button
+            type="button"
+            onClick={ ():void => { setUserStartedForm( true ); updateStepState( 1 ); } }
           >
             Begin
           </button>
-        )}
+        ) }
       </div>
     </div>
   );

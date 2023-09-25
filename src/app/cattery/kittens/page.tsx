@@ -24,25 +24,25 @@ export default async function Kittens(): Promise<JSX.Element> {
 
   return (
     <div>
-      <h2 className={styles.h2}>Available Kittens</h2>
-      <section className={`${styles.kitten_section}`}>
-        {availableKittens.map( ( kitten: Kitten ) => (
+      <h2 className={ styles.h2 }>Available Kittens</h2>
+      <section className={ `${styles.kitten_section}` }>
+        { availableKittens.map( ( kitten: Kitten ) => (
           <KittenSingleton
-            key={kitten.uuid}
-            kitten={kitten}
-            wrapperClasses={['background100']}
+            key={ kitten.uuid }
+            kitten={ kitten }
+            wrapperClasses={ ['background100'] }
           />
-        ) )}
+        ) ) }
       </section>
-      <h2 className={styles.h2}>Sold Kittens</h2>
-      <section className={styles.kitten_section}>
-        {soldKittens.map( ( kitten: Kitten ) => (
+      <h2 className={ styles.h2 }>Sold Kittens</h2>
+      <section className={ styles.kitten_section }>
+        { soldKittens.map( ( kitten: Kitten ) => (
           <KittenSingleton
-            key={kitten.id}
-            kitten={kitten}
-            wrapperClasses={['background500']}
+            key={ kitten.id }
+            kitten={ kitten }
+            wrapperClasses={ ['background500'] }
           />
-        ) )}
+        ) ) }
       </section>
     </div>
   );

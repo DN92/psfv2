@@ -6,8 +6,15 @@ const KingpinCard: React.FC = (): ReactElement => {
 
   return (
     <div className="kingpin-card">
-      <a href="https://catkingpin.com/" target="_blank">
-        <Image src={KingpinIcon} alt="tica icon" className="kingpin-icon" />
+      <a
+        href="https://catkingpin.com/"
+        target="_blank"
+      >
+        <Image
+          src={ KingpinIcon }
+          alt="tica icon"
+          className="kingpin-icon"
+        />
       </a>
     </div>
   );

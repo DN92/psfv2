@@ -8,7 +8,7 @@ export default async function KittenUpdateList():Promise<JSX.Element> {
   if ( error ) {
     console.log( error );
     return (
-      <div>{`something went wrong:: ${error.message}`}</div>
+      <div>{ `something went wrong:: ${error.message}` }</div>
     );
   }
 
@@ -17,14 +17,14 @@ export default async function KittenUpdateList():Promise<JSX.Element> {
   return (
     <div>
       <h3>Update a Kitten</h3>
-      {kittens.map( ( kitten:Kitten ) => (
+      { kittens.map( ( kitten:Kitten ) => (
         <KittenSingleton
-          key={kitten.uuid}
-          kitten={kitten}
-          wrapperClasses={['background100']}
+          key={ kitten.uuid }
+          kitten={ kitten }
+          wrapperClasses={ ['background100'] }
           asAdmin
         />
-      ) )}
+      ) ) }
     </div>
   );
 }

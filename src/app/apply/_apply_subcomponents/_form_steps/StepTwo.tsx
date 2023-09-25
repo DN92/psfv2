@@ -21,8 +21,8 @@ export default function StepTwo():JSX.Element {
                 type="radio"
                 name="gender"
                 value="Male"
-                checked={gender === 'Male'}
-                onChange={( e ): void => setGender( e.target.value )}
+                checked={ gender === 'Male' }
+                onChange={ ( e ): void => setGender( e.target.value ) }
               />
               Male
             </label>
@@ -31,8 +31,8 @@ export default function StepTwo():JSX.Element {
                 type="radio"
                 name="gender"
                 value="Female"
-                checked={gender === 'Female'}
-                onChange={( e ): void => setGender( e.target.value )}
+                checked={ gender === 'Female' }
+                onChange={ ( e ): void => setGender( e.target.value ) }
               />
               Female
             </label>
@@ -41,8 +41,8 @@ export default function StepTwo():JSX.Element {
                 type="radio"
                 name="gender"
                 value="No Preference"
-                checked={gender === 'No Preference'}
-                onChange={( e ): void => setGender( e.target.value )}
+                checked={ gender === 'No Preference' }
+                onChange={ ( e ): void => setGender( e.target.value ) }
               />
               No Preference
             </label>
@@ -52,8 +52,8 @@ export default function StepTwo():JSX.Element {
           <label htmlFor="coatColors">Preferred Coat Color(s):</label>
           <textarea
             id="coatColors"
-            value={coatColors}
-            onChange={( e ): void => setCoatColors( e.target.value )}
+            value={ coatColors }
+            onChange={ ( e ): void => setCoatColors( e.target.value ) }
           />
         </div>
         <div>
@@ -64,8 +64,8 @@ export default function StepTwo():JSX.Element {
                 type="radio"
                 name="earType"
                 value="Folded"
-                checked={earType === 'Folded'}
-                onChange={( e ): void => setEarType( e.target.value )}
+                checked={ earType === 'Folded' }
+                onChange={ ( e ): void => setEarType( e.target.value ) }
               />
               Folded
             </label>
@@ -74,8 +74,8 @@ export default function StepTwo():JSX.Element {
                 type="radio"
                 name="earType"
                 value="Straight"
-                checked={earType === 'Straight'}
-                onChange={( e ): void => setEarType( e.target.value )}
+                checked={ earType === 'Straight' }
+                onChange={ ( e ): void => setEarType( e.target.value ) }
               />
               Straight
             </label>
@@ -84,8 +84,8 @@ export default function StepTwo():JSX.Element {
                 type="radio"
                 name="earType"
                 value="No Preference"
-                checked={earType === 'No Preference'}
-                onChange={( e ): void => setEarType( e.target.value )}
+                checked={ earType === 'No Preference' }
+                onChange={ ( e ): void => setEarType( e.target.value ) }
               />
               No Preference
             </label>

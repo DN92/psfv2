@@ -33,8 +33,8 @@ export default function StepSix(): JSX.Element {
             <input
               type="radio"
               value="Health"
-              checked={traits === 'Health'}
-              onChange={handleTraitChange}
+              checked={ traits === 'Health' }
+              onChange={ handleTraitChange }
             />
           </label>
           <label>
@@ -42,8 +42,8 @@ export default function StepSix(): JSX.Element {
             <input
               type="radio"
               value="Personality"
-              checked={traits === 'Personality'}
-              onChange={handleTraitChange}
+              checked={ traits === 'Personality' }
+              onChange={ handleTraitChange }
             />
           </label>
           <label>
@@ -51,8 +51,8 @@ export default function StepSix(): JSX.Element {
             <input
               type="radio"
               value="Appearance"
-              checked={traits === 'Appearance'}
-              onChange={handleTraitChange}
+              checked={ traits === 'Appearance' }
+              onChange={ handleTraitChange }
             />
           </label>
           <label>
@@ -60,8 +60,8 @@ export default function StepSix(): JSX.Element {
             <input
               type="radio"
               value="Show Quality"
-              checked={traits === 'Show Quality'}
-              onChange={handleTraitChange}
+              checked={ traits === 'Show Quality' }
+              onChange={ handleTraitChange }
             />
           </label>
         </div>
@@ -72,8 +72,8 @@ export default function StepSix(): JSX.Element {
               type="radio"
               name="timing"
               value="Immediately"
-              checked={timing === 'Immediately'}
-              onChange={handleTimingChange}
+              checked={ timing === 'Immediately' }
+              onChange={ handleTimingChange }
             />
             Immediately
           </label>
@@ -82,8 +82,8 @@ export default function StepSix(): JSX.Element {
               type="radio"
               name="timing"
               value="In a few weeks"
-              checked={timing === 'In a few weeks'}
-              onChange={handleTimingChange}
+              checked={ timing === 'In a few weeks' }
+              onChange={ handleTimingChange }
             />
             In a few weeks
           </label>
@@ -92,8 +92,8 @@ export default function StepSix(): JSX.Element {
               type="radio"
               name="timing"
               value="In a few months"
-              checked={timing === 'In a few months'}
-              onChange={handleTimingChange}
+              checked={ timing === 'In a few months' }
+              onChange={ handleTimingChange }
             />
             In a few months
           </label>
@@ -101,7 +101,10 @@ export default function StepSix(): JSX.Element {
 
         <div>
           <p>Do you have a specific kitten in mind from our available litters? If yes, please provide details:</p>
-          <textarea value={specificKitten} onChange={handleSpecificKittenChange} />
+          <textarea
+            value={ specificKitten }
+            onChange={ handleSpecificKittenChange }
+          />
         </div>
 
         <button type="submit">Submit</button>

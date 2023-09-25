@@ -22,18 +22,32 @@ export default function DropDownItem( {
 
   return (
     <button
-      className={styles.dropdown_item}
+      className={ styles.dropdown_item }
       type="button"
-      onClick={():void => {
+      onClick={ ():void => {
         if ( !goToMenu || !setActiveMenu ) return;
         setActiveMenu( goToMenu );
-      }}
-      onMouseOver={():void => {}}
-      onFocus={():void => {}}
+      } }
+      onMouseOver={ ():void => {} }
+      onFocus={ ():void => {} }
     >
-      {iconLeft && <Image className={styles.dropdown_icon_left} fill src={iconLeft} alt="ic left" />}
-      {children}
-      {iconRight && <Image className={styles.dropdown_icon_right} fill src={iconRight} alt="ic right" />}
+      { iconLeft && (
+        <Image
+          className={ styles.dropdown_icon_left }
+          fill
+          src={ iconLeft }
+          alt="ic left"
+        />
+      ) }
+      { children }
+      { iconRight && (
+        <Image
+          className={ styles.dropdown_icon_right }
+          fill
+          src={ iconRight }
+          alt="ic right"
+        />
+      ) }
     </button>
   );
 }

@@ -13,12 +13,12 @@ const CatteryMenuSelectionSingle: React.FC<ComponentProps> = ( { href, name, css
   } ).join( ' ' );
 
   return (
-    <Link href={href}>
-      <div className={`${styles.cattery_menu_singleton_wrapper}`}>
-        <p className={styles.cattery_menu_link}>
-          {name}
+    <Link href={ href }>
+      <div className={ `${styles.cattery_menu_singleton_wrapper}` }>
+        <p className={ styles.cattery_menu_link }>
+          { name }
         </p>
-        <div className={`${secondChildCssClasses} ${styles.cattery_menu_right}`} />
+        <div className={ `${secondChildCssClasses} ${styles.cattery_menu_right}` } />
       </div>
     </Link>
   );

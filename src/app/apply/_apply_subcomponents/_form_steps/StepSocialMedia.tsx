@@ -17,11 +17,11 @@ export default function StepSocialMedeia():JSX.Element {
           <label htmlFor="heard-about">How did you hear about Planet Scottish Fold?</label>
           <select
             id="heard-about"
-            value={heardAbout}
-            onChange={( e ):void => setHeardAbout( e.target.value )}
+            value={ heardAbout }
+            onChange={ ( e ):void => setHeardAbout( e.target.value ) }
             required
           >
-            {/* Options */}
+            { /* Options */ }
           </select>
         </div>
 
@@ -29,8 +29,8 @@ export default function StepSocialMedeia():JSX.Element {
           <label htmlFor="reason">Why do you want a kitten from Planet Scottish Fold?</label>
           <textarea
             id="reason"
-            value={reason}
-            onChange={( e ):void => setReason( e.target.value )}
+            value={ reason }
+            onChange={ ( e ):void => setReason( e.target.value ) }
             required
           />
         </div>
@@ -40,8 +40,8 @@ export default function StepSocialMedeia():JSX.Element {
           <input
             type="text"
             id="instagram"
-            value={instagram}
-            onChange={( e ):void => setInstagram( e.target.value )}
+            value={ instagram }
+            onChange={ ( e ):void => setInstagram( e.target.value ) }
           />
         </div>
 
@@ -50,8 +50,8 @@ export default function StepSocialMedeia():JSX.Element {
           <input
             type="text"
             id="facebook"
-            value={facebook}
-            onChange={( e ):void => setFacebook( e.target.value )}
+            value={ facebook }
+            onChange={ ( e ):void => setFacebook( e.target.value ) }
           />
         </div>
 

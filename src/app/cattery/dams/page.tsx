@@ -15,16 +15,16 @@ export default async function Dams(): Promise<JSX.Element> {
 
   return (
     <div>
-      <h2 className={styles.h2}>Our Dams</h2>
-      <section className={styles.adult_cat_section}>
-        {dams.map( ( cat: Mother ) => (
+      <h2 className={ styles.h2 }>Our Dams</h2>
+      <section className={ styles.adult_cat_section }>
+        { dams.map( ( cat: Mother ) => (
           <CatAdultSingleton
-            key={cat.id}
-            adultCat={cat}
+            key={ cat.id }
+            adultCat={ cat }
             model="mother"
-            wrapperClasses={['background100']}
+            wrapperClasses={ ['background100'] }
           />
-        ) )}
+        ) ) }
       </section>
     </div>
   );

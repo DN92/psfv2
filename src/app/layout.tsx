@@ -25,11 +25,14 @@ export const metadata = {
 export default function RootLayout( { children }: RootLayoutProps ): JSX.Element {
   return (
     <html lang="en">
-      <body className={cinzel.className}>
-        <div id="App" className="App">
+      <body className={ cinzel.className }>
+        <div
+          id="App"
+          className="App"
+        >
           <Header />
           <div className="pages-container">
-            {children}
+            { children }
           </div>
           <Footer />
         </div>

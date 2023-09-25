@@ -21,9 +21,14 @@ export default async function Applications():Promise<JSX.Element> {
 
   return (
     <div>
-      {applications.map( ( { id, data, createdAt } ) => (
-        <ApplicantRowWithLink key={id} id={id} applicationData={data} createdAt={createdAt} />
-      ) )}
+      { applications.map( ( { id, data, createdAt } ) => (
+        <ApplicantRowWithLink
+          key={ id }
+          id={ id }
+          applicationData={ data }
+          createdAt={ createdAt }
+        />
+      ) ) }
     </div>
   );
 

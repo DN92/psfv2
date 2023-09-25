@@ -58,6 +58,33 @@
   background-image: url("/otherPictures/backgroundImg1.jpg") !important;
 }
 
+.btn-reset {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-align: left; /* counteract default centering */
+  cursor: pointer;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible; /* counteract default in some browsers */
+  white-space: normal; /* counteract default in some browsers */
+  vertical-align: middle; /* counteract default in some browsers */
+}
+
+.btn-reset::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+
 .overlay {
   background-color: rgba(0, 0, 0, .8) !important;
   position: fixed !important;

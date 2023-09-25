@@ -24,13 +24,16 @@ export default async function UserDetails( { params: { id } } ):Promise<JSX.Elem
   const QAtoStrings = questionAndAnswers.map( ( entry ) => [entry[0], entry[1]?.toString() ?? ''] );
 
   return (
-    <div className={styles.details_wrapper}>
-      {QAtoStrings.map( ( entry, idx ) => (
-        <div key={idx} className={styles.details_row}>
-          <p className={styles.details_row_entry}>{entry[0]}</p>
-          <p className={styles.details_row_entry}>{entry[1]}</p>
+    <div className={ styles.details_wrapper }>
+      { QAtoStrings.map( ( entry, idx ) => (
+        <div
+          key={ idx }
+          className={ styles.details_row }
+        >
+          <p className={ styles.details_row_entry }>{ entry[0] }</p>
+          <p className={ styles.details_row_entry }>{ entry[1] }</p>
         </div>
-      ) )}
+      ) ) }
     </div>
   );
 }

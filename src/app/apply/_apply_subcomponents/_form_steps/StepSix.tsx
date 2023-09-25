@@ -19,14 +19,14 @@ export default function StepSix():JSX.Element {
             <input
               type="checkbox"
               value="Health"
-              checked={traits === 'Health'}
-              onChange={( e ):void => {
+              checked={ traits === 'Health' }
+              onChange={ ( e ):void => {
                 if ( e.target.checked ) {
                   setTraits( 'Health' );
                 } else {
                   setTraits( '' );
                 }
-              }}
+              } }
             />
           </label>
           <label>
@@ -34,14 +34,14 @@ export default function StepSix():JSX.Element {
             <input
               type="checkbox"
               value="Personality"
-              checked={traits === 'Personality'}
-              onChange={( e ):void => {
+              checked={ traits === 'Personality' }
+              onChange={ ( e ):void => {
                 if ( e.target.checked ) {
                   setTraits( 'Personality' );
                 } else {
                   setTraits( '' );
                 }
-              }}
+              } }
             />
           </label>
           <label>
@@ -49,14 +49,14 @@ export default function StepSix():JSX.Element {
             <input
               type="checkbox"
               value="Appearance"
-              checked={traits === 'Appearance'}
-              onChange={( e ):void => {
+              checked={ traits === 'Appearance' }
+              onChange={ ( e ):void => {
                 if ( e.target.checked ) {
                   setTraits( 'Appearance' );
                 } else {
                   setTraits( '' );
                 }
-              }}
+              } }
             />
           </label>
           <label>
@@ -64,14 +64,14 @@ export default function StepSix():JSX.Element {
             <input
               type="checkbox"
               value="Show Quality"
-              checked={traits === 'Show Quality'}
-              onChange={( e ):void => {
+              checked={ traits === 'Show Quality' }
+              onChange={ ( e ):void => {
                 if ( e.target.checked ) {
                   setTraits( 'Show Quality' );
                 } else {
                   setTraits( '' );
                 }
-              }}
+              } }
             />
           </label>
         </div>
@@ -82,12 +82,12 @@ export default function StepSix():JSX.Element {
               type="radio"
               name="timing"
               value="Immediately"
-              checked={timing === 'Immediately'}
-              onChange={( e ):void => {
+              checked={ timing === 'Immediately' }
+              onChange={ ( e ):void => {
                 if ( e.target.checked ) {
                   setTiming( 'Immediately' );
                 }
-              }}
+              } }
             />
             Immediately
           </label>
@@ -96,12 +96,12 @@ export default function StepSix():JSX.Element {
               type="radio"
               name="timing"
               value="In a few weeks"
-              checked={timing === 'In a few weeks'}
-              onChange={( e ):void => {
+              checked={ timing === 'In a few weeks' }
+              onChange={ ( e ):void => {
                 if ( e.target.checked ) {
                   setTiming( 'In a few weeks' );
                 }
-              }}
+              } }
             />
             In a few weeks
           </label>
@@ -110,12 +110,12 @@ export default function StepSix():JSX.Element {
               type="radio"
               name="timing"
               value="In a few months"
-              checked={timing === 'In a few months'}
-              onChange={( e ):void => {
+              checked={ timing === 'In a few months' }
+              onChange={ ( e ):void => {
                 if ( e.target.checked ) {
                   setTiming( 'In a few months' );
                 }
-              }}
+              } }
             />
             In a few months
           </label>
@@ -123,7 +123,10 @@ export default function StepSix():JSX.Element {
 
         <div>
           <p>Do you have a specific kitten in mind from our available litters? If yes, please provide details:</p>
-          <textarea value={specificKitten} onChange={( e ):void => setSpecificKitten( e.target.value )} />
+          <textarea
+            value={ specificKitten }
+            onChange={ ( e ):void => setSpecificKitten( e.target.value ) }
+          />
         </div>
 
         <button type="submit">Submit</button>

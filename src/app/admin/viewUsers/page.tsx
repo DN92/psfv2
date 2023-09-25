@@ -26,9 +26,12 @@ export default async function ViewUsers(): Promise<JSX.Element> {
 
   return (
     <div>
-      {sortedData.map( ( user ) => (
-        <UserRow key={user.id} user={user} />
-      ) )}
+      { sortedData.map( ( user ) => (
+        <UserRow
+          key={ user.id }
+          user={ user }
+        />
+      ) ) }
     </div>
   );
 }

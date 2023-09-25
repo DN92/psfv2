@@ -20,8 +20,8 @@ export default function StepOne():JSX.Element {
           <input
             type="text"
             id="fullName"
-            value={fullName}
-            onChange={( e ):void => setFullName( e.target.value )}
+            value={ fullName }
+            onChange={ ( e ):void => setFullName( e.target.value ) }
           />
         </div>
         <div>
@@ -29,8 +29,8 @@ export default function StepOne():JSX.Element {
           <input
             type="email"
             id="email"
-            value={email}
-            onChange={( e ):void => setEmail( e.target.value )}
+            value={ email }
+            onChange={ ( e ):void => setEmail( e.target.value ) }
           />
         </div>
         <div>
@@ -38,8 +38,8 @@ export default function StepOne():JSX.Element {
           <input
             type="tel"
             id="phoneNumber"
-            value={phoneNumber}
-            onChange={( e ):void => setPhoneNumber( e.target.value )}
+            value={ phoneNumber }
+            onChange={ ( e ):void => setPhoneNumber( e.target.value ) }
           />
         </div>
         <div>
@@ -47,8 +47,8 @@ export default function StepOne():JSX.Element {
           <input
             type="text"
             id="residence"
-            value={residence}
-            onChange={( e ):void => setResidence( e.target.value )}
+            value={ residence }
+            onChange={ ( e ):void => setResidence( e.target.value ) }
           />
         </div>
         <div>
@@ -56,8 +56,8 @@ export default function StepOne():JSX.Element {
           <input
             type="text"
             id="age"
-            value={age}
-            onChange={( e ):void => setAge( e.target.value )}
+            value={ age }
+            onChange={ ( e ):void => setAge( e.target.value ) }
           />
         </div>
       </form>

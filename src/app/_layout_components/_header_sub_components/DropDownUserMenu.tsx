@@ -45,47 +45,53 @@ export default function DropDownUserMenu(): JSX.Element {
   // css for CSSTransitions are their children are located: @/globalCSS/cssTranisitons
   return (
     <div
-      className={styles.dropdown_menu}
-      style={{ height: menuHeight ? menuHeight : '' }}
+      className={ styles.dropdown_menu }
+      style={ { height: menuHeight ? menuHeight : '' } }
     >
       <CSSTransition
-        in={activeMenu === 'primary'}
+        in={ activeMenu === 'primary' }
         unmountOnExit
-        timeout={200}
+        timeout={ 200 }
         classNames="menu-primary"
-        onMouseEnter={calculateHeight}
+        onMouseEnter={ calculateHeight }
       >
         <div className="menu">
 
           <DropDownMenuOption
-            className={styles.dropdown_item}
-            iconLeft={<AiOutlineUser style={{ scale: 2.2 }} />}
-            iconRight={<SiLapce style={{ scale: 1.7 }} />}
-            onClick={():void => setActiveMenu( 'secondary' )}
+            className={ styles.dropdown_item }
+            iconLeft={ <AiOutlineUser style={ { scale: 2.2 } } /> }
+            iconRight={ <SiLapce style={ { scale: 1.7 } } /> }
+            onClick={ ():void => setActiveMenu( 'secondary' ) }
           >
-            <p>{emailRoot}</p>
+            <p>{ emailRoot }</p>
           </DropDownMenuOption>
-          <DropDownMenuOption className={styles.dropdown_item}>
-            {user?.id}
+          <DropDownMenuOption className={ styles.dropdown_item }>
+            { user?.id }
           </DropDownMenuOption>
-          <DropDownMenuOption className={styles.dropdown_item}>
-            {/* I have verfied that session_id does in fact exist on user and its extended interface. User is comming from auth helpers. I do not know where else to get User from if i'm targeting the wrong 'type'.  */}
-            {/* @ts-ignore */}
-            {user?.session_id}
+          <DropDownMenuOption className={ styles.dropdown_item }>
+            { /* I have verfied that session_id does in fact exist on user and its extended interface. User is comming from auth helpers. I do not know where else to get User from if i'm targeting the wrong 'type'.  */ }
+            { /* @ts-ignore */ }
+            { user?.session_id }
           </DropDownMenuOption>
-          <DropDownMenuOption className={styles.dropdown_item}>
-            {user?.role}
+          <DropDownMenuOption className={ styles.dropdown_item }>
+            { user?.role }
           </DropDownMenuOption>
           {
             user ?
               (
-                <DropDownMenuOption className={styles.dropdown_item} onClick={handleSignOut}>
+                <DropDownMenuOption
+                  className={ styles.dropdown_item }
+                  onClick={ handleSignOut }
+                >
                   Sign Out
                 </DropDownMenuOption>
               )
               :
               (
-                <DropDownMenuOption className={styles.dropdown_item} onClick={navToSignIn}>
+                <DropDownMenuOption
+                  className={ styles.dropdown_item }
+                  onClick={ navToSignIn }
+                >
                   Sign In
                 </DropDownMenuOption>
               )
@@ -95,23 +101,35 @@ export default function DropDownUserMenu(): JSX.Element {
       </CSSTransition>
 
       <CSSTransition
-        in={activeMenu === 'secondary'}
+        in={ activeMenu === 'secondary' }
         unmountOnExit
-        timeout={200}
+        timeout={ 200 }
         classNames="menu-secondary"
-        onMouseEnter={calculateHeight}
+        onMouseEnter={ calculateHeight }
       >
         <div className="menu">
-          <DropDownItem setActiveMenu={setActiveMenu} goToMenu="primary">
+          <DropDownItem
+            setActiveMenu={ setActiveMenu }
+            goToMenu="primary"
+          >
             Cartoons
           </DropDownItem>
-          <DropDownItem setActiveMenu={setActiveMenu} goToMenu="primary">
+          <DropDownItem
+            setActiveMenu={ setActiveMenu }
+            goToMenu="primary"
+          >
             Cartoons
           </DropDownItem>
-          <DropDownItem setActiveMenu={setActiveMenu} goToMenu="primary">
+          <DropDownItem
+            setActiveMenu={ setActiveMenu }
+            goToMenu="primary"
+          >
             Cartoons
           </DropDownItem>
-          <DropDownItem setActiveMenu={setActiveMenu} goToMenu="primary">
+          <DropDownItem
+            setActiveMenu={ setActiveMenu }
+            goToMenu="primary"
+          >
             Cartoons
           </DropDownItem>
         </div>

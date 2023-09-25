@@ -19,8 +19,11 @@ export default function ScrollButton( { elementId, children }: ComponenetProps )
 
 
   return (
-    <button type="button" onClick={():void => handleClick()}>
-      {children}
+    <button
+      type="button"
+      onClick={ ():void => handleClick() }
+    >
+      { children }
     </button>
   );
 }

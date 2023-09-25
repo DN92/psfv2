@@ -10,21 +10,30 @@ const thirdThird: Array<string> = reviewPaths.slice( ( reviewPaths.length ) * ( 
 export default function Reviews(): JSX.Element {
 
   return (
-    <div className={styles.reviews_wrapper}>
-      <div className={styles.reviews_column}>
-        {firstThird.map( ( path: string ) => (
-          <IndividualReview review={path} key={path} />
-        ) )}
+    <div className={ styles.reviews_wrapper }>
+      <div className={ styles.reviews_column }>
+        { firstThird.map( ( path: string ) => (
+          <IndividualReview
+            review={ path }
+            key={ path }
+          />
+        ) ) }
       </div>
-      <div className={styles.reviews_column}>
-        {secondThird.map( ( path: string ) => (
-          <IndividualReview review={path} key={path} />
-        ) )}
+      <div className={ styles.reviews_column }>
+        { secondThird.map( ( path: string ) => (
+          <IndividualReview
+            review={ path }
+            key={ path }
+          />
+        ) ) }
       </div>
-      <div className={styles.reviews_column}>
-        {thirdThird.map( ( path: string ) => (
-          <IndividualReview review={path} key={path} />
-        ) )}
+      <div className={ styles.reviews_column }>
+        { thirdThird.map( ( path: string ) => (
+          <IndividualReview
+            review={ path }
+            key={ path }
+          />
+        ) ) }
       </div>
     </div>
   );

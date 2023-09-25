@@ -26,23 +26,23 @@ export default function CatAdultSingleton( { adultCat, model, wrapperClasses = [
 
   return (
     <Link
-      className={`${styles.adult_cat_singleton_wrapper} ${classesToAddToWrapper} `}
-      href={`/cattery/${model === 'stud' ? 'studs' : 'dams'}/detailed/${model}/${adultCat.id}`}
+      className={ `${styles.adult_cat_singleton_wrapper} ${classesToAddToWrapper} ` }
+      href={ `/cattery/${model === 'stud' ? 'studs' : 'dams'}/detailed/${model}/${adultCat.id}` }
     >
-      <div className={styles.adult_cat_singleton_image_card}>
+      <div className={ styles.adult_cat_singleton_image_card }>
         <Image
           fill
-          src={`/images/css_images/${model}-animated-1.jpeg`}
+          src={ `/images/css_images/${model}-animated-1.jpeg` }
           alt="dam main pic"
         />
       </div>
-      <div className={styles.adult_cat_singleton_text}>
-        <p>{`Planet Scottish Fold ${model}`}</p>
-        <p>{`Hi, I am${name}`}</p>
-        <p>{`I am a ${breed}`}</p>
+      <div className={ styles.adult_cat_singleton_text }>
+        <p>{ `Planet Scottish Fold ${model}` }</p>
+        <p>{ `Hi, I am${name}` }</p>
+        <p>{ `I am a ${breed}` }</p>
         <p>My color is </p>
-        <p>{furColor}</p>
-        <p>{`and I have ${eyeColor} eyes`}</p>
+        <p>{ furColor }</p>
+        <p>{ `and I have ${eyeColor} eyes` }</p>
       </div>
 
     </Link>

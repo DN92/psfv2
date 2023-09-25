@@ -99,7 +99,10 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
   }, [pgresError] );
 
   return (
-    <form action="" autoComplete="off">
+    <form
+      action=""
+      autoComplete="off"
+    >
       <h3>Update a kitten</h3>
       <div>
         <div>
@@ -107,8 +110,8 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
           <input
             id="changeName"
             type="checkbox"
-            checked={allowChangeName}
-            onClick={():void => setAllowChangeName( ( prev ) => !prev )}
+            checked={ allowChangeName }
+            onClick={ ():void => setAllowChangeName( ( prev ) => !prev ) }
           />
         </div>
         <div>
@@ -117,13 +120,13 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
             id="kittenName"
             type="text"
             name="name"
-            disabled={!allowChangeName}
-            value={allowChangeName ? ( newName ) : ( kitten?.name ?? '' )}
-            onChange={( e ):void => {
+            disabled={ !allowChangeName }
+            value={ allowChangeName ? ( newName ) : ( kitten?.name ?? '' ) }
+            onChange={ ( e ):void => {
               if ( allowChangeName ) {
                 setNewName( e.target.value );
               }
-            }}
+            } }
           />
         </div>
       </div>
@@ -133,8 +136,8 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
           <input
             id="changePrice"
             type="checkbox"
-            checked={allowChangePrice}
-            onClick={():void => setAllowChangePrice( ( prev ) => !prev )}
+            checked={ allowChangePrice }
+            onClick={ ():void => setAllowChangePrice( ( prev ) => !prev ) }
           />
         </div>
         <div>
@@ -144,12 +147,12 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
             type="number"
             name="price"
             disabled
-            value={allowChangePrice ? ( newPrice ) : ( kitten?.price ?? -1 )}
-            onChange={( e ):void => {
+            value={ allowChangePrice ? ( newPrice ) : ( kitten?.price ?? -1 ) }
+            onChange={ ( e ):void => {
               if ( allowChangePrice ) {
                 setNewPrice( Number( e.target.value ) );
               }
-            }}
+            } }
           />
         </div>
       </div>
@@ -159,8 +162,8 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
           <input
             id="changeBreed"
             type="checkbox"
-            checked={allowChangeBreed}
-            onClick={():void => { setAllowChangeBreed( ( prev ) => !prev ); }}
+            checked={ allowChangeBreed }
+            onClick={ ():void => { setAllowChangeBreed( ( prev ) => !prev ); } }
           />
         </div>
         <div>
@@ -169,13 +172,13 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
             id="kittenBreed"
             type="text"
             name="breed"
-            disabled={!allowChangeBreed}
-            value={allowChangeBreed ? ( newBreed ) : ( kitten?.breed ?? '' )}
-            onChange={( e ):void => {
+            disabled={ !allowChangeBreed }
+            value={ allowChangeBreed ? ( newBreed ) : ( kitten?.breed ?? '' ) }
+            onChange={ ( e ):void => {
               if ( allowChangeBreed ) {
                 setNewBreed( ( e.target.value ) );
               }
-            }}
+            } }
           />
         </div>
       </div>
@@ -186,7 +189,7 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
           type="text"
           name="gender"
           disabled
-          value={kitten?.gender ?? ''}
+          value={ kitten?.gender ?? '' }
         />
       </div>
       <div>
@@ -195,8 +198,8 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
           <input
             id="changeDob"
             type="checkbox"
-            checked={allowChangeDob}
-            onClick={():void => setAllowChangeDob( ( prev ) => !prev )}
+            checked={ allowChangeDob }
+            onClick={ ():void => setAllowChangeDob( ( prev ) => !prev ) }
           />
         </div>
         <div>
@@ -205,13 +208,13 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
             id="kittenDob"
             type="text"
             name="dob"
-            disabled={allowChangeDob}
-            value={allowChangeDob ? ( newDob ) : ( kitten?.dob ?? '' )}
-            onChange={( e ):void => {
+            disabled={ allowChangeDob }
+            value={ allowChangeDob ? ( newDob ) : ( kitten?.dob ?? '' ) }
+            onChange={ ( e ):void => {
               if ( allowChangeDob ) {
                 setNewDob( e.target.value );
               }
-            }}
+            } }
           />
         </div>
       </div>
@@ -222,7 +225,7 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
           type="text"
           name="mother"
           disabled
-          value={kitten?.mother ?? ''}
+          value={ kitten?.mother ?? '' }
         />
       </div>
       <div>
@@ -232,7 +235,7 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
           type="text"
           name="father"
           disabled
-          value={kitten?.father ?? ''}
+          value={ kitten?.father ?? '' }
         />
       </div>
       <div>
@@ -242,7 +245,7 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
           type="text"
           name="ears"
           disabled
-          value={kitten?.ears ?? ''}
+          value={ kitten?.ears ?? '' }
         />
       </div>
       <div>
@@ -251,8 +254,8 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
           <input
             id="changeFurColor"
             type="text"
-            checked={allowChangeFurColor}
-            onClick={():void => setAllowChangeFurColor( ( prev ) => !prev )}
+            checked={ allowChangeFurColor }
+            onClick={ ():void => setAllowChangeFurColor( ( prev ) => !prev ) }
           />
         </div>
         <div>
@@ -261,13 +264,13 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
             id="kittenFurColor"
             type="text"
             name="furColor"
-            disabled={!allowChangeFurColor}
-            value={allowChangeFurColor ? ( newFurColor ) : ( kitten?.furColor ?? '' )}
-            onChange={( e ):void => {
+            disabled={ !allowChangeFurColor }
+            value={ allowChangeFurColor ? ( newFurColor ) : ( kitten?.furColor ?? '' ) }
+            onChange={ ( e ):void => {
               if ( allowChangeFurColor ) {
                 setNewFurColor( e.target.value );
               }
-            }}
+            } }
           />
         </div>
       </div>
@@ -278,7 +281,7 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
           type="text"
           name="eyeColor"
           disabled
-          value={kitten?.eyeColor ?? ''}
+          value={ kitten?.eyeColor ?? '' }
         />
       </div>
       <div>
@@ -287,8 +290,8 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
           <input
             id="changeLocation"
             type="text"
-            checked={allowChangeLocation}
-            onClick={():void => setAllowChangeLocation( ( prev ) => !prev )}
+            checked={ allowChangeLocation }
+            onClick={ ():void => setAllowChangeLocation( ( prev ) => !prev ) }
           />
         </div>
         <div>
@@ -297,13 +300,13 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
             id="kittenLocation"
             type="text"
             name="location"
-            disabled={!allowChangeLocation}
-            value={allowChangeLocation ? ( newLocation ) : ( kitten?.location ?? '' )}
-            onChange={( e ):void => {
+            disabled={ !allowChangeLocation }
+            value={ allowChangeLocation ? ( newLocation ) : ( kitten?.location ?? '' ) }
+            onChange={ ( e ):void => {
               if ( allowChangeLocation ) {
                 setNewLocation( e.target.value );
               }
-            }}
+            } }
           />
         </div>
       </div>
@@ -313,8 +316,8 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
           <input
             id="changeDescription"
             type="checkbox"
-            checked={allowChangeDescription}
-            onClick={():void => setAllowChangeDescription( ( prev ) => !prev )}
+            checked={ allowChangeDescription }
+            onClick={ ():void => setAllowChangeDescription( ( prev ) => !prev ) }
           />
         </div>
         <div>
@@ -323,13 +326,13 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
             id="kittenDescription"
             type="text"
             name="description"
-            disabled={!allowChangeDescription}
-            value={allowChangeDescription ? ( newDescription ) : ( kitten?.description ?? '' )}
-            onChange={( e ):void => {
+            disabled={ !allowChangeDescription }
+            value={ allowChangeDescription ? ( newDescription ) : ( kitten?.description ?? '' ) }
+            onChange={ ( e ):void => {
               if ( allowChangeDescription ) {
                 setNewDescription( e.target.value );
               }
-            }}
+            } }
           />
         </div>
       </div>
@@ -339,8 +342,8 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
           <input
             id="changeSlug"
             type="checkbox"
-            checked={allowChangeSlug}
-            onClick={():void => setAllowChangeSlug( ( prev ) => !prev )}
+            checked={ allowChangeSlug }
+            onClick={ ():void => setAllowChangeSlug( ( prev ) => !prev ) }
           />
         </div>
         <div>
@@ -349,13 +352,13 @@ export default function KittenUpdate( { params: { uuid } }: Params ):React.React
             id="kittenSlug"
             type="text"
             name="slug"
-            disabled={!setAllowChangeSlug}
-            value={allowChangeSlug ? ( newSlug ) : ( kitten?.slug ?? '' )}
-            onChange={( e ):void => {
+            disabled={ !setAllowChangeSlug }
+            value={ allowChangeSlug ? ( newSlug ) : ( kitten?.slug ?? '' ) }
+            onChange={ ( e ):void => {
               if ( allowChangeSlug ) {
                 setNewSlug( e.target.value );
               }
-            }}
+            } }
           />
         </div>
       </div>

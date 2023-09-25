@@ -3,7 +3,7 @@ import styles from '../home.module.css';
 const IframeWrapper: React.FC = () => {
 
   return (
-    <div className={styles.iframeWrapper}>
+    <div className={ styles.iframeWrapper }>
       <iframe
         width="560"
         height="315"

@@ -16,17 +16,21 @@ export default function UserNavItem( { src, alt, children }: ComponentProps ): J
 
   return (
     <li
-      className={styles.header_icon_nav_li}
-      onMouseLeave={():void => setOpen( false )}
+      className={ styles.header_icon_nav_li }
+      onMouseLeave={ ():void => setOpen( false ) }
     >
       <button
-        className={styles.portrait_card}
+        className={ styles.portrait_card }
         type="button"
-        onClick={(): void => setOpen( ( prev ) => !prev )}
+        onClick={ (): void => setOpen( ( prev ) => !prev ) }
       >
-        <Image fill src={src} alt={alt} />
+        <Image
+          fill
+          src={ src }
+          alt={ alt }
+        />
       </button>
-      {open && children}
+      { open && children }
     </li>
   );
 }

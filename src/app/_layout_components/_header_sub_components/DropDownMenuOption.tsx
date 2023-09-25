@@ -38,34 +38,34 @@ export default function DropDownMenuOption( {
     case 'link': {
       return (
         <Link
-          href={href}
-          className={className}
-          onClick={onClick}
-          onMouseOver={onMouseOver}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          onFocus={onFocus}
+          href={ href }
+          className={ className }
+          onClick={ onClick }
+          onMouseOver={ onMouseOver }
+          onMouseEnter={ onMouseEnter }
+          onMouseLeave={ onMouseLeave }
+          onFocus={ onFocus }
         >
-          {iconLeft}
-          {children}
-          {iconRight}
+          { iconLeft }
+          { children }
+          { iconRight }
         </Link>
       );
     }
     default: {
       return (
         <button
-          className={className}
+          className={ className }
           type="button"
-          onClick={onClick}
-          onMouseOver={onMouseOver}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-          onFocus={onFocus}
+          onClick={ onClick }
+          onMouseOver={ onMouseOver }
+          onMouseEnter={ onMouseEnter }
+          onMouseLeave={ onMouseLeave }
+          onFocus={ onFocus }
         >
-          {iconLeft}
-          {children}
-          {iconRight}
+          { iconLeft }
+          { children }
+          { iconRight }
         </button>
       );
 

@@ -14,12 +14,12 @@ export default async function ApplicantRowWithLink( { id, applicationData, creat
   // const keys = Object.keys(applicant).join(' ');
 
   return (
-    <div className={styles.application_row_wrapper}>
-      <p className={styles.application_row_column}>{id}</p>
-      <p className={styles.application_row_column}>{firstName}</p>
-      <p className={styles.application_row_column}>{lastName}</p>
-      <p className={styles.application_row_column}>{eMail}</p>
-      <p className={styles.application_row_column}>{createdAt}</p>
+    <div className={ styles.application_row_wrapper }>
+      <p className={ styles.application_row_column }>{ id }</p>
+      <p className={ styles.application_row_column }>{ firstName }</p>
+      <p className={ styles.application_row_column }>{ lastName }</p>
+      <p className={ styles.application_row_column }>{ eMail }</p>
+      <p className={ styles.application_row_column }>{ createdAt }</p>
     </div>
   );
 }

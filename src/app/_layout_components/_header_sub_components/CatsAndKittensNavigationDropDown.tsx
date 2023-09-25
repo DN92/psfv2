@@ -23,40 +23,43 @@ export default function CatsAndKittensNavigationDropDown():JSX.Element {
   return (
     <li
       className="header-nav-link header-navlink-with-dropdown"
-      onMouseLeave={closeMenu}
-      onMouseEnter={openMenu}
-      onMouseOver={openMenu}
-      onFocus={openMenu}
+      onMouseLeave={ closeMenu }
+      onMouseEnter={ openMenu }
+      onMouseOver={ openMenu }
+      onFocus={ openMenu }
     >
       <button
         type="button"
-        style={{
+        style={ {
           border: 'none',
           padding: '0',
           backgroundColor: 'inherit',
           color: 'inherit',
           font: 'inherit',
-          cursor: 'inherit' }}
+          cursor: 'inherit' } }
       >
         CATS AND KITTENS
-        {' '}
-        <span className={`header-navlink-icon ${open ? 'open-menu' : 'close-menu'}`}>
+        { ' ' }
+        <span className={ `header-navlink-icon ${open ? 'open-menu' : 'close-menu'}` }>
           {
             open ?
 
-              <BiDownArrow style={{ scale: 1.1 }} />
+              <BiDownArrow style={ { scale: 1.1 } } />
               :
-              <BiRightArrow style={{ scale: 1.1 }} />
+              <BiRightArrow style={ { scale: 1.1 } } />
           }
         </span>
       </button>
-      <div className="header-navlink-dropdown" style={{ display: open ? 'initial' : 'none' }}>
+      <div
+        className="header-navlink-dropdown"
+        style={ { display: open ? 'initial' : 'none' } }
+      >
         <DropDownMenuOption
           className="header-navlink-dropdown-item"
           type="link"
           href="/cattery/kittens"
-          iconLeft={<GiCat style={iconScaler} />}
-          onClick={closeMenu}
+          iconLeft={ <GiCat style={ iconScaler } /> }
+          onClick={ closeMenu }
         >
           <p>Kittens</p>
         </DropDownMenuOption>
@@ -64,8 +67,8 @@ export default function CatsAndKittensNavigationDropDown():JSX.Element {
           className="header-navlink-dropdown-item"
           type="link"
           href="/cattery/dams"
-          iconLeft={<FaCat style={iconScaler} />}
-          onClick={closeMenu}
+          iconLeft={ <FaCat style={ iconScaler } /> }
+          onClick={ closeMenu }
         >
           <p>Moms</p>
         </DropDownMenuOption>
@@ -73,8 +76,8 @@ export default function CatsAndKittensNavigationDropDown():JSX.Element {
           className="header-navlink-dropdown-item"
           type="link"
           href="/cattery/studs"
-          iconLeft={<FaCat style={iconScaler} />}
-          onClick={closeMenu}
+          iconLeft={ <FaCat style={ iconScaler } /> }
+          onClick={ closeMenu }
         >
           <p>Dads</p>
         </DropDownMenuOption>

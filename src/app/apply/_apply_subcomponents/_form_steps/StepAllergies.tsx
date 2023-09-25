@@ -19,8 +19,8 @@ export default function StepAllergies():JSX.Element {
                 type="radio"
                 name="allergicToCats"
                 value="yes"
-                checked={allergicToCats === 'yes'}
-                onChange={():void => setAllergicToCats( 'yes' )}
+                checked={ allergicToCats === 'yes' }
+                onChange={ ():void => setAllergicToCats( 'yes' ) }
               />
               Yes
             </label>
@@ -29,8 +29,8 @@ export default function StepAllergies():JSX.Element {
                 type="radio"
                 name="allergicToCats"
                 value="no"
-                checked={!allergicToCats}
-                onChange={():void => setAllergicToCats( 'no' )}
+                checked={ !allergicToCats }
+                onChange={ ():void => setAllergicToCats( 'no' ) }
               />
               No
             </label>
@@ -45,8 +45,8 @@ export default function StepAllergies():JSX.Element {
                 type="radio"
                 name="otherAllergies"
                 value="yes"
-                checked={otherAllergies === 'yes'}
-                onChange={():void => setOtherAllergies( 'yes' )}
+                checked={ otherAllergies === 'yes' }
+                onChange={ ():void => setOtherAllergies( 'yes' ) }
               />
               Yes
             </label>
@@ -55,24 +55,24 @@ export default function StepAllergies():JSX.Element {
                 type="radio"
                 name="otherAllergies"
                 value="no"
-                checked={otherAllergies === 'no'}
-                onChange={():void => setOtherAllergies( 'yes' )}
+                checked={ otherAllergies === 'no' }
+                onChange={ ():void => setOtherAllergies( 'yes' ) }
               />
               No
             </label>
           </label>
         </div>
 
-        {otherAllergies && (
+        { otherAllergies && (
           <div>
             <label htmlFor="allergyDetails">Please provide a few details regarding the allergies:</label>
             <textarea
               id="allergyDetails"
-              value={allergyDetails}
-              onChange={( e ):void => setAllergyDetails( e.target.value )}
+              value={ allergyDetails }
+              onChange={ ( e ):void => setAllergyDetails( e.target.value ) }
             />
           </div>
-        )}
+        ) }
 
         <button type="submit">Submit</button>
       </form>

@@ -40,12 +40,15 @@ export default async function ResetPassword(): Promise<JSX.Element> {
   }
 
   return (
-    <form action={handlePasswordReset} className={styles.auth_container}>
-      <h2 className={styles.auth_container_h2}>Reset Password</h2>
-      <div className={styles.auth_container_section}>
-        <div className={styles.auth_section_partition}>
+    <form
+      action={ handlePasswordReset }
+      className={ styles.auth_container }
+    >
+      <h2 className={ styles.auth_container_h2 }>Reset Password</h2>
+      <div className={ styles.auth_container_section }>
+        <div className={ styles.auth_section_partition }>
           <label
-            className={styles.auth_section_partition_span1}
+            className={ styles.auth_section_partition_span1 }
             htmlFor="input_password"
           >
             New Password
@@ -53,33 +56,33 @@ export default async function ResetPassword(): Promise<JSX.Element> {
         </div>
         <PasswordInputWithEyeBall />
       </div>
-      <div className={styles.auth_container_section}>
-        <div className={styles.auth_section_partition}>
+      <div className={ styles.auth_container_section }>
+        <div className={ styles.auth_section_partition }>
           <label
-            className={styles.auth_section_partition_span1}
+            className={ styles.auth_section_partition_span1 }
             htmlFor="input_confirm_password"
           >
             Confirm Password
           </label>
         </div>
-        <div className={styles.auth_input_wrapper}>
+        <div className={ styles.auth_input_wrapper }>
           <input
             id="input_confirm_password"
-            className={styles.auth_input}
+            className={ styles.auth_input }
             type="password"
             name="confirmPW"
           />
         </div>
       </div>
-      <div className={styles.auth_sign_in_button_wrapper}>
+      <div className={ styles.auth_sign_in_button_wrapper }>
         <button
           type="submit"
-          className={styles.auth_sign_in_button}
+          className={ styles.auth_sign_in_button }
         >
           Submit
         </button>
       </div>
-      <div className={styles.auth_sign_in_button_wrapper}>
+      <div className={ styles.auth_sign_in_button_wrapper }>
         <Link href="/">Home Page</Link>
       </div>
     </form>

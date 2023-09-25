@@ -8,8 +8,13 @@ type ComponentProps = {
 const IndividualReview: React.FC<ComponentProps> = ( { review }: ComponentProps ) => {
 
   return (
-    <div className={styles.review__singleton_wrapper}>
-      <Image fill src={review} alt="customer review" className={styles.review_singleton} />
+    <div className={ styles.review__singleton_wrapper }>
+      <Image
+        fill
+        src={ review }
+        alt="customer review"
+        className={ styles.review_singleton }
+      />
     </div>
   );
 };

@@ -8,12 +8,12 @@ export default async function Header(): Promise<JSX.Element> {
 
   return (
     <div className="header-wrapper">
-      {/* <div className={styles.banner_main_wrapper}>
+      { /* <div className={styles.banner_main_wrapper}>
         <div className={styles.banner_main}>
           <p className={styles.banner_main_text}>THIS IS MY BIG BANNER</p>
         </div>
 
-      </div> */}
+      </div> */ }
       <div className="header">
         <FaviconCard />
         <div className="header-right">

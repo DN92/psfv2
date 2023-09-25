@@ -1,0 +1,38 @@
+.bannerContainerClosed,
+.bannerContainerOpen {
+  background-color: var(--clr-100);
+  padding: 0.5rem;
+  position: relative;
+  border: 2px solid black;
+  margin: 10rem auto 1rem auto;
+}
+
+.bannerContainerOpen {
+  background-color: var(--clr-100);
+  width: 80%;
+}
+
+.bannerContainerClosed {
+  width: 60%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.closeButtonContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.bannerMessage {
+  text-align: center;
+  padding: .25rem 1rem;
+}
+
+@media (min-width: 800px) {
+  .bannerContainerClosed,
+  .bannerContainerOpen {
+    background-color: red;
+  }
+}

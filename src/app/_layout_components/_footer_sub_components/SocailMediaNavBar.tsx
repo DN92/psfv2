@@ -8,9 +8,14 @@ const SocialMediaNavBar: React.FC = () => {
 
   return (
     <nav className="social-media-navbar">
-      {socialMediaInfo.map( ( platform: SocialMediaDatapoint ) => (
-        <SocialMediaIconWrapper key={platform.site} iconSrc={platform.iconSrc} href={platform.href} site={platform.site} />
-      ) )}
+      { socialMediaInfo.map( ( platform: SocialMediaDatapoint ) => (
+        <SocialMediaIconWrapper
+          key={ platform.site }
+          iconSrc={ platform.iconSrc }
+          href={ platform.href }
+          site={ platform.site }
+        />
+      ) ) }
     </nav>
   );
 };

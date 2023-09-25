@@ -3,7 +3,7 @@ export default function QuestionWrapper( { children }:{ children: React.ReactNod
   return (
     <div className="">
       question wrapper
-      {children}
+      { children }
     </div>
   );
 }
