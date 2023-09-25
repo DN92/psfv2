@@ -13,12 +13,14 @@
 
 .image_container_one {
   aspect-ratio: 1 / 1;
-  width: 35%;
+  width: 80%;
+  margin: 2rem auto;
 }
 
 .image_container_two {
+  margin: 1rem auto;
   aspect-ratio: 107 / 50;
-  width: 45%;
+  width: 85%;
 }
 .image_container_three {
   aspect-ratio: 77 /100;

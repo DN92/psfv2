@@ -20,6 +20,7 @@ export default function ScrollButton( { elementId, children }: ComponenetProps )
 
   return (
     <button
+      className="button_style_grid_button1"
       type="button"
       onClick={ ():void => handleClick() }
     >

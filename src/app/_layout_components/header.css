@@ -5,7 +5,7 @@
   height: var(--headerSize);
   width: 100%;
   background-color: var(--clr-350);
-  padding: 1rem 0 0rem 0; 
+  padding: 1rem 0 0rem 0;
 }
 
 .header {
@@ -13,7 +13,7 @@
   height: 100%;
   display: flex;
   justify-content: space-around;
-  
+
 }
 
 .header > * {
@@ -49,7 +49,7 @@
 }
 
 .application-title-wrapper {
-  
+
 }
 
 .website-title {
@@ -85,7 +85,7 @@
   justify-content: center;
   align-items: center;
   color: var(--clr-800);
-  
+  text-decoration: none !important;
 }
 
 .header-nav-link:hover,

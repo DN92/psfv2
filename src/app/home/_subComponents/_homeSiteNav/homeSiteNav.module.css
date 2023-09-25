@@ -1,0 +1,11 @@
+.nav {
+  text-align: center;
+}
+
+.navLink {
+  margin: .25rem auto;
+}
+
+.navLink > a {
+  color: var(--clr-400);
+}

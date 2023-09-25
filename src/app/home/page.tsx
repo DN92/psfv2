@@ -1,16 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import HomeBanner from './_subComponents/home_banner/HomeBanner';
+import HomeBanner from './_subComponents/_home_banner/HomeBanner';
 import ownerWith3Kittens from './_assets/ownerWith3Kittens.jpg';
 import ticaReg from './_assets/ticaReg.jpg';
-import styles from './home.module.css';
-import PageScrollNavigation from './_subComponents/PageScrollNavigation';
-import HomeSiteNav from './_subComponents/HomeSiteNav';
+import PageScrollNavigation from './_subComponents/_page_scroll_navigation/PageScrollNavigation';
+import HomeSiteNav from './_subComponents/_homeSiteNav/HomeSiteNav';
 import WelcomeTo from './_subComponents/WelcomeTo';
 import MyPassion from './_subComponents/MyPassion';
 import TheBreed from './_subComponents/TheBreed';
 import OurKittens from './_subComponents/OurKittens';
 import Recieve from './_subComponents/Receive';
+import styles from './home.module.css';
 
 export default function Home(): JSX.Element {
 
@@ -25,12 +25,15 @@ export default function Home(): JSX.Element {
     </Link>,
   ];
 
+  // TODO: CREATE PROPER H(x) ELEMENT FOR TITLE OF SECTION  welcome to psf and my passion
+
   return (
     <main>
       <HomeBanner
         message={ message }
         whenClosedText="Show Announcements"
       />
+      <HomeSiteNav />
       { /* <IframeWrapper /> */ }
       <div className={ `${styles.image_container} ${styles.image_container_one}` }>
         <Image
@@ -40,7 +43,6 @@ export default function Home(): JSX.Element {
         />
       </div>
       <PageScrollNavigation />
-      <HomeSiteNav />
       <div className={ `${styles.image_container} ${styles.image_container_two}` }>
         <Image
           fill

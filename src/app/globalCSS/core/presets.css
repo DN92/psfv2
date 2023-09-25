@@ -50,7 +50,8 @@ h6{
 
 /* links */
 a:any-link {
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 5px;
   letter-spacing: 0.02rem;
 }
 
