@@ -5,12 +5,12 @@ export default function OurKittens():JSX.Element {
 
   return (
     <div className={ styles.header }>
-      <h4
+      <h5
         id="our_kittens"
         className={ `${styles.ourKittensWrapper} bold` }
       >
         Our Kittens
-      </h4>
+      </h5>
       <p>
         Our kittens well-being is very important, thus choosing the right owners for our babies is another priority! If you’re ready for your perfect baby, please fill out the Questionnaire.
       </p>

@@ -38,3 +38,11 @@
 .button_style_grid_button1:active {
   transform: scale(1.025);
 }
+
+/* next button */
+
+.button_apply_form {
+  width: 100%;
+  text-transform: uppercase;
+  min-height: 2.25rem;
+}

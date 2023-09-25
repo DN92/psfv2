@@ -1,7 +1,7 @@
 .progress_bar {
   height: 40px;
   width: 80%;
-  margin: auto;
+  margin: 1rem auto 2rem auto;
   display: flex;
 }
 

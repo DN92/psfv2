@@ -11,9 +11,11 @@ import StepFive from './_apply_subcomponents/_form_steps/StepFive';
 import StepSix from './_apply_subcomponents/_form_steps/StepSix';
 import StepAllergies from './_apply_subcomponents/_form_steps/StepAllergies';
 import StepSocialMedeia from './_apply_subcomponents/_form_steps/StepSocialMedia';
+import styles from './apply.module.css';
 
 export default function Apply():JSX.Element {
 
+  const [formStarted, setFormStarted] = useState( false );
   const [currentStep, setCurrentStep] = useState<number>( 0 );
   const [previousStep, setPreviousStep] = useState<number>( 0 );
   const [userStartedForm, setUserStartedForm] = useState( true );
@@ -46,21 +48,37 @@ export default function Apply():JSX.Element {
       <div className="QUESTIONS_WRAPPER">
         { currentStep < allSteps.length && allSteps[currentStep] }
       </div>
-      <div className="BUTTONS-WRAPPER">
-        <button type="button">reset form</button>
+      <div className={ styles.applyFormButtonsWrapper }>
+        <button
+          className="button_apply_form"
+          type="button"
+          onClick={ ():void => { setFormStarted( false ); updateStepState( 0 ); } }
+        >
+          reset form
+        </button>
         { currentStep !== 0 && (
           <button
+            className="button_apply_form"
             type="button"
             onClick={ ():void => { updateStepState( currentStep - 1 ); } }
           >
             back
           </button>
         ) }
-        <button type="button">next</button>
-        { currentStep === 0 && (
+        { currentStep !== 0 && (
           <button
+            className="button_apply_form"
             type="button"
-            onClick={ ():void => { setUserStartedForm( true ); updateStepState( 1 ); } }
+            onClick={ ():void => { updateStepState( currentStep + 1 >= allSteps.length ? allSteps.length : currentStep + 1 ); } }
+          >
+            next
+          </button>
+        ) }
+        { currentStep === 0 && !formStarted && (
+          <button
+            className="button_apply_form"
+            type="button"
+            onClick={ ():void => { setUserStartedForm( true ); updateStepState( 1 ); setFormStarted( true ); } }
           >
             Begin
           </button>

@@ -39,17 +39,16 @@ h3{
 }
 
 h4{
-  font-size: var(--fs-650);
+  font-size: var(--fs-700);
 }
 h5{
+  font-size: var(--fs-650);
+}
+
+h6{
   font-size: var(--fs-600);
   font-weight:700;
   margin: 1rem;
-}
-
-/* h6 will be for errors */
-h6{
-  color:red;
 }
 
 /* links */

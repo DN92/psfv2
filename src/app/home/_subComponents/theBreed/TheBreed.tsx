@@ -8,12 +8,12 @@ export default function TheBreed():JSX.Element {
 
   return (
     <div className={ styles.theBreedWrapper }>
-      <h4
+      <h5
         id="the_breed"
         className={ `${styles.header} bold` }
       >
         The Breed
-      </h4>
+      </h5>
       <p>
         Scottish folds are known to be suuupperr affectionate and get along with other pets and small children. This breed does not fit the standard cat stereotype! They don&apos;vet want to be left alone in their lair, instead, they&apos;vell want to sit on your lap, lie under your arm or on your pillow as close to your face If you get them a sibling you&apos;vell enjoy watching them jump around and groom each other, but they wont forget about you! You&apos;vell simply get double affection and love.
       </p>

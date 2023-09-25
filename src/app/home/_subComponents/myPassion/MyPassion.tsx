@@ -7,12 +7,12 @@ export default function MyPassion():JSX.Element {
 
   return (
     <div className={ styles.myPassionWrapper }>
-      <h4
+      <h5
         className={ `${styles.header} bold` }
         id="my_passion"
       >
         My Passion
-      </h4>
+      </h5>
       <p>
         Hello, I&apos;m Nataliya, the proud owner of Planet Scottish Fold Cattery. Let me share how my love for nature and animals guided me on this wonderful journey of breeding. Since I was a child, I&apos;ve been captivated by the beauty of the natural world. Cats, in particular, hold a special place in my heart, even from a young age. Growing up, pets were always a cherished part of my family. We had a variety of companions, from our beloved childhood cat to parrots, turtles, fish, hamsters, and dogs. To me, life without a pet would feel incomplete.
       </p>

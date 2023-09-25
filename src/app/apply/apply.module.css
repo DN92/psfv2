@@ -1,0 +1,8 @@
+.applyFormButtonsWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 80%;
+  margin: 0 auto;
+  gap: 2rem;
+  margin: 2rem auto;
+}

@@ -35,7 +35,7 @@ export default async function Detailedkitten( { params: { type, id } }: Params )
         <p>{ `with ${kitten.eyeColor} eyes` }</p>
         <p>{ `STATUS: ${kitten.status}` }</p>
         <p>{ `$${kitten.price}` }</p>
-        <h4>Parents</h4>
+        <h5>Parents</h5>
         <p>{ `Dam: ${kitten.mother}` }</p>
         <p>{ `Sire: ${kitten.father}` }</p>
         <p />

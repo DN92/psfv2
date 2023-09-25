@@ -1,5 +1,14 @@
 /* Utility classes */
 
+.standard-text-section-wrapper {
+  width: 94%;
+  margin: auto;
+}
+
+.standard-text-section-header {
+  margin: 0 0 0 1.25rem
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

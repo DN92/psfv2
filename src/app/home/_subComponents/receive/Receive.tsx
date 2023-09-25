@@ -5,12 +5,12 @@ export default function Recieve():JSX.Element {
 
   return (
     <div className={ styles.recieveWrapper }>
-      <h4
+      <h5
         id="recieve"
         className={ `${styles.header} bold` }
       >
         How will you recieve your kitten?
-      </h4>
+      </h5>
       <p>
         You have many options on how to get your new family member. If you&apos;re close, picking up from our cattery is the best option.
       </p>
