@@ -23,6 +23,20 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-height: 375px;
   text-align: center;
+  text-decoration: none !important;
+}
+
+.adult_cat_singleton_text {
+  flex: 1 0 auto;
+  display: flex;
+  color: var(--clr-500);
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem 0 .5rem 0;
+}
+
+.adult_cat_singleton_text > p {
+  flex: 1 0 auto;
 }
 
 .adult_cat_singleton_wrapper:hover {

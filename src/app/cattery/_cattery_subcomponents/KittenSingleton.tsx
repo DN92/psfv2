@@ -51,14 +51,14 @@ const KittenSingleton: React.FC<ComponentProps> = ( { kitten, wrapperClasses = [
             <p>My color is </p>
             <p>{ furColor }</p>
             <p>{ `and I have ${eyeColor} eyes` }</p>
-            <p>{ `$${kitten.price}` }</p>
+            <p className="bold green bigger-text">{ `$${kitten.price}` }</p>
           </>
         ) : (
           <>
-            <p>{ `Hi, I am ${name}` }</p>
-            <p>I was recently sold to</p>
-            <p>a lucky family for</p>
-            <p>{ `$${kitten.price}` }</p>
+            <p className="white">{ `Hi, I am ${name}` }</p>
+            <p className="white">I was recently sold to</p>
+            <p className="white">a lucky family for</p>
+            <p className="white bold bigger-text">{ `$${kitten.price}` }</p>
           </>
         ) }
       </div>
