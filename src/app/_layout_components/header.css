@@ -104,7 +104,7 @@
 
 .header-navlink-dropdown {
   position: absolute;
-  background-color: rgb(27, 137, 137);
+  background-color: var(--clr-350);
   width: 100%;
   top: 58px;
   overflow: hidden;
@@ -114,6 +114,8 @@
 }
 
 .header-navlink-dropdown-item {
+  color: var(--clr-800) !important;
+  text-decoration: none !important;
   background-color: var(--clr-700);
   width: 100%;
   border: 1px solid white;
