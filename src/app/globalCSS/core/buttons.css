@@ -19,11 +19,14 @@
   transform: scale(1.025);
 }
 
+/* next button */
+
 .button_style_grid_button1 {
   width: 100%;
   background: none;
   border: none;
   text-decoration: underline;
+  text-decoration-color: blue;
   text-underline-offset: 5px;
 }
 

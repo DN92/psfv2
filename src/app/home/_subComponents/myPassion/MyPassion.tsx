@@ -1,31 +1,28 @@
 import Image from 'next/image';
-import cert1 from '../_assets/internationalCatAssociationCert.jpg';
-import cert2 from '../_assets/catBreedSenseiCert.jpg';
-import gSnap from '../_assets/googleReviewSnap.jpg';
-import styles from '../home.module.css';
+import cert from '../../_assets/internationalCatAssociationCert.jpg';
+import gSnap from '../../_assets/googleReviewSnap.jpg';
+import styles from './myPassion.module.css';
 
 export default function MyPassion():JSX.Element {
 
   return (
-    <div>
-      <h2 id="my_passion">My Passion</h2>
+    <div className={ styles.myPassionWrapper }>
+      <h4
+        className={ `${styles.header} bold` }
+        id="my_passion"
+      >
+        My Passion
+      </h4>
       <p>
         Hello, I&apos;m Nataliya, the proud owner of Planet Scottish Fold Cattery. Let me share how my love for nature and animals guided me on this wonderful journey of breeding. Since I was a child, I&apos;ve been captivated by the beauty of the natural world. Cats, in particular, hold a special place in my heart, even from a young age. Growing up, pets were always a cherished part of my family. We had a variety of companions, from our beloved childhood cat to parrots, turtles, fish, hamsters, and dogs. To me, life without a pet would feel incomplete.
       </p>
-      <div className={ `${styles.image_container} ${styles.image_container_three}` }>
-        <Image
-          fill
-          src={ cert1 }
-          alt="cat association cert"
-        />
-      </div>
       <p>
         In 2016, my cattery journey began with Athena, a purebred Scottish Straight cat gifted to me by my sister. Athena captured my heart with her incredible loyalty and affectionate nature. She became the foundation of my breeding program, producing adorable kittens and eventually retiring in 2021. Her legacy continues through Ladybug, one of her kittens, who carries her mother&apos;s loving personality. Throughout the years, my dedication has been focused on understanding and improving this remarkable breed. My utmost priority is breeding healthy kittens that embody the best qualities of the breed: friendly, affectionate, loyal, and non-aggressive. Based on my personal experiences as a child, where I encountered attacks by a cat and three dogs, I am deeply committed to breeding kittens with exceptional friendliness and zero aggression.
       </p>
       <div className={ `${styles.image_container} ${styles.image_container_four}` }>
         <Image
           fill
-          src={ cert2 }
+          src={ cert }
           alt="cat sensei cert"
         />
       </div>

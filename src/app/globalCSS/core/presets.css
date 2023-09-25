@@ -16,6 +16,10 @@ a, p, span, textarea {
   line-height: 1.5;
 }
 
+p {
+  padding: .5rem 0;
+}
+
 @media (max-width: 15.3125em) {
   #h1 {
     display: none;
@@ -50,8 +54,10 @@ h6{
 
 /* links */
 a:any-link {
+  color: var(--clr-400);
   text-decoration: underline;
-  text-underline-offset: 5px;
+  text-underline-offset: 3px;
+  text-decoration-style: double;
   letter-spacing: 0.02rem;
 }
 

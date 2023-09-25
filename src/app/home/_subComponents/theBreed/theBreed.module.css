@@ -1,0 +1,18 @@
+.theBreedWrapper {
+  width: 94%;
+  margin: auto;
+}
+
+.header {
+  margin: 0 0 0 1.25rem
+}
+
+.image_container {
+  margin: auto;
+  position: relative;
+}
+
+.image_container_six {
+  aspect-ratio: 98 / 100;
+  width: 45%;
+}

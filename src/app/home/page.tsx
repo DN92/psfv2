@@ -6,10 +6,11 @@ import ticaReg from './_assets/ticaReg.jpg';
 import PageScrollNavigation from './_subComponents/_page_scroll_navigation/PageScrollNavigation';
 import HomeSiteNav from './_subComponents/_homeSiteNav/HomeSiteNav';
 import WelcomeTo from './_subComponents/welcomeTo/WelcomeTo';
-import MyPassion from './_subComponents/MyPassion';
-import TheBreed from './_subComponents/TheBreed';
-import OurKittens from './_subComponents/OurKittens';
-import Recieve from './_subComponents/Receive';
+import MyPassion from './_subComponents/myPassion/MyPassion';
+import TheBreed from './_subComponents/theBreed/TheBreed';
+import OurKittens from './_subComponents/ourKittens/OurKittens';
+import Recieve from './_subComponents/receive/Receive';
+import cert1 from './_assets/catBreedSenseiCert.jpg';
 import styles from './home.module.css';
 
 export default function Home(): JSX.Element {
@@ -24,8 +25,6 @@ export default function Home(): JSX.Element {
       If interested, please apply here
     </Link>,
   ];
-
-  // TODO: CREATE PROPER H(x) ELEMENT FOR TITLE OF SECTION  welcome to psf and my passion
 
   return (
     <main>
@@ -51,6 +50,13 @@ export default function Home(): JSX.Element {
         />
       </div>
       <WelcomeTo />
+      <div className={ `${styles.image_container} ${styles.image_container_three}` }>
+        <Image
+          fill
+          src={ cert1 }
+          alt="cat association cert"
+        />
+      </div>
       <MyPassion />
       <TheBreed />
       <OurKittens />
