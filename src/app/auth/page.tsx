@@ -32,7 +32,7 @@ export default async function Login(): Promise<JSX.Element> {
         className={ styles.auth_container }
         action={ handleSignIn }
       >
-        <h2 className={ styles.auth_container_h2 }>Sign in</h2>
+        <h4 className={ styles.auth_container_h2 }>Sign in</h4>
         <div className={ styles.auth_container_section }>
           <div className={ styles.auth_section_partition }>
             <label
